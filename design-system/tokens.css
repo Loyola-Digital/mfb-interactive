@@ -1,0 +1,51 @@
+/* Gerado de tokens.json. Não edite à mão: edite tokens.json e rode de novo. */
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
+@font-face { font-family: "Empirica Head"; src: url("fonts/EmpiricaHeadMedium.ttf"); font-weight: 500; font-style: normal; font-display: swap; }
+:root {
+  --coral: #FD6560;
+  --coral-tint: #FFE4E2;
+  --coral-ink: #C0302B;
+  --yellow: #EFD43F;
+  --yellow-vivid: #FFD02A;
+  --yellow-soft: #FFEEA6;
+  --yellow-tint: #FFF7D6;
+  --leaf: #8CD35F;
+  --leaf-tint: #EEF9E4;
+  --leaf-ink: #2F6B17;
+  --sky: #7DB9F5;
+  --sky-tint: #E6F2FE;
+  --surface: #FFFFFF;
+  --ink: #1C1917;
+  --ink-muted: #57534E;
+  --on-accent: #1C1917;
+  --hairline: #EAE6E1;
+  --border-strong: #8A847E;
+  --focus-ring: #1C1917;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 56px;
+  --space-8: 96px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --shadow-card: 0 8px 24px rgba(28, 25, 23, 0.08);
+  --shadow-soft: 0 2px 8px rgba(28, 25, 23, 0.06);
+  --font-display: Grandstander, "Baloo 2", "Trebuchet MS", sans-serif;
+  --font-sans: Poppins, "Segoe UI", system-ui, sans-serif;
+  --font-editorial: "Empirica Head", Georgia, serif;
+}
+.display-hero { font-family: var(--font-display); font-size: 64px; line-height: 1; font-weight: 800; letter-spacing: -0.01em; }
+.display { font-family: var(--font-display); font-size: 44px; line-height: 1.05; font-weight: 800; }
+.title { font-family: var(--font-display); font-size: 28px; line-height: 1.1; font-weight: 800; }
+.heading { font-family: var(--font-display); font-size: 20px; line-height: 1.2; font-weight: 700; }
+.lead { font-family: var(--font-sans); font-size: 20px; line-height: 1.4; font-weight: 400; }
+.body { font-family: var(--font-sans); font-size: 16px; line-height: 1.55; font-weight: 400; }
+.body-strong { font-family: var(--font-sans); font-size: 16px; line-height: 1.45; font-weight: 600; }
+.small { font-family: var(--font-sans); font-size: 13px; line-height: 1.45; font-weight: 400; }
+.button { font-family: var(--font-sans); font-size: 14px; line-height: 1.2; font-weight: 700; letter-spacing: 0.04em; }
+.editorial-display { font-family: var(--font-editorial); font-size: 56px; line-height: 1.05; font-weight: 500; }

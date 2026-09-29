@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exemplo — Meu Filho Bilíngue</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components/bundle.css">
+<style>
+  body { margin: 0; background: var(--surface); }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-6); align-items: center; padding: var(--space-7) var(--space-4) var(--space-8); }
+  .hero img.char { width: 100%; max-width: 280px; justify-self: center; }
+  .actions { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-5); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-5); margin-top: var(--space-6); }
+  @media (max-width: 640px) { .hero { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="mfb">
+  <header class="wrap" style="padding: var(--space-4)">
+    <img src="assets/Logos/logo-mfb-dark.png" alt="Meu Filho Bilíngue" height="48">
+  </header>
+
+  <section class="wrap hero">
+    <div>
+      <h1 class="display-hero">Inglês na <span class="mfb-scribble">rotina</span> da família</h1>
+      <p class="lead" style="color: var(--ink-muted)">Da hora do banho à história antes de dormir, o inglês vira parte do dia.</p>
+      <div class="actions">
+        <a class="mfb-btn mfb-btn--primary" href="#">Quero começar</a>
+        <a class="mfb-btn mfb-btn--outline" href="#">Como funciona</a>
+      </div>
+    </div>
+    <img class="char" src="assets/Personagens/coco-coral.svg" alt="">
+  </section>
+
+  <section class="mfb-band mfb-band--yellow">
+    <div class="wrap">
+      <h2 class="display">Por que funciona</h2>
+      <div class="cards">
+        <article class="mfb-card"><h3>Problema</h3><p>As crianças passam o dia em português e o inglês fica só para a escola.</p></article>
+        <article class="mfb-card"><h3>Método</h3><p>Atividades curtas dentro da rotina, 15 a 20 minutos por dia.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mfb-band mfb-band--coral">
+    <div class="wrap">
+      <h2 class="display">Perguntas <span class="mfb-scribble">frequentes</span></h2>
+      <div class="mfb-faq" style="margin-top: var(--space-6)">
+        <details open><summary>Quanto tempo por dia?</summary><p>De 15 a 20 minutos, dentro de um momento que já existe na rotina.</p></details>
+        <details><summary>Preciso falar inglês bem?</summary><p>Não. O material traz as frases prontas e o áudio de cada uma.</p></details>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

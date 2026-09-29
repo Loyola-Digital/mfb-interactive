@@ -1,0 +1,54 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Meu Filho Bilíngue</title>
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--surface); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+  .coral { fill:var(--coral); }
+  .yellow { fill:var(--yellow-vivid); }
+  .leaf { fill:var(--leaf); }
+  .sky { fill:var(--sky); }
+  .ground { fill:var(--surface); }
+  .blk { rx:var(--radius-lg); }
+  .bub { rx:20px; }
+  .words { position:absolute; left:var(--space-6); bottom:var(--space-6); max-width:440px; }
+  .name { margin:0; font-family:var(--font-display); font-size:76px; line-height:.95; font-weight:800; color:var(--ink); }
+  .tag { margin:var(--space-3) 0 0 3px; font-size:14px; line-height:20px; color:var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      yellow-vivid 232×288 slab bleeding top and bottom (the showcase yellow of the references) · coral bubble 200×40 and yellow·leaf·sky bubbles 120–168×40 · ≈40% of 960×288
+  arrangement one tall yellow slab with a conversation of speech bubbles stacked across it, alternating left/right tails like the logo's two bubbles
+  pattern     literal motif, speech: "a conversa entre pais e filhos" → pill bubbles with triangular tails, coral and yellow leading, leaf and sky as support
+  scales      bubble height 40 (space-6 + space-2), pitch 56 (space-7), rx 20 = half height; slab corners radius-lg; gutters space-4
+-->
+<rect class="yellow blk" x="112" y="-28" width="232" height="344" rx="28"/>
+<rect class="leaf bub" x="40" y="28" width="136" height="40" rx="20"/>
+<path class="leaf" d="M60 66 L78 66 L58 80 Z"/>
+<rect class="coral bub" x="200" y="84" width="200" height="40" rx="20"/>
+<path class="coral" d="M362 122 L382 122 L384 136 Z"/>
+<rect class="ground bub" x="136" y="140" width="176" height="40" rx="20"/>
+<path class="ground" d="M156 178 L174 178 L154 192 Z"/>
+<rect class="sky bub" x="280" y="196" width="160" height="40" rx="20"/>
+<path class="sky" d="M402 234 L422 234 L424 248 Z"/>
+<circle class="ground" cx="310" cy="216" r="9"/><circle class="ground" cx="334" cy="216" r="9"/>
+<circle class="ground" cx="236" cy="104" r="9"/><circle class="ground" cx="260" cy="104" r="9"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Meu Filho<br>Bilíngue</h1>
+<p class="tag">Inglês dentro da rotina da família.</p>
+</div>
+</div>
+</body>
+</html>

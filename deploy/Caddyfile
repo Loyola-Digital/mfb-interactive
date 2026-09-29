@@ -1,0 +1,12 @@
+# /etc/caddy/Caddyfile — HTTPS automático para a API.
+{
+	servers {
+		# Mantém o X-Forwarded-For que a Vercel envia (IP real da família).
+		# ponytail: confia em qualquer origem; o IP é só para o limite de tentativas, o limite por e-mail é o que protege.
+		trusted_proxies static 0.0.0.0/0 ::/0
+	}
+}
+
+api.SEU-DOMINIO.com.br {
+	reverse_proxy 127.0.0.1:8787
+}

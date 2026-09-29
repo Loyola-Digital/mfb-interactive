@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "web/dist",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://api.SEU-DOMINIO.com.br/api/:path*" }
+  ]
+}

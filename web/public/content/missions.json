@@ -1,0 +1,385 @@
+{
+  "missions": [
+    {
+      "id": "M01",
+      "version": 1,
+      "type": "paths",
+      "title": "Vamos ao jardim",
+      "available": true,
+      "garden": {
+        "x": 25,
+        "y": 95
+      },
+      "icon": "portao",
+      "bookRef": "Curious Ones — Stage 1, p. 10 (caminhos) e p. 54 (vocabulário). Adaptado: o caminho é percorrido por toques, sem traçado.",
+      "goal": "Levar o coelhinho pelas pedras até o portão do jardim.",
+      "word": "rabbit",
+      "meaning": "coelho",
+      "adultTip": "Mostre a pedra que está brilhando e deixe a criança tocar uma de cada vez. Quando o coelho chegar, aponte para ele e diga \"rabbit\".",
+      "offScreen": "Façam um caminho com almofadas ou folhas de papel no chão e pulem de uma em uma até a porta, como o coelho.",
+      "game": {
+        "start": {
+          "x": 50,
+          "y": 90
+        },
+        "points": [
+          {
+            "x": 50,
+            "y": 71
+          },
+          {
+            "x": 50,
+            "y": 53
+          },
+          {
+            "x": 50,
+            "y": 35
+          }
+        ],
+        "goal": {
+          "x": 50,
+          "y": 14
+        },
+        "goalArt": "portao"
+      }
+    },
+    {
+      "id": "M02",
+      "version": 1,
+      "type": "paths",
+      "title": "Passeio do coelhinho",
+      "available": true,
+      "garden": {
+        "x": 72,
+        "y": 87.5
+      },
+      "icon": "cenouras",
+      "bookRef": "Curious Ones — Stage 1, pp. 10 e 12 (percursos até um destino). Adaptado para toques num caminho curvo.",
+      "goal": "Levar o coelhinho pelo caminho curvo até as cenouras.",
+      "word": "rabbit",
+      "meaning": "coelho",
+      "adultTip": "Deixe a criança seguir a pedra destacada, mesmo que demore. Se ela tocar fora de ordem, espere: a ajuda aparece sozinha.",
+      "offScreen": "Desenhem juntos um caminho curvo no papel e passem o dedo por ele até chegar ao desenho de uma cenoura.",
+      "game": {
+        "start": {
+          "x": 20,
+          "y": 90
+        },
+        "points": [
+          {
+            "x": 34,
+            "y": 72
+          },
+          {
+            "x": 64,
+            "y": 66
+          },
+          {
+            "x": 74,
+            "y": 46
+          },
+          {
+            "x": 52,
+            "y": 32
+          }
+        ],
+        "goal": {
+          "x": 30,
+          "y": 15
+        },
+        "goalArt": "cenouras"
+      }
+    },
+    {
+      "id": "M03",
+      "version": 1,
+      "type": "colors",
+      "title": "O sapinho verde",
+      "available": true,
+      "garden": {
+        "x": 30,
+        "y": 80
+      },
+      "icon": "sapo",
+      "bookRef": "Curious Ones — Stage 1, p. 26 (cor verde e sapo). Adaptado para pintura por preenchimento com toque.",
+      "goal": "Pintar o sapo com a mesma cor do modelo.",
+      "word": "green",
+      "meaning": "verde",
+      "adultTip": "Mostre o sapo do modelo e deixe a criança escolher a tinta sozinha. Quando o sapo ficar verde, aponte e diga \"green\".",
+      "offScreen": "Procurem juntos algo verde pela casa e digam \"green\" quando encontrarem.",
+      "game": {
+        "drawing": "sapo",
+        "paints": [
+          "leaf",
+          "coral"
+        ],
+        "target": "leaf"
+      }
+    },
+    {
+      "id": "M04",
+      "version": 1,
+      "type": "colors",
+      "title": "A banana amarela",
+      "available": true,
+      "garden": {
+        "x": 74,
+        "y": 72.5
+      },
+      "icon": "banana",
+      "bookRef": "Curious Ones — Stage 1, p. 25 (cor amarela e banana). Adaptado para pintura por preenchimento com toque.",
+      "goal": "Pintar a banana com a mesma cor do modelo.",
+      "word": "yellow",
+      "meaning": "amarelo",
+      "adultTip": "Agora são três tintas. Mostre a banana do modelo e deixe a criança comparar antes de escolher. Quando ficar amarela, diga \"yellow\".",
+      "offScreen": "Procurem uma fruta amarela na cozinha e digam \"yellow\" juntos.",
+      "game": {
+        "drawing": "banana",
+        "paints": [
+          "yellow",
+          "leaf",
+          "coral"
+        ],
+        "target": "yellow"
+      }
+    },
+    {
+      "id": "M05",
+      "version": 1,
+      "type": "quantities",
+      "title": "Uma flor",
+      "available": true,
+      "garden": {
+        "x": 28,
+        "y": 65
+      },
+      "icon": "tulipa",
+      "bookRef": "Curious Ones — Stage 1, p. 54 (número um). Adaptado: uma flor no lugar do coelho, com contagem visual.",
+      "goal": "Plantar uma flor no único espaço do canteiro.",
+      "word": "one",
+      "meaning": "um",
+      "adultTip": "Mostre o número 1 e a tulipa do modelo. A criança toca no cesto para pegar a flor e depois no buraquinho de terra. Diga junto: \"one\".",
+      "offScreen": "Peguem um brinquedo, mostrem um dedo e digam \"one\".",
+      "game": {
+        "slots": 1,
+        "numeral": "1"
+      }
+    },
+    {
+      "id": "M06",
+      "version": 1,
+      "type": "quantities",
+      "title": "Duas flores",
+      "available": true,
+      "garden": {
+        "x": 70,
+        "y": 57.5
+      },
+      "icon": "tulipas",
+      "bookRef": "Curious Ones — Stage 1, p. 56 (número dois e tulipas). Adaptado para contagem visual.",
+      "goal": "Plantar duas flores, uma em cada espaço.",
+      "word": "two",
+      "meaning": "dois",
+      "adultTip": "Cada flor é pega no cesto separadamente. Conte as flores plantadas apontando com o dedo: \"one, two\".",
+      "offScreen": "Separem duas flores ou dois brinquedos e contem juntos: \"one, two\".",
+      "game": {
+        "slots": 2,
+        "numeral": "2"
+      }
+    },
+    {
+      "id": "M07",
+      "version": 1,
+      "type": "sentence",
+      "title": "It's a bee",
+      "available": true,
+      "garden": {
+        "x": 26,
+        "y": 50
+      },
+      "icon": "abelha",
+      "bookRef": "Proposta de extensão, fora das páginas analisadas do Curious Ones — validar vocabulário e frase com a Fernanda.",
+      "goal": "Montar a frase \"It's a bee\" com as peças.",
+      "word": "It's a bee",
+      "meaning": "É uma abelha",
+      "adultTip": "Mostre que cada peça tem a forma do seu espaço. A criança monta da esquerda para a direita. No fim, leia apontando cada peça: \"It's a bee\".",
+      "offScreen": "Aponte para um brinquedo ou figura e pergunte \"What is it?\". Ajude a responder \"It's a ...\".",
+      "game": {
+        "words": [
+          "It's",
+          "a",
+          "bee"
+        ],
+        "art": "abelha"
+      }
+    },
+    {
+      "id": "M08",
+      "version": 1,
+      "type": "sentence",
+      "title": "It's a frog",
+      "available": true,
+      "garden": {
+        "x": 72,
+        "y": 42.5
+      },
+      "icon": "sapo",
+      "bookRef": "Proposta de extensão, fora das páginas analisadas do Curious Ones — validar vocabulário e frase com a Fernanda.",
+      "goal": "Montar a frase \"It's a frog\" com as peças.",
+      "word": "It's a frog",
+      "meaning": "É um sapo",
+      "adultTip": "Mostre que cada peça tem a forma do seu espaço. A criança monta da esquerda para a direita. No fim, leia apontando cada peça: \"It's a frog\".",
+      "offScreen": "Aponte para um brinquedo ou figura e pergunte \"What is it?\". Ajude a responder \"It's a ...\".",
+      "game": {
+        "words": [
+          "It's",
+          "a",
+          "frog"
+        ],
+        "art": "sapo"
+      }
+    },
+    {
+      "id": "M09",
+      "version": 1,
+      "type": "sentence",
+      "title": "It's a rabbit",
+      "available": true,
+      "garden": {
+        "x": 30,
+        "y": 35
+      },
+      "icon": "coelho",
+      "bookRef": "Proposta de extensão, fora das páginas analisadas do Curious Ones — validar vocabulário e frase com a Fernanda.",
+      "goal": "Montar a frase \"It's a rabbit\" com as peças.",
+      "word": "It's a rabbit",
+      "meaning": "É um coelho",
+      "adultTip": "Mostre que cada peça tem a forma do seu espaço. A criança monta da esquerda para a direita. No fim, leia apontando cada peça: \"It's a rabbit\".",
+      "offScreen": "Aponte para um brinquedo ou figura e pergunte \"What is it?\". Ajude a responder \"It's a ...\".",
+      "game": {
+        "words": [
+          "It's",
+          "a",
+          "rabbit"
+        ],
+        "art": "coelho"
+      }
+    },
+    {
+      "id": "M10",
+      "version": 1,
+      "type": "quiz",
+      "title": "De quem é a sombra?",
+      "available": true,
+      "garden": {
+        "x": 74,
+        "y": 27.5
+      },
+      "icon": "sombra:abelha",
+      "bookRef": "Proposta de extensão, fora das páginas analisadas do Curious Ones — validar vocabulário e frase com a Fernanda.",
+      "goal": "Descobrir qual bicho tem a sombra e completar a frase.",
+      "word": "It's a bee",
+      "meaning": "É uma abelha",
+      "adultTip": "Mostre a sombra e deixe a criança comparar com os desenhos. Quando acertar, leia a frase inteira apontando: \"It's a bee\".",
+      "offScreen": "Brinquem de sombra com a mão e uma lanterna e perguntem \"What is it?\".",
+      "game": {
+        "frame": "It's a",
+        "options": [
+          {
+            "word": "bee",
+            "art": "abelha"
+          },
+          {
+            "word": "frog",
+            "art": "sapo"
+          },
+          {
+            "word": "rabbit",
+            "art": "coelho"
+          }
+        ],
+        "answer": "bee"
+      }
+    },
+    {
+      "id": "M11",
+      "version": 1,
+      "type": "quiz",
+      "title": "Outra sombra",
+      "available": true,
+      "garden": {
+        "x": 28,
+        "y": 20
+      },
+      "icon": "sombra:coelho",
+      "bookRef": "Proposta de extensão, fora das páginas analisadas do Curious Ones — validar vocabulário e frase com a Fernanda.",
+      "goal": "Descobrir qual bicho tem a sombra e completar a frase.",
+      "word": "It's a rabbit",
+      "meaning": "É um coelho",
+      "adultTip": "Mostre a sombra e deixe a criança comparar com os desenhos. Quando acertar, leia a frase inteira apontando: \"It's a rabbit\".",
+      "offScreen": "Brinquem de sombra com a mão e uma lanterna e perguntem \"What is it?\".",
+      "game": {
+        "frame": "It's a",
+        "options": [
+          {
+            "word": "bee",
+            "art": "abelha"
+          },
+          {
+            "word": "frog",
+            "art": "sapo"
+          },
+          {
+            "word": "rabbit",
+            "art": "coelho"
+          }
+        ],
+        "answer": "rabbit"
+      }
+    },
+    {
+      "id": "M12",
+      "version": 1,
+      "type": "spelling",
+      "title": "Palavra BEE",
+      "available": true,
+      "garden": {
+        "x": 70,
+        "y": 12.5
+      },
+      "icon": "letras:BEE",
+      "bookRef": "Proposta de extensão, fora das páginas analisadas do Curious Ones — validar vocabulário e frase com a Fernanda.",
+      "goal": "Montar a palavra BEE casando cada letra com a letra apagada.",
+      "word": "bee",
+      "meaning": "abelha",
+      "adultTip": "A criança procura a letra igual à letra clarinha, da esquerda para a direita. Diga o nome de cada letra quando ela encaixar e leia a palavra no fim.",
+      "offScreen": "Escrevam BEE num papel com letras grandes e procurem essas letras em livros ou embalagens.",
+      "game": {
+        "word": "BEE",
+        "art": "abelha"
+      }
+    },
+    {
+      "id": "M13",
+      "version": 1,
+      "type": "spelling",
+      "title": "Palavra FROG",
+      "available": true,
+      "garden": {
+        "x": 48,
+        "y": 5
+      },
+      "icon": "letras:FROG",
+      "bookRef": "Proposta de extensão, fora das páginas analisadas do Curious Ones — validar vocabulário e frase com a Fernanda.",
+      "goal": "Montar a palavra FROG casando cada letra com a letra apagada.",
+      "word": "frog",
+      "meaning": "sapo",
+      "adultTip": "A criança procura a letra igual à letra clarinha, da esquerda para a direita. Diga o nome de cada letra quando ela encaixar e leia a palavra no fim.",
+      "offScreen": "Escrevam FROG num papel com letras grandes e procurem essas letras em livros ou embalagens.",
+      "game": {
+        "word": "FROG",
+        "art": "sapo"
+      }
+    }
+  ]
+}
