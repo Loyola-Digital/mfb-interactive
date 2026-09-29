@@ -20,7 +20,7 @@ família (celular) ──https──> Vercel (front estático, pasta web/dist)
 Um agente de IA **deve pedir ao humano** (e não inventar) estes itens:
 
 1. **Acesso SSH** à VPS com um usuário que tenha `sudo` (Ubuntu 22.04 ou 24.04).
-2. **Domínio da API**, por exemplo `api.seudominio.com.br`, com um registro DNS **A** apontando para o IP da VPS. Verifique com `dig +short api.seudominio.com.br` — precisa devolver o IP da VPS antes da etapa 5.
+2. **Domínio da API**: `mfb-api.devital.com.br`, com um registro DNS **A** apontando para o IP da VPS. Verifique com `dig +short mfb-api.devital.com.br` — precisa devolver o IP da VPS antes da etapa 5.
 3. **Acesso de leitura ao repositório** `github.com/Loyola-Digital/mfb-interactive` (privado). O jeito recomendado é uma *deploy key* (etapa 2): o agente gera a chave na VPS, mostra a parte pública e **pede ao humano** para cadastrá-la no GitHub.
 4. **E-mail da primeira família** (ou da equipe) para criar a primeira conta.
 
@@ -101,12 +101,11 @@ Outros comandos: `... cli.ts senha <email>` (redefine e encerra sessões) e `...
 ## 5. HTTPS com Caddy
 
 ```bash
-sudo cp /opt/mfb-interactive/app/deploy/Caddyfile /etc/caddy/Caddyfile
-sudo sed -i 's/api.SEU-DOMINIO.com.br/api.seudominio.com.br/' /etc/caddy/Caddyfile   # use o domínio real
+sudo cp /opt/mfb-interactive/app/deploy/Caddyfile /etc/caddy/Caddyfile   # já configurado para mfb-api.devital.com.br
 sudo systemctl reload caddy
 ```
 
-**Verificar:** `curl -s https://api.seudominio.com.br/api/health` devolve `{"ok":true}` (o primeiro acesso pode levar alguns segundos enquanto o certificado é emitido). Se falhar: `journalctl -u caddy -n 50` — quase sempre é DNS ainda não propagado ou porta 80/443 fechada.
+**Verificar:** `curl -s https://mfb-api.devital.com.br/api/health` devolve `{"ok":true}` (o primeiro acesso pode levar alguns segundos enquanto o certificado é emitido). Se falhar: `journalctl -u caddy -n 50` — quase sempre é DNS ainda não propagado ou porta 80/443 fechada.
 
 ## 6. Backup diário
 
@@ -123,7 +122,7 @@ Restaurar: `sudo systemctl stop mfb-api`, copiar o backup para `/var/lib/mfb/app
 
 ## 7. Front na Vercel
 
-1. No repositório, troque em `vercel.json` o `api.SEU-DOMINIO.com.br` pelo domínio real e faça commit/push (quem tiver permissão de escrita no GitHub — a deploy key da VPS é só leitura).
+1. O `vercel.json` já repassa `/api/*` para `https://mfb-api.devital.com.br`. Se o domínio da API mudar, troque lá e no `deploy/Caddyfile` e faça commit/push (a deploy key da VPS é só leitura).
 2. Na Vercel: *Add New Project* → importar `Loyola-Digital/mfb-interactive` → **Root Directory: raiz do repositório** (build e pasta de saída já vêm do `vercel.json`) → *Deploy*.
 3. (Opcional) Configurar o domínio do app, por exemplo `app.seudominio.com.br`, em *Settings → Domains*.
 
@@ -159,7 +158,7 @@ Você vai publicar a API do projeto "Mundo Meu Filho Bilíngue" numa VPS Ubuntu.
 
 Acesso: ssh <usuario>@<ip-da-vps>  (o usuário tem sudo)
 Repositório (privado): github.com/Loyola-Digital/mfb-interactive
-Domínio da API: <api.seudominio.com.br>  (DNS A já aponta para a VPS)
+Domínio da API: mfb-api.devital.com.br  (DNS A já aponta para a VPS)
 E-mail da primeira conta: <email@familia.com>
 
 Siga EXATAMENTE o arquivo DEPLOY.md do repositório, etapas 0 a 6, na ordem.
