@@ -40,12 +40,6 @@ export function missionIcon(key: string): string {
   return img(key);
 }
 
-/** Ícones das peças de frase (forma + cor de token), usados na peça e no encaixe. */
-export const shapes: Record<string, string> = {
-  star: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg>',
-  heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8.5-5.3-8.5-11A4.8 4.8 0 0 1 12 6.8 4.8 4.8 0 0 1 20.5 10c0 5.7-8.5 11-8.5 11z"/></svg>',
-  circle: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>',
-};
 
 const PAINTABLE: Record<string, { color: string; line: string }> = {
   sapo: { color: sapoCor, line: sapoTraco },

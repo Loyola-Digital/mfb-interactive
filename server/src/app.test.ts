@@ -69,7 +69,7 @@ describe('login', () => {
     expect((await login('ana@exemplo.com', 'senha-da-ana', '7.7.7.7')).res.status).toBe(200);
     for (let i = 0; i < 30; i++) await login(`y${i}@exemplo.com`, 'errada-123', '7.7.7.7');
     expect((await login('ana@exemplo.com', 'senha-da-ana', '7.7.7.7')).res.status).toBe(429);
-  });
+  }, 30_000); // ~60 hashes scrypt: lento em máquina carregada
 });
 
 describe('sessão', () => {

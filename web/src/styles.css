@@ -174,29 +174,41 @@ h1, h2, p { margin: 0; }
 .icon-letters { display: flex; gap: 2px; align-items: center; justify-content: center; width: 100%; }
 .icon-letters span { flex: 1; max-width: 22px; aspect-ratio: 3 / 4; display: grid; place-items: center; border-radius: 6px; background: var(--yellow); border: 2px solid var(--ink); font: 800 14px/1 var(--font-display); }
 
-/* Montar a frase */
-.sentence { grid-template-rows: auto auto 1fr; justify-items: center; }
-.sentence__art { width: min(38vw, 150px); }
-.sentence__slots, .sentence__pieces { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
-.sentence__pieces { align-self: center; }
-.slot-piece, .piece {
-  position: relative; min-width: 84px; height: 96px; padding: var(--space-2) var(--space-3); border-radius: var(--radius-md);
-  display: grid; justify-items: center; align-content: center; gap: var(--space-1);
+/* Quebra-cabeça (montar palavra e frase) */
+.jig { position: relative; grid-template-rows: auto auto 1fr; justify-items: center; overflow: hidden; touch-action: manipulation; }
+.jig__art { width: min(42vw, 170px); }
+.jig.is-complete .jig__art { animation: hop .7s ease-in-out 2; }
+.jig__board { position: relative; margin-top: var(--space-2); }
+.jig__tray { align-self: stretch; justify-self: stretch; min-height: 190px; }
+.jig-slot, .jig-piece { position: absolute; padding: 0; border: 0; background: none; display: block; }
+.jig-shape { display: block; overflow: visible; }
+.jig-face { position: absolute; left: 4px; top: 4px; height: 80px; display: flex; align-items: center; justify-content: center; gap: 2px; flex-direction: column; pointer-events: none; }
+.jig-letter { font: 800 44px/1 var(--font-display); color: var(--on-accent); }
+.jig-word { font: 800 21px/1 var(--font-display); color: var(--on-accent); }
+.game img.jig-mini { width: 44px; }
+
+.jig-slot path { fill: color-mix(in srgb, var(--piece) 18%, var(--surface)); stroke: var(--piece); stroke-width: 3.5; stroke-dasharray: 7 5; stroke-linejoin: round; }
+.jig-slot .jig-face { opacity: .35; }
+.jig-slot .jig-letter, .jig-slot .jig-word { color: var(--border-strong); }
+.jig-slot.is-target path { stroke: var(--ink); stroke-dasharray: none; }
+.jig-slot.is-hint path { stroke: var(--ink); stroke-width: 6; stroke-dasharray: none; fill: var(--yellow-soft); }
+.jig-slot.is-filled { visibility: hidden; }
+
+.jig-piece {
+  left: 0; top: 0; z-index: 3; cursor: grab; touch-action: none; opacity: 0;
+  transition: left .35s cubic-bezier(.3, 1.4, .5, 1), top .35s cubic-bezier(.3, 1.4, .5, 1), rotate .35s ease, scale .2s ease, opacity .2s ease;
+  filter: drop-shadow(0 6px 6px color-mix(in srgb, var(--ink) 22%, transparent));
 }
-.slot-piece { border: 4px dashed var(--piece); background: color-mix(in srgb, var(--piece) 16%, var(--surface)); }
-.slot-piece > * { opacity: .45; }
-.slot-piece .piece__art { filter: grayscale(1); }
-.slot-piece.is-next { box-shadow: 0 0 0 4px var(--ink); }
-.slot-piece.is-filled { border-style: solid; border-color: var(--ink); background: var(--piece); animation: pop .35s ease; }
-.slot-piece.is-filled > * { opacity: 1; filter: none; }
-.piece { border: 4px solid var(--ink); background: var(--piece); cursor: pointer; box-shadow: var(--shadow-card); }
-.piece.is-used { visibility: hidden; }
-.piece.is-hint { box-shadow: 0 0 0 6px var(--yellow-vivid), var(--shadow-card); animation: pulse-plain 1.2s ease-in-out infinite; }
-.piece__shape svg { width: 30px; height: 30px; display: block; fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
-.slot-piece .piece__shape svg { fill: var(--piece); }
-.game img.piece__art { width: 48px; }
-.piece__word { font: 800 22px/1 var(--font-display); color: var(--on-accent); }
-.sentence.is-complete .sentence__slots { animation: pop .5s ease; }
+.jig.is-ready .jig-piece { opacity: 1; }
+.jig-piece path { fill: var(--piece); stroke: var(--ink); stroke-width: 3.5; stroke-linejoin: round; }
+.jig-piece.is-lifted { scale: 1.1; z-index: 5; filter: drop-shadow(0 12px 10px color-mix(in srgb, var(--ink) 30%, transparent)); }
+.jig-piece.is-lifted path { stroke-width: 5; }
+.jig-piece.is-dragging { transition: none; cursor: grabbing; z-index: 6; }
+.jig-piece.is-placed { z-index: 2; cursor: default; filter: none; animation: snap .3s ease .3s; }
+.jig.is-complete .jig-piece.is-placed { animation: glow 1s ease-in-out 2; }
+
+@keyframes snap { 50% { scale: 1.12; } }
+@keyframes glow { 50% { filter: drop-shadow(0 0 10px var(--yellow-vivid)); } }
 
 /* Quiz da sombra */
 .quiz { grid-template-rows: auto 1fr; justify-items: center; }
@@ -215,19 +227,6 @@ h1, h2, p { margin: 0; }
 .option.is-hint { box-shadow: 0 0 0 6px var(--yellow-vivid), var(--shadow-card); animation: pulse-plain 1.2s ease-in-out infinite; }
 .option.is-right { border-color: var(--leaf-ink); background: var(--leaf-tint); }
 
-/* Montar a palavra */
-.spell { grid-template-rows: auto auto 1fr; justify-items: center; }
-.spell__art { width: min(38vw, 150px); }
-.spell__slots, .spell__tiles { display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; }
-.spell__tiles { align-self: center; gap: var(--space-3); }
-.game .letter-slot, .game .letter { width: 64px; height: 76px; display: grid; place-items: center; border-radius: var(--radius-md); font: 800 44px/1 var(--font-display); }
-.letter-slot { border: 4px dashed var(--border-strong); color: var(--hairline); -webkit-text-stroke: 2px var(--border-strong); background: var(--surface); }
-.letter-slot.is-next { box-shadow: 0 0 0 4px var(--ink); }
-.letter-slot.is-filled { border: 4px solid var(--ink); color: var(--on-accent); -webkit-text-stroke: 0; background: var(--yellow); animation: pop .35s ease; }
-.letter { border: 4px solid var(--ink); background: var(--yellow); color: var(--on-accent); cursor: pointer; box-shadow: var(--shadow-card); padding: 0; }
-.letter.is-used { visibility: hidden; }
-.letter.is-hint { box-shadow: 0 0 0 6px var(--coral), var(--shadow-card); animation: pulse-plain 1.2s ease-in-out infinite; }
-.spell.is-complete .spell__slots { animation: pop .5s ease; }
 .result-art--word { width: min(50vw, 200px); }
 
 /* ---------- resultado ---------- */

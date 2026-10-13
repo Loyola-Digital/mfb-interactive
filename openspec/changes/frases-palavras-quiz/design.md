@@ -8,19 +8,20 @@ Mesmo contrato de jogo das mudanças anteriores (`GameModule` com `play`/`result
 
 **Goals:** três tipos novos com testes de redutor; nenhuma dependência nova; só uma ilustração nova (abelha).
 
-**Non-Goals:** arrastar peças (o PRD pede toque); frases além de "It's a ___"; letras minúsculas/cursivas; mais de uma área no mundo.
+**Non-Goals:** arrastar como único jeito de jogar (o PRD pede que só toque baste); frases além de "It's a ___"; letras minúsculas/cursivas; mais de uma área no mundo.
 
 ## Decisions
 
-### 1. Um redutor de sequência para frase e palavra
-Frase e palavra são "tocar o item certo para o próximo espaço". `games/sequence.ts` recebe a lista de chaves esperadas (`["It's","a","bee"]` ou `["B","E","E"]`); o evento `tap(key)` é válido quando `key` é a chave do próximo espaço, o que resolve letras repetidas sem identificar qual peça física foi usada. A tela remove a peça tocada. Mesmo padrão de erros e ajuda dos outros jogos.
-- *Alternativa: reaproveitar o redutor de Caminhos.* Ele trata "pedra já alcançada" como neutra e indexa por posição, o que não serve para letras repetidas.
+### 1. Quebra-cabeça com encaixe por formato (palavra e frase)
+Pedido do usuário em 13/10/2026: jogos mais lúdicos, com o bicho na tela, peças espalhadas que se encaixam. `games/jigsaw.ts` (redutor) aceita `place(peça, espaço)`, válido quando os índices coincidem e o espaço está livre, em qualquer ordem. Como cada peça tem um formato único (orelha à direita, recorte à esquerda), letras repetidas viram peças distintas e a regra continua "peça i → espaço i". `games/jigsaw-view.ts` desenha os contornos em SVG gerados por código, espalha as peças numa grade embaralhada com giro e trata arrastar (Pointer Events com captura) e tocar-depois-tocar com o mesmo gesto inicial.
+- *Substitui* a versão anterior (peças em fileira, ordem da esquerda para a direita), que o usuário achou pouco lúdica.
+- *Alternativa: arrastar obrigatório.* Mais natural num quebra-cabeça, mas o PRD exige que tudo funcione só com toque.
 
 ### 2. Um redutor de escolha para o quiz
 `games/choice.ts`: opções, resposta, descartadas. Errar descarta a opção (não pode ser escolhida de novo e aparece riscada e esmaecida) e conta tentativa; duas seguidas destacam a certa.
 
-### 3. Peças de quebra-cabeça por CSS
-As peças usam, por posição na frase, uma combinação fixa de cor de token e forma (`coral` + estrela, `sky` + coração, `yellow` + desenho do bicho). O espaço vazio mostra o contorno tracejado da mesma cor com o mesmo ícone. Sem imagem nova.
+### 3. Peças em SVG com cores de token
+Cada peça usa uma cor de token em rodízio (`coral`, `yellow`, `sky`, `leaf`) e contorno `--ink`; o espaço vazio mostra o mesmo contorno tracejado com a letra ou palavra apagada. Sem imagem nova além do bicho.
 
 ### 4. Sombra por filtro
 A sombra do quiz é a própria ilustração com `filter: brightness(0)` e opacidade reduzida. As letras apagadas da palavra são o mesmo texto em `--font-display` com cor `--hairline` e contorno.

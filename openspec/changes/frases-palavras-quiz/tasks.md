@@ -25,3 +25,9 @@
 ## 5. Verificação integrada
 
 - [x] 5.1 Jogar M07–M13 em 360 px, conferir a área dos pais e rodar `npm test`, `npm run typecheck`, `npm run build`, e a busca por cor hex sem ocorrências
+
+## 6. Quebra-cabeça lúdico (pedido de 13/10/2026)
+
+- [x] 6.1 Redutor `jigsaw.ts` com testes (encaixe só no espaço do formato, qualquer ordem, espaço errado é inválido, peça/espaço ocupados não contam, ajuda após dois erros, conclui uma vez) substituindo `sequence.ts`
+- [x] 6.2 Tela de quebra-cabeça compartilhada (bicho em destaque, contornos em SVG que se encaixam, peças espalhadas e giradas, arrastar e tocar-depois-tocar, volta ao lugar no erro, brilho no fim); verificar no navegador a M13 com mouse real arrastando e tocando
+- [x] 6.3 Montar a palavra e Montar a frase usando o quebra-cabeça; verificar no navegador M13 e M09 até o resultado e rodar `npm test` e `npm run typecheck`
