@@ -2,21 +2,29 @@ import '../../design-system/tokens.css';
 import '../../design-system/components/bundle.css';
 import './styles.css';
 
-import type { Mission } from '../../shared/content.ts';
+import type { Book, Content, Mission, PlacementLevel } from '../../shared/content.ts';
 import { api, ApiError, OfflineError } from './api.ts';
-import { loadMissions } from './content-loader.ts';
+import { loadContent } from './content-loader.ts';
 import { createProgressClient } from './progress-client.ts';
 import { showEnd, showError } from './screens/status.ts';
 import { showGarden } from './screens/garden.ts';
 import { showLogin } from './screens/login.ts';
 import { showMission } from './screens/mission.ts';
 import { showParents } from './screens/parents.ts';
+import { showPlacement, showPlacementOffer } from './screens/placement.ts';
 import { showWelcome } from './screens/welcome.ts';
 import { safeStorage } from './storage.ts';
 
 export interface App {
   root: HTMLElement;
+  /** Todas as missões, de todas as apostilas. */
   missions: Mission[];
+  books: Book[];
+  placement: PlacementLevel[];
+  /** Apostila atual: a escolhida pelo adulto, ou a primeira. */
+  book: Book;
+  /** Registra a escolha de apostila. */
+  chooseBook(id: Book['id']): void;
   email: string;
   progress: ReturnType<typeof createProgressClient>;
   go(hash: string): void;
@@ -30,7 +38,7 @@ export interface App {
 const USER_KEY = 'mfb.user.v1';
 const root = document.getElementById('app')!;
 const storage = safeStorage();
-let missions: Mission[] | null = null;
+let content: Content | null = null;
 let email: string | null = storage.get<string>(USER_KEY);
 let sessionChecked = false;
 let leave: (() => void) | null = null;
@@ -58,7 +66,13 @@ function go(hash: string) {
 
 const app: App = {
   root,
-  get missions() { return missions ?? []; },
+  get missions() { return content?.missions ?? []; },
+  get books() { return content?.books ?? []; },
+  get placement() { return content?.placement ?? []; },
+  get book() { return app.books.find((b) => b.id === progress.state.book) ?? app.books[0]; },
+  chooseBook(id) {
+    if (progress.state.book !== id) progress.record('bookChosen', null, null, { book: id });
+  },
   get email() { return email ?? ''; },
   progress,
   go,
@@ -98,10 +112,10 @@ async function route() {
   progressListener = null;
   const [, name = '', param] = location.hash.split('/');
 
-  if (!missions) {
-    const loaded = await loadMissions();
+  if (!content) {
+    const loaded = await loadContent();
     if (!loaded.ok) return showError(app, 'Não conseguimos carregar as brincadeiras.', () => void route());
-    missions = loaded.missions;
+    content = loaded.content;
   }
 
   if (name === 'login') return showLogin(app, (userEmail) => {
@@ -116,7 +130,9 @@ async function route() {
   if (name === 'missao' && param) return showMission(app, param);
   if (name === 'pais') return showParents(app);
   if (name === 'fim') return showEnd(app);
+  if (name === 'alinhamento') return showPlacement(app);
   if (!progress.state.welcomeSeen) return showWelcome(app);
+  if (!progress.state.book) return showPlacementOffer(app);
   return showGarden(app);
 }
 

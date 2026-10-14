@@ -257,3 +257,74 @@ h1, h2, p { margin: 0; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .paint.is-hint, .stone.is-next { outline: 4px dashed var(--ink); outline-offset: 6px; }
 }
+
+/* Apostilas: abas, rótulo de capítulo, prova na trilha */
+.book-tabs { display: flex; gap: var(--space-2); overflow-x: auto; padding-bottom: var(--space-3); scrollbar-width: none; }
+.book-tabs--inline { flex-wrap: wrap; overflow: visible; }
+.book-tab {
+  flex: none; min-height: 48px; padding: var(--space-2) var(--space-4); border-radius: var(--radius-pill); border: 2px solid var(--ink);
+  background: var(--surface); color: var(--ink); font: 700 15px/1.1 var(--font-sans); cursor: pointer;
+}
+.book-tab.is-current { background: var(--yellow); }
+.chapter-label { position: absolute; transform: translate(-50%, -50%); z-index: 1; max-width: 42%; white-space: normal; text-align: center; background: var(--surface); border: 2px solid var(--ink); box-shadow: var(--shadow-soft); }
+.spot--test { border-radius: var(--radius-lg); border-color: var(--coral-ink); background: var(--coral-tint); }
+.spot__test { position: absolute; top: calc(100% + 4px); white-space: nowrap; background: var(--coral); color: var(--on-accent); }
+.spot .shape, .spot .icon-letters { width: 100%; height: 100%; }
+.book-choices { display: grid; gap: var(--space-3); }
+.book-choice { display: grid; justify-items: start; gap: var(--space-1); text-align: left; height: auto; padding: var(--space-3) var(--space-4); }
+.book-choice__title { font-weight: 800; }
+.book-choice__aud { font-weight: 400; opacity: .85; }
+.placement-rabbit { width: 96px; margin: 0 auto var(--space-3); }
+.report__book { margin-top: var(--space-5); }
+.mfb-card .report__chapter { margin: var(--space-4) 0 var(--space-2); font: 700 16px/1.3 var(--font-sans); color: var(--ink-muted); }
+
+/* Cartas do Escolher e do Ligar */
+.card-art { max-height: 100%; object-fit: contain; }
+.game .card-art--big, .game .card-art--small { width: auto !important; align-self: end; }
+.game .card-art--big { height: 110px; max-height: none; }
+.game .card-art--small { height: 50px; }
+.card-text { font: 800 clamp(22px, 7vw, 34px)/1.05 var(--font-display); text-align: center; overflow-wrap: anywhere; }
+.card-text--caption { font-size: 18px; }
+.shape { width: 100%; height: auto; display: block; }
+.shape * { stroke: var(--ink); stroke-width: 4; }
+.card-count { display: flex; flex-wrap: wrap; justify-content: center; align-content: center; gap: 2px; width: 100%; min-height: 64px; }
+.card-count img { width: calc(33% - 2px) !important; }
+.card-count--1 img { width: 70% !important; }
+.card-count--2 img { width: calc(50% - 2px) !important; }
+.card-count--empty { border: 3px dashed var(--border-strong); border-radius: var(--radius-md); }
+.game .card-count img { width: calc(25% - 2px) !important; }
+.game .card-count--1 img { width: 60% !important; }
+.game .card-count--2 img, .game .card-count--3 img, .game .card-count--4 img { width: calc(45% - 2px) !important; }
+
+.pick { grid-template-rows: auto 1fr; }
+.pick__dots { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: var(--space-2); }
+.pick__dots li { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--ink); background: var(--surface); }
+.pick__dots li.is-current { background: var(--yellow); }
+.pick__dots li.is-done { background: var(--leaf); }
+.pick--test .pick__dots li.is-done { background: var(--sky); }
+.pick__stage { display: grid; grid-template-rows: auto 1fr; gap: var(--space-4); justify-items: center; align-content: start; }
+.pick__prompt { width: clamp(150px, 46vw, 220px); min-height: 120px; display: grid; place-items: center; gap: var(--space-2); padding: var(--space-3); animation: pop .4s ease; }
+.pick__prompt img { max-height: 160px; }
+.pick__options { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3); align-self: start; }
+.pick-card { min-height: 96px; align-content: center; }
+.pick-card img { max-height: 110px; object-fit: contain; }
+.pick__options--2 .pick-card { width: clamp(120px, 38vw, 170px); }
+.option.is-picked { background: var(--sky-tint); scale: .94; }
+.pick.is-complete .pick__stage { opacity: .6; }
+
+.match__cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: start; }
+.match__col { display: grid; gap: var(--space-3); justify-items: center; }
+.match-card { width: 100%; max-width: 150px; min-height: 72px; align-content: center; }
+.match-card img { max-height: 76px; object-fit: contain; }
+.match-card .card-count img { width: calc(30% - 2px) !important; }
+.match-card .card-text { font-size: 28px; }
+.match-card.is-lifted { scale: 1.06; box-shadow: 0 0 0 5px var(--yellow), var(--shadow-card); }
+.match-card.is-hint { box-shadow: 0 0 0 6px var(--yellow-vivid), var(--shadow-card); animation: pulse-plain 1.2s ease-in-out infinite; }
+.match-card.is-matched { border-color: var(--pair, var(--leaf)); background: color-mix(in srgb, var(--pair, var(--leaf)) 22%, var(--surface)); cursor: default; animation: pop .35s ease; }
+.match-card:disabled, .pick-card:disabled { color: inherit; }
+
+.result-art--cards { display: flex; justify-content: center; gap: var(--space-2); width: min(86vw, 400px); }
+.result-art--cards .pick-card, .result-art--cards .match-card { position: relative; flex: 0 1 104px; min-width: 0; padding: var(--space-2); border: 4px solid var(--ink); border-radius: var(--radius-lg); background: var(--leaf-tint); display: grid; place-items: center; }
+.match-pair { display: grid; gap: var(--space-2); flex: 0 1 104px; min-width: 0; }
+.word--big.word--long { font-size: clamp(22px, 6vw, 30px); }
+.result-art--test { width: min(50vw, 200px); }

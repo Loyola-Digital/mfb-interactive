@@ -28,7 +28,7 @@ async function login(email: string, password: string, ip?: string) {
   return { res, cookie };
 }
 
-const event = (type = 'started', extra = {}) => ({ id: uuid(), type, missionId: 'M03', attemptId: uuid(), at: clock, ...extra });
+const event = (type = 'started', extra = {}) => ({ id: uuid(), type, missionId: 'CO1-03', attemptId: uuid(), at: clock, ...extra });
 
 describe('login', () => {
   it('login correto cria sessão com cookie HttpOnly, Secure e SameSite=Lax', async () => {
@@ -115,6 +115,16 @@ describe('progresso', () => {
     await app.request('/api/progress/events', json(lote, cookie));
     const res = await app.request('/api/progress', { headers: { cookie: cookie! } });
     expect((await res.json()).events).toHaveLength(2);
+  });
+
+  it('guarda e devolve os acertos da prova e a escolha de apostila', async () => {
+    const { cookie } = await login('ana@exemplo.com', 'senha-da-ana');
+    const prova = { ...event('completed'), missionId: 'CO1-P1', data: { right: 4, total: 6 } };
+    const escolha = { ...event('bookChosen'), missionId: null, attemptId: null, data: { book: 'CO2' } };
+    expect((await app.request('/api/progress/events', json({ events: [prova, escolha] }, cookie))).status).toBe(200);
+    const { events } = await (await app.request('/api/progress', { headers: { cookie: cookie! } })).json();
+    expect(events.find((e: { id: string }) => e.id === prova.id).data).toEqual({ right: 4, total: 6 });
+    expect(events.find((e: { id: string }) => e.id === escolha.id).data).toEqual({ book: 'CO2' });
   });
 
   it('recusa lote com evento malformado sem gravar nada', async () => {

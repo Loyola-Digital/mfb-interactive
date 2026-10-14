@@ -89,9 +89,12 @@ export function createApp({ db, secureCookie = true, now = Date.now }: Options) 
 
   app.get('/progress', (c) => {
     const rows = db
-      .prepare('SELECT id, type, mission_id, attempt_id, at FROM progress_events WHERE user_id = ? ORDER BY at')
-      .all(c.get('userId')) as { id: string; type: string; mission_id: string | null; attempt_id: string | null; at: number }[];
-    const events = rows.map((r) => ({ id: r.id, type: r.type, missionId: r.mission_id, attemptId: r.attempt_id, at: r.at }));
+      .prepare('SELECT id, type, mission_id, attempt_id, at, data FROM progress_events WHERE user_id = ? ORDER BY at')
+      .all(c.get('userId')) as { id: string; type: string; mission_id: string | null; attempt_id: string | null; at: number; data: string | null }[];
+    const events = rows.map((r) => ({
+      id: r.id, type: r.type, missionId: r.mission_id, attemptId: r.attempt_id, at: r.at,
+      ...(r.data ? { data: JSON.parse(r.data) } : {}),
+    }));
     return c.json({ events });
   });
 
@@ -101,12 +104,12 @@ export function createApp({ db, secureCookie = true, now = Date.now }: Options) 
     if (events.length === 0 || events.length > MAX_BATCH || !events.every(isValidEvent)) return c.json({ error: 'invalid_events' }, 400);
     // Mesmo id de outra conta é ignorado pelo PRIMARY KEY: nunca sobrescreve nem vaza.
     const insert = db.prepare(
-      'INSERT OR IGNORE INTO progress_events (id, user_id, type, mission_id, attempt_id, at, received_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      'INSERT OR IGNORE INTO progress_events (id, user_id, type, mission_id, attempt_id, at, received_at, data) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
     );
     const userId = c.get('userId');
     db.exec('BEGIN');
     try {
-      for (const e of events as ProgressEvent[]) insert.run(e.id, userId, e.type, e.missionId, e.attemptId, e.at, now());
+      for (const e of events as ProgressEvent[]) insert.run(e.id, userId, e.type, e.missionId, e.attemptId, e.at, now(), e.data ? JSON.stringify(e.data) : null);
       db.exec('COMMIT');
     } catch (err) {
       db.exec('ROLLBACK');

@@ -6,7 +6,15 @@ export interface GameHooks {
   onDemoSeen(): void;
   /** Ajuda acionada: pelo botão ou pela ajuda progressiva. */
   onHelp(): void;
-  onComplete(): void;
+  /** Na prova, leva os acertos. */
+  onComplete(score?: Score): void;
+  /** Modo prova: sem demonstração nem ajuda; a primeira escolha é a resposta. */
+  test?: boolean;
+}
+
+export interface Score {
+  right: number;
+  total: number;
 }
 
 export interface GameHandle {

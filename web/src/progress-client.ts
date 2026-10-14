@@ -1,5 +1,5 @@
 // Progresso no front: estado exibido = eventos confirmados pelo servidor + fila local ainda não enviada.
-import { aggregate, uuid, type EventType, type Progress, type ProgressEvent } from '../../shared/progress.ts';
+import { aggregate, uuid, type EventData, type EventType, type Progress, type ProgressEvent } from '../../shared/progress.ts';
 import { ApiError, OfflineError, type Api } from './api.ts';
 import type { SafeStorage } from './storage.ts';
 
@@ -65,8 +65,8 @@ export function createProgressClient(opts: { api: ProgressApi; storage: SafeStor
       return storage.persistent;
     },
 
-    record(type: EventType, missionId: string | null = null, attemptId: string | null = null): ProgressEvent {
-      const event: ProgressEvent = { id: uuid(), type, missionId, attemptId, at: Date.now() };
+    record(type: EventType, missionId: string | null = null, attemptId: string | null = null, data?: EventData): ProgressEvent {
+      const event: ProgressEvent = { id: uuid(), type, missionId, attemptId, at: Date.now(), ...(data ? { data } : {}) };
       outbox = [...outbox, event];
       saveOutbox();
       changed();

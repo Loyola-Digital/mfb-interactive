@@ -1,15 +1,19 @@
 // Fluxo comum a qualquer missão: preparação do adulto → jogo → resultado.
 import { isPlayable, type PlayableMission } from '../../../shared/content.ts';
 import { uuid } from '../../../shared/progress.ts';
+import { rabbit } from '../art.ts';
 import { missionResult, playMission } from '../games/index.ts';
 import type { GameHandle } from '../games/types.ts';
 import type { App } from '../main.ts';
 import { confirmDialog, esc, logo, mount } from '../ui.ts';
+import { bookMissions } from './garden.ts';
 
 export function showMission(app: App, id: string) {
   const mission = app.missions.find((m) => m.id === id);
   if (!mission || !isPlayable(mission)) return app.go('#/');
-  const number = app.missions.indexOf(mission) + 1;
+  // Abrir uma missão de outra apostila (link, "próxima") passa a usar essa apostila no jardim.
+  app.chooseBook(mission.book);
+  const number = bookMissions(app, mission.book).indexOf(mission) + 1;
   showPrep(app, mission, number);
 }
 
@@ -17,13 +21,14 @@ function showPrep(app: App, m: PlayableMission, number: number) {
   mount(app.root, `<div class="screen screen--adult">
     <header class="topbar">${logo}</header>
     <section class="mfb-card adult-card prep">
-      <span class="mfb-pill mfb-pill--yellow mfb-pill--sm">Missão ${number} · para o adulto</span>
+      <span class="mfb-pill mfb-pill--${m.test ? 'coral' : 'yellow'} mfb-pill--sm">${m.test ? 'Prova' : 'Missão'} ${number} · para o adulto</span>
       <h1 class="title">${esc(m.title)}</h1>
+      <p class="small muted">${esc(app.book.title)} · ${esc(m.chapter)}</p>
       <p><strong class="body-strong">Objetivo:</strong> ${esc(m.goal)}</p>
       <p class="prep__word"><span class="word">${esc(m.word)}</span> <span class="muted">= ${esc(m.meaning)}</span></p>
       <p><strong class="body-strong">Como acompanhar:</strong> ${esc(m.adultTip)}</p>
       <div class="actions">
-        <button class="mfb-btn mfb-btn--primary" data-play>Vamos brincar</button>
+        <button class="mfb-btn mfb-btn--primary" data-play>${m.test ? 'Começar a prova' : 'Vamos brincar'}</button>
         <button class="mfb-btn mfb-btn--outline" data-garden>Voltar ao jardim</button>
       </div>
     </section>
@@ -43,7 +48,7 @@ function showPlay(app: App, m: PlayableMission, number: number) {
       <button class="mfb-btn mfb-btn--outline mfb-btn--sm" data-skip>Pular</button>
     </header>
     <div class="play-area"></div>
-    <button class="help-btn" data-help aria-label="Mostrar como brincar">
+    <button class="help-btn" data-help aria-label="Mostrar como brincar"${m.test ? ' hidden' : ''}>
       <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="M18 19a6 6 0 1 1 8 5.6c-1.4.6-2 1.6-2 3v1.4"/><circle cx="24" cy="35" r="2.2"/></svg>
     </button>
   </div>`);
@@ -56,11 +61,12 @@ function showPlay(app: App, m: PlayableMission, number: number) {
   app.onLeave(cleanup);
 
   handle = playMission(app.root.querySelector<HTMLElement>('.play-area')!, m, {
-    demoFirst: !app.progress.state.missions[m.id]?.demoSeen,
+    demoFirst: !m.test && !app.progress.state.missions[m.id]?.demoSeen,
+    test: m.test,
     onDemoSeen: () => app.progress.record('demoSeen', m.id, attemptId),
     onHelp: () => app.progress.record('help', m.id, attemptId),
-    onComplete: () => {
-      app.progress.record('completed', m.id, attemptId);
+    onComplete: (score) => {
+      app.progress.record('completed', m.id, attemptId, score);
       cleanup();
       showResult(app, m, number);
     },
@@ -79,14 +85,16 @@ function showPlay(app: App, m: PlayableMission, number: number) {
 
 function showResult(app: App, m: PlayableMission, number: number) {
   // Próxima na ordem do jardim; abre a preparação do adulto, nunca o jogo direto.
-  const next = app.missions.slice(app.missions.indexOf(m) + 1).find(isPlayable);
+  const list = bookMissions(app, m.book);
+  const next = list.slice(list.indexOf(m) + 1).find(isPlayable);
+  // Na prova a criança só vê a comemoração; os acertos ficam na área dos pais.
+  const scene = m.test
+    ? `<div class="result-art result-art--test">${rabbit('celebrating')}</div><p class="result-scene__word"><span class="word word--big">Great job!</span></p>`
+    : `${missionResult(m)}<p class="result-scene__word"><span class="word word--big${m.word.length > 14 ? ' word--long' : ''}">${esc(m.word)}</span></p>`;
   mount(app.root, `<div class="screen screen--result">
-    <section class="result-scene" aria-label="Resultado">
-      ${missionResult(m)}
-      <p class="result-scene__word"><span class="word word--big">${esc(m.word)}</span></p>
-    </section>
+    <section class="result-scene" aria-label="Resultado">${scene}</section>
     <section class="mfb-card adult-card result-card">
-      <p class="small muted">${esc(m.word)} = ${esc(m.meaning)}</p>
+      <p class="small muted">${m.test ? 'Prova concluída. Os acertos estão na área dos pais.' : `${esc(m.word)} = ${esc(m.meaning)}`}</p>
       <h2 class="heading">Para brincar fora da tela</h2>
       <p>${esc(m.offScreen)}</p>
       <div class="actions">

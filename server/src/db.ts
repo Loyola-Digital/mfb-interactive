@@ -30,5 +30,8 @@ export function openDb(path: string): Db {
     );
     CREATE INDEX IF NOT EXISTS progress_events_user ON progress_events(user_id);
   `);
+  // Bancos criados antes dos acertos de prova e da escolha de apostila.
+  const cols = db.prepare('PRAGMA table_info(progress_events)').all() as { name: string }[];
+  if (!cols.some((c) => c.name === 'data')) db.exec('ALTER TABLE progress_events ADD COLUMN data TEXT');
   return db;
 }

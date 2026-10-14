@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import type { ProgressEvent } from '../../shared/progress.ts';
 import { ApiError, OfflineError } from './api.ts';
-import { loadMissions } from './content-loader.ts';
+import { loadContent } from './content-loader.ts';
 import { createProgressClient } from './progress-client.ts';
 import { safeStorage } from './storage.ts';
 
@@ -61,21 +61,21 @@ function setup(storage: Storage | null = new MemoryStorage()) {
 describe('cliente de progresso', () => {
   it('com internet, concluir chega ao servidor e aparece no estado', async () => {
     const { server, client } = setup();
-    client.record('started', 'M03', 'tent-0001');
-    client.record('completed', 'M03', 'tent-0001');
+    client.record('started', 'CO1-03', 'tent-0001');
+    client.record('completed', 'CO1-03', 'tent-0001');
     await client.sync();
     expect(server.events.size).toBe(2);
     expect(client.pending).toBe(0);
-    expect(client.state.missions.M03.completed).toBe(true);
+    expect(client.state.missions['CO1-03'].completed).toBe(true);
   });
 
   it('servidor fora do ar: jogo segue, fica pendente e sincroniza quando volta', async () => {
     const { server, client } = setup();
     server.online = false;
-    client.record('started', 'M03', 'tent-0001');
-    client.record('completed', 'M03', 'tent-0001');
+    client.record('started', 'CO1-03', 'tent-0001');
+    client.record('completed', 'CO1-03', 'tent-0001');
     await client.sync();
-    expect(client.state.missions.M03.completed).toBe(true);
+    expect(client.state.missions['CO1-03'].completed).toBe(true);
     expect(client.pending).toBe(2);
     expect(server.events.size).toBe(0);
 
@@ -89,20 +89,20 @@ describe('cliente de progresso', () => {
     const storage = new MemoryStorage();
     const { server, client, make } = setup(storage);
     server.online = false;
-    client.record('completed', 'M03', 'tent-0001');
+    client.record('completed', 'CO1-03', 'tent-0001');
     await client.sync();
     const recarregado = make();
     expect(recarregado.pending).toBe(1);
-    expect(recarregado.state.missions.M03.completed).toBe(true);
+    expect(recarregado.state.missions['CO1-03'].completed).toBe(true);
   });
 
   it('armazenamento bloqueado: funciona em memória e salva direto no servidor', async () => {
     const { server, client } = setup(new BrokenStorage());
     expect(client.persistent).toBe(false);
-    client.record('completed', 'M03', 'tent-0001');
+    client.record('completed', 'CO1-03', 'tent-0001');
     await client.sync();
     expect(server.events.size).toBe(1);
-    expect(client.state.missions.M03.completed).toBe(true);
+    expect(client.state.missions['CO1-03'].completed).toBe(true);
   });
 
   it('dado corrompido no aparelho começa vazio sem travar', () => {
@@ -115,7 +115,7 @@ describe('cliente de progresso', () => {
   it('resposta 401 encerra a sessão local', async () => {
     const { server, client, onUnauthorized } = setup();
     server.status = 401;
-    client.record('started', 'M03', 'tent-0001');
+    client.record('started', 'CO1-03', 'tent-0001');
     await client.sync();
     expect(onUnauthorized).toHaveBeenCalled();
   });
@@ -123,7 +123,7 @@ describe('cliente de progresso', () => {
   it('trocar de conta descarta dados da conta anterior', async () => {
     const { server, client } = setup();
     server.online = false;
-    client.record('completed', 'M03', 'tent-0001');
+    client.record('completed', 'CO1-03', 'tent-0001');
     client.useAccount('bia@exemplo.com');
     expect(client.pending).toBe(0);
     expect(client.state.missions).toEqual({});
@@ -131,11 +131,11 @@ describe('cliente de progresso', () => {
 
   it('apagar precisa de internet e limpa servidor e aparelho', async () => {
     const { server, client } = setup();
-    client.record('completed', 'M03', 'tent-0001');
+    client.record('completed', 'CO1-03', 'tent-0001');
     await client.sync();
     server.online = false;
     expect(await client.clearAll()).toBe(false);
-    expect(client.state.missions.M03.completed).toBe(true);
+    expect(client.state.missions['CO1-03'].completed).toBe(true);
     server.online = true;
     expect(await client.clearAll()).toBe(true);
     expect(server.events.size).toBe(0);
@@ -144,8 +144,8 @@ describe('cliente de progresso', () => {
 
   it('registro feito durante um envio também é enviado', async () => {
     const { server, client } = setup();
-    client.record('started', 'M03', 'tent-0001');
-    client.record('help', 'M03', 'tent-0001');
+    client.record('started', 'CO1-03', 'tent-0001');
+    client.record('help', 'CO1-03', 'tent-0001');
     await client.sync();
     await client.sync();
     expect(server.events.size).toBe(2);
@@ -156,10 +156,10 @@ describe('cliente de progresso', () => {
 describe('carregador de conteúdo', () => {
   it('fetch falhando e JSON inválido viram erro, não exceção', async () => {
     const semRede = (async () => { throw new TypeError('Failed to fetch'); }) as unknown as typeof fetch;
-    expect((await loadMissions(semRede)).ok).toBe(false);
-    const invalido = (async () => new Response('{"missions": [{"id": "X"}]}')) as unknown as typeof fetch;
-    expect((await loadMissions(invalido)).ok).toBe(false);
+    expect((await loadContent(semRede)).ok).toBe(false);
+    const invalido = (async () => new Response('{"books": [{"id": "X"}]}')) as unknown as typeof fetch;
+    expect((await loadContent(invalido)).ok).toBe(false);
     const erro404 = (async () => new Response('', { status: 404 })) as unknown as typeof fetch;
-    expect(await loadMissions(erro404)).toEqual({ ok: false, error: 'HTTP 404' });
+    expect(await loadContent(erro404)).toEqual({ ok: false, error: 'HTTP 404' });
   });
 });

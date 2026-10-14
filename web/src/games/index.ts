@@ -1,6 +1,8 @@
-import type { PlayableMission } from '../../../shared/content.ts';
+import { isPlayable, type Mission, type PlayableMission } from '../../../shared/content.ts';
 import { colorsGame } from './colors-view.ts';
+import { matchGame } from './match-view.ts';
 import { pathsGame } from './paths-view.ts';
+import { pickGame } from './pick-view.ts';
 import { quantitiesGame } from './quantities-view.ts';
 import { quizGame } from './quiz-view.ts';
 import { sentenceGame } from './sentence-view.ts';
@@ -15,6 +17,8 @@ export const games = {
   sentence: sentenceGame,
   quiz: quizGame,
   spelling: spellingGame,
+  pick: pickGame,
+  match: matchGame,
 };
 
 export function playMission(root: HTMLElement, m: PlayableMission, hooks: GameHooks): GameHandle {
@@ -25,6 +29,8 @@ export function playMission(root: HTMLElement, m: PlayableMission, hooks: GameHo
     case 'sentence': return sentenceGame.play(root, m, hooks);
     case 'quiz': return quizGame.play(root, m, hooks);
     case 'spelling': return spellingGame.play(root, m, hooks);
+    case 'pick': return pickGame.play(root, m, hooks);
+    case 'match': return matchGame.play(root, m, hooks);
   }
 }
 
@@ -36,5 +42,25 @@ export function missionResult(m: PlayableMission): string {
     case 'sentence': return sentenceGame.result(m);
     case 'quiz': return quizGame.result(m);
     case 'spelling': return spellingGame.result(m);
+    case 'pick': return pickGame.result(m);
+    case 'match': return matchGame.result(m);
+  }
+}
+
+/** Ícone do ponto no jardim: o da missão ou a primeira figura do jogo. */
+export function missionIconKey(m: Mission): string {
+  if (m.icon) return m.icon;
+  if (!isPlayable(m)) return 'pedra';
+  switch (m.type) {
+    case 'colors': return m.game.drawing;
+    case 'paths': return m.game.goalArt;
+    case 'quantities': return 'tulipa';
+    case 'sentence': case 'spelling': return m.game.art;
+    case 'quiz': return m.game.options[0].art;
+    case 'pick': {
+      const c = [m.game.rounds[0].prompt, ...m.game.rounds[0].options].find((x) => x.art);
+      return c?.art ?? `shape:${m.game.rounds[0].prompt.shape ?? 'circle'}`;
+    }
+    case 'match': return m.game.pairs.flat().find((x) => x.art)?.art ?? 'pedra';
   }
 }
