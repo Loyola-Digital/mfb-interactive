@@ -49,6 +49,8 @@ let role: Role = 'family';
 let sessionChecked = false;
 let leave: (() => void) | null = null;
 let progressListener: (() => void) | null = null;
+/** Última missão aberta: o jardim volta para a tela dela. */
+let lastMission: string | undefined;
 
 const progress = createProgressClient({
   api,
@@ -138,7 +140,10 @@ async function route() {
   if (session === 'login') return go('#/login');
   if (session === 'offline') return showError(app, 'Sem conexão com a internet. Conecte-se para entrar.', () => void route());
 
-  if (name === 'missao' && param) return showMission(app, param);
+  if (name === 'missao' && param) {
+    lastMission = param;
+    return showMission(app, param);
+  }
   if (name === 'pais') return showParents(app);
   if (name === 'admin') return showAdmin(app);
   if (name === 'fim') return showEnd(app);
@@ -146,7 +151,7 @@ async function route() {
   if (!progress.state.welcomeSeen) return showWelcome(app);
   if (!progress.state.book) return showPlacementOffer(app);
   if (name === 'provas') return showTests(app);
-  return showGarden(app);
+  return showGarden(app, lastMission);
 }
 
 window.addEventListener('hashchange', () => void route());

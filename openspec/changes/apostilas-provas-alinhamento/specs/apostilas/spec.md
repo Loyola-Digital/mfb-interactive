@@ -21,7 +21,7 @@ Depois que a apostila for escolhida, o app SHALL ter três abas fixas no topo: *
 - **THEN** aparece a lista de provas da apostila atual, e a aba Provas fica marcada
 
 ### Requirement: Trilha da apostila atual
-A aba Exercícios SHALL mostrar só os exercícios da apostila atual, sem as provas, em zigue-zague calculado e com o nome de cada capítulo no início do trecho. Um seletor no topo SHALL permitir trocar de apostila sem perder o progresso das outras.
+A aba Exercícios SHALL mostrar só os exercícios da apostila atual, sem as provas, em zigue-zague calculado, uma tela por capítulo com o nome dele no alto. Um seletor no topo SHALL permitir trocar de apostila sem perder o progresso das outras.
 
 #### Scenario: Trocar de apostila
 - **WHEN** o adulto escolhe Explorers 1 no seletor

@@ -68,13 +68,13 @@ h1, h2, p { margin: 0; }
 .trail__fill { stroke: var(--yellow-soft); stroke-width: 26px; }
 
 /* ---------- jardim ---------- */
-.screen--garden { min-height: 100dvh; display: grid; grid-template-rows: auto auto 1fr; max-width: 720px; margin: 0 auto; padding: 0 var(--space-4) var(--space-4); }
+.screen--garden { min-height: 100dvh; display: flex; flex-direction: column; max-width: 720px; margin: 0 auto; padding: 0 var(--space-4) var(--space-4); }
 .topbar--garden .logo { height: 36px; }
 .garden-notes { display: grid; gap: var(--space-2); }
 .garden-notes:not(:empty) { margin-bottom: var(--space-3); }
 .garden {
-  /* Cresce com o número de missões; céu no topo, arbustos na base, faixa de grama repetida no meio. */
-  position: relative; align-self: stretch; min-height: max(520px, calc(var(--missions, 6) * 100px)); border-radius: var(--radius-lg); overflow: hidden;
+  /* Uma tela por vez: ocupa o resto da altura; céu no topo, arbustos na base, faixa de grama repetida no meio. */
+  flex: 1; position: relative; min-height: 440px; border-radius: var(--radius-lg); overflow: hidden;
   background:
     url('./assets/art/jardim-topo.webp') top / 100% auto no-repeat,
     url('./assets/art/jardim-base.webp') bottom / 100% auto no-repeat,
@@ -98,6 +98,18 @@ h1, h2, p { margin: 0; }
 .spot.is-soon .spot__icon { opacity: .45; filter: grayscale(1); }
 .spot__soon { position: absolute; top: calc(100% + 4px); white-space: nowrap; }
 .spot.is-suggested { box-shadow: 0 0 0 6px var(--yellow), var(--shadow-card); animation: pulse 1.6s ease-in-out infinite; }
+/* Margem para os pontos do alto e de baixo (número, selo de feito, "em breve") não serem cortados. */
+.garden__track { position: absolute; inset: 60px 0 64px; }
+.pager { display: grid; grid-template-columns: 56px 1fr 56px; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3); }
+.pager__label { margin: 0; display: grid; text-align: center; line-height: 1.2; }
+.pager__label .small { color: var(--ink-muted); }
+.pager__btn {
+  width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--ink); background: var(--surface); display: grid; place-items: center;
+  padding: 0; cursor: pointer; box-shadow: var(--shadow-card);
+}
+.pager__btn svg { width: 28px; height: 28px; fill: none; stroke: var(--ink); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.pager__btn[disabled] { visibility: hidden; }
+.pager__btn.is-suggested { background: var(--yellow); animation: pulse-plain 1.6s ease-in-out infinite; }
 .garden__rabbit { position: absolute; width: 60px; transform: translate(36px, -90%); pointer-events: none; z-index: 1; }
 
 /* ---------- missão (área da criança) ---------- */
@@ -248,7 +260,7 @@ h1, h2, p { margin: 0; }
 
 @media (min-width: 720px) {
   .screen--garden { padding-top: var(--space-4); }
-  .garden { min-height: max(640px, calc(var(--missions, 6) * 110px)); }
+  .garden { min-height: 560px; }
   .spot { width: 96px; height: 96px; }
   .screen--play { border-radius: var(--radius-lg); overflow: hidden; margin: var(--space-4) auto 0; min-height: calc(100dvh - var(--space-7)); }
 }
@@ -266,7 +278,6 @@ h1, h2, p { margin: 0; }
   background: var(--surface); color: var(--ink); font: 700 15px/1.1 var(--font-sans); cursor: pointer;
 }
 .book-tab.is-current { background: var(--yellow); }
-.chapter-label { position: absolute; transform: translate(-50%, -50%); z-index: 1; max-width: 42%; white-space: normal; text-align: center; background: var(--surface); border: 2px solid var(--ink); box-shadow: var(--shadow-soft); }
 .spot .shape, .spot .icon-letters { width: 100%; height: 100%; }
 .book-choices { display: grid; gap: var(--space-3); }
 .book-choice { display: grid; justify-items: start; gap: var(--space-1); text-align: left; height: auto; padding: var(--space-3) var(--space-4); }

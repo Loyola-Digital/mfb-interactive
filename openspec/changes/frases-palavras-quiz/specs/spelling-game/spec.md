@@ -14,7 +14,7 @@ O jogo SHALL mostrar o desenho da palavra em destaque, um tabuleiro com o contor
 - **THEN** aparecem o sapo, um tabuleiro com quatro contornos (F, R, O, G apagados) e as quatro peças espalhadas e giradas
 
 ### Requirement: Encaixe por formato, em qualquer ordem
-Cada peça SHALL encaixar somente no espaço do seu formato, em qualquer ordem. A criança SHALL poder arrastar a peça até o espaço ou tocar na peça (que fica destacada, "na mão") e depois no espaço; arrastar MUST NOT ser obrigatório. Ao encaixar, a peça SHALL ir até o espaço, endireitar e ficar presa. Soltar ou tocar num espaço errado SHALL contar como tentativa inválida e devolver a peça ao lugar dela. Soltar a peça fora do tabuleiro, tocar em espaço ocupado ou no fundo MUST NOT contar como tentativa.
+Cada peça SHALL encaixar somente no espaço do seu formato, em qualquer ordem. A criança SHALL poder arrastar a peça até o espaço ou tocar na peça (que fica destacada, "na mão") e depois no espaço; arrastar MUST NOT ser obrigatório. Ao encaixar, a peça SHALL ir até o espaço, endireitar e ficar presa.
 
 #### Scenario: Encaixe tocando
 - **WHEN** a criança toca na peça R e depois no segundo espaço
@@ -23,6 +23,9 @@ Cada peça SHALL encaixar somente no espaço do seu formato, em qualquer ordem. 
 #### Scenario: Encaixe arrastando
 - **WHEN** a criança arrasta a peça F até o primeiro espaço
 - **THEN** o F encaixa no primeiro espaço
+
+### Requirement: Tentativa inválida
+Soltar ou tocar num espaço errado SHALL contar como tentativa inválida e devolver a peça ao lugar dela. Soltar a peça fora do tabuleiro, tocar em espaço ocupado ou no fundo MUST NOT contar como tentativa.
 
 #### Scenario: Espaço errado
 - **WHEN** a criança solta a peça G no espaço do R

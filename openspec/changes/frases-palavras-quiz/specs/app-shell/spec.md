@@ -2,9 +2,13 @@
 
 ## ADDED Requirements
 
-### Requirement: Jardim com rolagem para muitas missões
-Com mais de seis missões, o jardim SHALL crescer na vertical mantendo os pontos com pelo menos 56 × 56 px e sem se sobrepor, com rolagem da página. Ao abrir, o jardim SHALL rolar até a missão sugerida.
+### Requirement: Jardim em telas
+O jardim SHALL mostrar uma tela por capítulo, sem rolagem; capítulo com mais de seis exercícios SHALL virar telas do mesmo tamanho. Setas de pelo menos 56 × 56 px SHALL passar de tela, e a que leva à missão sugerida SHALL ficar destacada. Ao abrir, o jardim SHALL mostrar a tela da última missão aberta ou, se não houver, a da missão sugerida. Os pontos SHALL ter pelo menos 56 × 56 px e não se sobrepor.
 
-#### Scenario: Treze missões em 360 px
-- **WHEN** o jardim é aberto com 13 missões em 360 px de largura
-- **THEN** todos os pontos são tocáveis sem sobreposição, a página rola na vertical e a missão sugerida fica visível
+#### Scenario: Capítulo com nove exercícios em 360 px
+- **WHEN** o adulto abre um capítulo com 9 exercícios em 360 px de largura
+- **THEN** o capítulo aparece em duas telas (5 e 4 pontos), todos tocáveis sem sobreposição, e as setas passam de uma para a outra
+
+#### Scenario: Voltar de uma missão
+- **WHEN** a criança sai de uma missão da tela 6
+- **THEN** o jardim abre de novo na tela 6

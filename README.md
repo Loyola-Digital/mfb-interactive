@@ -3,7 +3,7 @@
 Jogos visuais de inglês baseados nas apostilas da Fernanda Zapparoli, acompanhados pelos pais. Sem som. O progresso fica na conta da família, no servidor.
 
 - **Três apostilas:** Curious Ones 1 (a partir de 3 anos), Curious Ones 2 (a partir de 4 anos) e Explorers 1 (Ensino Fundamental I). Cada uma segue os capítulos do livro, com exercícios e uma prova no fim do capítulo (93 missões ao todo).
-- **Três abas:** **Exercícios** (trilha no jardim), **Provas** (uma por capítulo, sem ajuda; os acertos aparecem só na área dos pais) e **Teste de alinhamento** (sugere por qual apostila começar; aparece sozinho no primeiro acesso).
+- **Três abas:** **Exercícios** (trilha no jardim, uma tela por capítulo), **Provas** (uma por capítulo, sem ajuda; os acertos aparecem só na área dos pais) e **Teste de alinhamento** (sugere por qual apostila começar; aparece sozinho no primeiro acesso).
 - **Área dos pais:** o que foi praticado por apostila e capítulo, acertos das provas, apostila atual e, para admin, a administração de links de acesso.
 
 ## Pastas
