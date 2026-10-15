@@ -1,13 +1,13 @@
-import { api, ApiError, OfflineError } from '../api.ts';
+import { api, ApiError, OfflineError, type Me } from '../api.ts';
 import type { App } from '../main.ts';
 import { logo, mount } from '../ui.ts';
 
-export function showLogin(app: App, onSignedIn: (email: string) => void) {
+export function showLogin(app: App, onSignedIn: (me: Me) => void) {
   mount(app.root, `<div class="screen screen--adult screen--login">
     <header class="topbar">${logo}</header>
     <section class="mfb-card adult-card">
       <h1 class="title">Entrar</h1>
-      <p class="muted">Use o e-mail e a senha que a equipe do Meu Filho Bilíngue enviou para você.</p>
+      <p class="muted">Use o e-mail e a senha da sua conta. Recebeu um link de acesso? Abra o link para criar a sua senha.</p>
       <form class="form" novalidate>
         <label class="field"><span class="body-strong">E-mail</span>
           <input name="email" type="email" inputmode="email" autocomplete="username" autocapitalize="none" required></label>
@@ -16,7 +16,7 @@ export function showLogin(app: App, onSignedIn: (email: string) => void) {
         <p class="form-error" role="alert" hidden></p>
         <button class="mfb-btn mfb-btn--primary" type="submit">Entrar</button>
       </form>
-      <p class="small muted">Ainda não tem acesso? Fale com a equipe do Meu Filho Bilíngue.</p>
+      <p class="small muted">Esqueceu a senha ou ainda não tem acesso? Fale com a equipe do Meu Filho Bilíngue para receber um link.</p>
     </section>
   </div>`);
 
@@ -32,8 +32,7 @@ export function showLogin(app: App, onSignedIn: (email: string) => void) {
     if (!email || !password) return showErr('Preencha o e-mail e a senha.');
     button.disabled = true;
     try {
-      const me = await api.login(email, password);
-      onSignedIn(me.email);
+      onSignedIn(await api.login(email, password));
     } catch (err) {
       if (err instanceof ApiError && err.status === 429) showErr('Muitas tentativas. Aguarde 15 minutos e tente de novo.');
       else if (err instanceof OfflineError) showErr('Sem conexão com o servidor. Verifique a internet e tente de novo.');

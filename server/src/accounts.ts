@@ -21,26 +21,34 @@ export function verifyPassword(password: string, stored: string): boolean {
 // Hash de uma senha qualquer, usado quando o e-mail não existe para o login levar o mesmo tempo.
 export const DUMMY_HASH = hashPassword(randomBytes(12).toString('hex'));
 
+export const ROLES = ['family', 'admin'] as const;
+export type Role = (typeof ROLES)[number];
+
 export interface User {
   id: number;
   email: string;
   password_hash: string;
   status: 'active' | 'disabled';
+  role: Role;
 }
 
 export function findUser(db: Db, email: string): User | undefined {
-  return db.prepare('SELECT id, email, password_hash, status FROM users WHERE email = ?').get(normalizeEmail(email)) as User | undefined;
+  return db.prepare('SELECT id, email, password_hash, status, role FROM users WHERE email = ?').get(normalizeEmail(email)) as User | undefined;
 }
 
+export const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizeEmail(email));
+
 function checkInputs(email: string, password: string) {
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizeEmail(email))) throw new Error('e-mail inválido');
+  if (!isValidEmail(email)) throw new Error('e-mail inválido');
   if (password.length < MIN_PASSWORD) throw new Error(`a senha precisa de pelo menos ${MIN_PASSWORD} caracteres`);
 }
 
-export function createAccount(db: Db, email: string, password: string): void {
+/** Conta nova sempre nasce como família; admin só pelo comando `admin` (setRole). */
+export function createAccount(db: Db, email: string, password: string): number {
   checkInputs(email, password);
   if (findUser(db, email)) throw new Error('já existe uma conta com esse e-mail');
-  db.prepare('INSERT INTO users (email, password_hash, created_at) VALUES (?, ?, ?)').run(normalizeEmail(email), hashPassword(password), Date.now());
+  const r = db.prepare('INSERT INTO users (email, password_hash, created_at) VALUES (?, ?, ?)').run(normalizeEmail(email), hashPassword(password), Date.now());
+  return Number(r.lastInsertRowid);
 }
 
 function mustFind(db: Db, email: string): User {
@@ -55,6 +63,13 @@ export function setPassword(db: Db, email: string, password: string): void {
   const user = mustFind(db, email);
   db.prepare("UPDATE users SET password_hash = ?, status = 'active' WHERE id = ?").run(hashPassword(password), user.id);
   db.prepare('DELETE FROM sessions WHERE user_id = ?').run(user.id);
+}
+
+/** Só pelo comando na VPS: nenhuma rota da API muda papel. */
+export function setRole(db: Db, email: string, role: Role): void {
+  if (!ROLES.includes(role)) throw new Error(`papel inválido: ${role}`);
+  const user = mustFind(db, email);
+  db.prepare('UPDATE users SET role = ? WHERE id = ?').run(role, user.id);
 }
 
 export function disableAccount(db: Db, email: string): void {

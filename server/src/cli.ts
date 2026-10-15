@@ -1,9 +1,12 @@
 // Uso (na VPS): npm run conta:criar -- email@familia.com
 //               npm run conta:senha -- email@familia.com
 //               npm run conta:desativar -- email@familia.com
+//               npm run conta:admin -- seu@email.com      (dá o papel admin: pode gerar links de acesso)
+//               npm run conta:familia -- seu@email.com    (volta ao papel família)
+// Papel só muda por aqui, com acesso à VPS; a API não tem rota para isso.
 // Sem a variável SENHA, pergunta a senha sem mostrar; deixar vazio gera uma senha e mostra uma vez.
 import { randomBytes } from 'node:crypto';
-import { createAccount, disableAccount, setPassword } from './accounts.ts';
+import { createAccount, disableAccount, setPassword, setRole } from './accounts.ts';
 import { openDb } from './db.ts';
 
 // --dev usa o banco local de desenvolvimento (server/dev.db).
@@ -34,9 +37,14 @@ async function askPassword(): Promise<string> {
 }
 
 async function main() {
-  if (!email || !['criar', 'senha', 'desativar'].includes(command)) {
-    console.error('Uso: npm run conta:<criar|senha|desativar> -- <email>');
+  if (!email || !['criar', 'senha', 'desativar', 'admin', 'familia'].includes(command)) {
+    console.error('Uso: npm run conta:<criar|senha|desativar|admin|familia> -- <email>');
     process.exit(1);
+  }
+  if (command === 'admin' || command === 'familia') {
+    setRole(db, email, command === 'admin' ? 'admin' : 'family');
+    console.log(`Conta ${email} agora tem o papel ${command === 'admin' ? 'admin' : 'família'}.`);
+    return;
   }
   if (command === 'desativar') {
     disableAccount(db, email);

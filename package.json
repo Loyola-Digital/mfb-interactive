@@ -14,7 +14,9 @@
     "typecheck": "tsc --noEmit",
     "conta:criar": "node server/src/cli.ts criar",
     "conta:senha": "node server/src/cli.ts senha",
-    "conta:desativar": "node server/src/cli.ts desativar"
+    "conta:desativar": "node server/src/cli.ts desativar",
+    "conta:admin": "node server/src/cli.ts admin",
+    "conta:familia": "node server/src/cli.ts familia"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.3",

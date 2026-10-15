@@ -34,13 +34,13 @@ describe('login', () => {
   it('login correto cria sessão com cookie HttpOnly, Secure e SameSite=Lax', async () => {
     const { res, cookie } = await login('  Ana@Exemplo.com ', 'senha-da-ana');
     expect(res.status).toBe(200);
-    expect(await res.json()).toEqual({ email: 'ana@exemplo.com' });
+    expect(await res.json()).toEqual({ email: 'ana@exemplo.com', role: 'family' });
     const header = res.headers.get('set-cookie')!;
     expect(header).toMatch(/HttpOnly/);
     expect(header).toMatch(/Secure/);
     expect(header).toMatch(/SameSite=Lax/);
     const me = await app.request('/api/me', { headers: { cookie: cookie! } });
-    expect(await me.json()).toEqual({ email: 'ana@exemplo.com' });
+    expect(await me.json()).toEqual({ email: 'ana@exemplo.com', role: 'family' });
   });
 
   it('senha errada, e-mail inexistente e conta desativada dão a mesma resposta', async () => {

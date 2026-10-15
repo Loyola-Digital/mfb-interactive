@@ -3,13 +3,15 @@ import '../../design-system/components/bundle.css';
 import './styles.css';
 
 import type { Book, Content, Mission, PlacementLevel } from '../../shared/content.ts';
-import { api, ApiError, OfflineError } from './api.ts';
+import { api, ApiError, OfflineError, type Me, type Role } from './api.ts';
 import { loadContent } from './content-loader.ts';
 import { createProgressClient } from './progress-client.ts';
 import { showEnd, showError } from './screens/status.ts';
 import { showGarden } from './screens/garden.ts';
 import { showLogin } from './screens/login.ts';
 import { showMission } from './screens/mission.ts';
+import { showAdmin } from './screens/admin.ts';
+import { showInvite } from './screens/invite.ts';
 import { showParents } from './screens/parents.ts';
 import { showPlacement, showPlacementOffer } from './screens/placement.ts';
 import { showTests } from './screens/tests.ts';
@@ -27,6 +29,8 @@ export interface App {
   /** Registra a escolha de apostila. */
   chooseBook(id: Book['id']): void;
   email: string;
+  /** Papel informado pelo servidor; sem conexão, vale "family" (a área de administração some). */
+  role: Role;
   progress: ReturnType<typeof createProgressClient>;
   go(hash: string): void;
   logout(): Promise<void>;
@@ -41,6 +45,7 @@ const root = document.getElementById('app')!;
 const storage = safeStorage();
 let content: Content | null = null;
 let email: string | null = storage.get<string>(USER_KEY);
+let role: Role = 'family';
 let sessionChecked = false;
 let leave: (() => void) | null = null;
 let progressListener: (() => void) | null = null;
@@ -54,6 +59,7 @@ const progress = createProgressClient({
 
 function endSession() {
   email = null;
+  role = 'family';
   sessionChecked = false;
   storage.remove(USER_KEY);
   progress.forget();
@@ -75,6 +81,7 @@ const app: App = {
     if (progress.state.book !== id) progress.record('bookChosen', null, null, { book: id });
   },
   get email() { return email ?? ''; },
+  get role() { return role; },
   progress,
   go,
   async logout() {
@@ -85,19 +92,19 @@ const app: App = {
   onProgressChange(fn) { progressListener = fn; },
 };
 
-export function signedIn(userEmail: string) {
-  email = userEmail;
+export function signedIn(me: Me) {
+  email = me.email;
+  role = me.role;
   sessionChecked = true;
-  storage.set(USER_KEY, userEmail);
-  progress.useAccount(userEmail);
+  storage.set(USER_KEY, me.email);
+  progress.useAccount(me.email);
 }
 
 /** Garante sessão: servidor confirma, ou (sem internet) usa a última conta conhecida neste aparelho. */
 async function ensureSession(): Promise<'ok' | 'login' | 'offline'> {
   if (sessionChecked && email) return 'ok';
   try {
-    const me = await api.me();
-    signedIn(me.email);
+    signedIn(await api.me());
     await progress.sync();
     return 'ok';
   } catch (err) {
@@ -119,10 +126,13 @@ async function route() {
     content = loaded.content;
   }
 
-  if (name === 'login') return showLogin(app, (userEmail) => {
-    signedIn(userEmail);
+  const enter = (me: Me) => {
+    signedIn(me);
     void progress.sync().then(() => go('#/'));
-  });
+  };
+  if (name === 'login') return showLogin(app, enter);
+  // Link de acesso: funciona sem sessão (e troca de conta se houver uma aberta).
+  if (name === 'convite' && param) return showInvite(app, param, enter);
 
   const session = await ensureSession();
   if (session === 'login') return go('#/login');
@@ -130,6 +140,7 @@ async function route() {
 
   if (name === 'missao' && param) return showMission(app, param);
   if (name === 'pais') return showParents(app);
+  if (name === 'admin') return showAdmin(app);
   if (name === 'fim') return showEnd(app);
   if (name === 'alinhamento') return showPlacement(app);
   if (!progress.state.welcomeSeen) return showWelcome(app);

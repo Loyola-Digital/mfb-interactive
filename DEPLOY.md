@@ -13,6 +13,7 @@ família (celular) ──https──> Vercel (front estático, pasta web/dist)
 
 - A API **não** fica exposta diretamente: o Node escuta só em `127.0.0.1`; quem atende a internet é o Caddy.
 - O navegador fala só com o domínio da Vercel. A Vercel repassa `/api/*` para a VPS. Por isso o cookie de login funciona no Safari do iPhone sem CORS.
+- Os links de acesso usam o endereço da Vercel (`<app>/#/convite/<token>`); não há envio de e-mail pelo servidor, o admin copia o link e manda à família.
 - Não há build no servidor: o Node 24 roda o TypeScript de `server/` direto.
 
 ## 0. Antes de começar: o que pedir ao responsável
@@ -22,7 +23,7 @@ Um agente de IA **deve pedir ao humano** (e não inventar) estes itens:
 1. **Acesso SSH** à VPS com um usuário que tenha `sudo` (Ubuntu 22.04 ou 24.04).
 2. **Domínio da API**: `mfb-api.devital.com.br`, com um registro DNS **A** apontando para o IP da VPS. Verifique com `dig +short mfb-api.devital.com.br` — precisa devolver o IP da VPS antes da etapa 5.
 3. **Acesso de leitura ao repositório** `github.com/Loyola-Digital/mfb-interactive` (privado). O jeito recomendado é uma *deploy key* (etapa 2): o agente gera a chave na VPS, mostra a parte pública e **pede ao humano** para cadastrá-la no GitHub.
-4. **E-mail da primeira família** (ou da equipe) para criar a primeira conta.
+4. **E-mail do responsável** para criar a primeira conta, que recebe o papel admin.
 
 Nunca cole senhas, chaves privadas ou tokens em chats, commits ou arquivos do repositório.
 
@@ -83,20 +84,21 @@ sudo systemctl daemon-reload && sudo systemctl enable --now mfb-api
 `curl -s http://127.0.0.1:8787/api/health` devolve `{"ok":true}`.
 Logs: `journalctl -u mfb-api -n 50`.
 
-## 4. Primeira conta
+## 4. Primeira conta (admin)
 
-Não existe cadastro no app; contas são criadas por comando (ver também README → Contas).
+Não existe cadastro aberto. A primeira conta é a do responsável, com papel **admin**: pelo app, ela gera os links de acesso das famílias (ver também README → Contas e papéis).
 
 ```bash
 cd /opt/mfb-interactive/app
-sudo -u mfb node server/src/cli.ts criar familia@exemplo.com
+sudo -u mfb node server/src/cli.ts criar admin@exemplo.com
+sudo -u mfb node server/src/cli.ts admin admin@exemplo.com
 ```
 
-O comando pede a senha sem mostrar; apertar Enter gera uma senha e a mostra **uma única vez**. Entregue-a ao humano por um canal privado, não registre em arquivos nem em logs de chat públicos.
+O comando `criar` pede a senha sem mostrar; apertar Enter gera uma senha e a mostra **uma única vez**. Entregue-a ao humano por um canal privado, não registre em arquivos nem em logs de chat públicos.
 
-Outros comandos: `... cli.ts senha <email>` (redefine e encerra sessões) e `... cli.ts desativar <email>`.
+Outros comandos: `... cli.ts senha <email>` (redefine e encerra sessões), `... cli.ts desativar <email>` e `... cli.ts familia <email>` (tira o admin). O papel só muda por esses comandos; a API não tem rota para isso.
 
-**Verificar:** `sudo -u mfb sqlite3 /var/lib/mfb/app.db "select email, status from users;"` lista a conta como `active`.
+**Verificar:** `sudo -u mfb sqlite3 /var/lib/mfb/app.db "select email, status, role from users;"` lista a conta como `active` e `admin`.
 
 ## 5. HTTPS com Caddy
 
@@ -126,7 +128,11 @@ Restaurar: `sudo systemctl stop mfb-api`, copiar o backup para `/var/lib/mfb/app
 2. Na Vercel: *Add New Project* → importar `Loyola-Digital/mfb-interactive` → **Root Directory: raiz do repositório** (build e pasta de saída já vêm do `vercel.json`) → *Deploy*.
 3. (Opcional) Configurar o domínio do app, por exemplo `app.seudominio.com.br`, em *Settings → Domains*.
 
-**Verificar:** abrir o endereço da Vercel no celular → tela de login → entrar com a conta da etapa 4 → o jardim aparece. Em outro aparelho com a mesma conta, o progresso aparece igual.
+**Verificar:**
+1. Abrir o endereço da Vercel no celular → tela de login → entrar com a conta da etapa 4 → aparecem as boas-vindas e depois "Em qual apostila começar?".
+2. Escolher uma apostila → aparecem as abas Exercícios, Provas e Teste de alinhamento.
+3. Área dos pais → o cartão **Administração** aparece (a conta é admin). Gerar um link para um e-mail de teste, abrir o link numa janela anônima, criar a senha e confirmar que entra no app; depois cancelar ou deixar o link usado.
+4. Em outro aparelho com a mesma conta, o progresso aparece igual.
 
 ## 8. Atualizar a versão
 
@@ -136,14 +142,16 @@ sudo -u mfb -H git pull && sudo -u mfb -H npm ci --omit=dev && sudo systemctl re
 curl -s http://127.0.0.1:8787/api/health
 ```
 
-A Vercel publica o front sozinha a cada push na branch principal. Voltar versão da API: `sudo -u mfb git checkout <commit>` e reiniciar o serviço; o banco cria as tabelas sozinho e não precisa de migração.
+A Vercel publica o front sozinha a cada push na branch principal. Ao iniciar, a API cria sozinha as tabelas e colunas novas (por exemplo, os papéis das contas e os links de acesso); não há migração manual, e as contas antigas viram papel família. Voltar versão da API: `sudo -u mfb git checkout <commit>` e reiniciar o serviço; versões antigas ignoram as colunas extras.
+
+Se a instalação foi feita antes dos papéis (antes de 15/10/2026), depois de atualizar dê admin à conta do responsável: `sudo -u mfb node server/src/cli.ts admin <email>`.
 
 ## Checklist final (entregar ao humano)
 
 - [ ] `https://api.<domínio>/api/health` responde `{"ok":true}`
 - [ ] `systemctl is-enabled mfb-api caddy` → `enabled` nos dois; sobrevivem a `sudo reboot`
 - [ ] Porta 8787 **não** acessível de fora (`curl http://<ip>:8787` falha)
-- [ ] Primeira conta criada e login funcionando pela URL da Vercel
+- [ ] Primeira conta criada com papel admin e login funcionando pela URL da Vercel
 - [ ] Backup do dia existe em `/var/lib/mfb/backups/`
 - [ ] Nenhuma senha, chave ou token foi escrito no repositório
 
@@ -159,7 +167,7 @@ Você vai publicar a API do projeto "Mundo Meu Filho Bilíngue" numa VPS Ubuntu.
 Acesso: ssh <usuario>@<ip-da-vps>  (o usuário tem sudo)
 Repositório (privado): github.com/Loyola-Digital/mfb-interactive
 Domínio da API: mfb-api.devital.com.br  (DNS A já aponta para a VPS)
-E-mail da primeira conta: <email@familia.com>
+E-mail da primeira conta (vai ser admin): <seu@email.com>
 
 Siga EXATAMENTE o arquivo DEPLOY.md do repositório, etapas 0 a 6, na ordem.
 Leia o DEPLOY.md primeiro: se ainda não tiver acesso ao repositório, peça que eu cole o conteúdo dele.

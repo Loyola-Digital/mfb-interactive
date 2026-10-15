@@ -62,6 +62,12 @@ export function showParents(app: App) {
         <div class="book-tabs book-tabs--inline">${app.books.map((b) => `<button type="button" class="book-tab${b.id === app.book.id ? ' is-current' : ''}" data-book="${b.id}" aria-pressed="${b.id === app.book.id}">${esc(b.title)}</button>`).join('')}</div>
         <div class="actions"><a class="mfb-btn mfb-btn--outline" href="#/alinhamento">${suggestion ? 'Refazer o teste' : 'Fazer o teste'}</a></div>
       </section>
+      ${app.role === 'admin' ? `<section class="mfb-card adult-card">
+        <span class="mfb-pill mfb-pill--coral mfb-pill--sm">Administração</span>
+        <h2 class="heading">Links de acesso</h2>
+        <p class="small muted">Gere links para novas famílias entrarem ou para quem esqueceu a senha.</p>
+        <div class="actions"><a class="mfb-btn mfb-btn--primary" href="#/admin">Abrir administração</a></div>
+      </section>` : ''}
       <section class="mfb-card adult-card">
         <h2 class="heading">Sua conta</h2>
         <p><span class="muted">E-mail:</span> <strong class="body-strong">${esc(app.email)}</strong></p>
