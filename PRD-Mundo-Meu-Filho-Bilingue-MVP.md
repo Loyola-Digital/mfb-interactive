@@ -9,7 +9,24 @@
 **Nome:** provisório  
 **Escopo proposto:** piloto funcional no navegador do celular, antes da expansão para um produto comercial completo.
 
-**Documento complementar:** [Ideias e decisões do produto](C:/Users/Lucas/Documents/Codex/2026-09-29/hoje/outputs/Ideias-e-Decisoes-Mundo-Meu-Filho-Bilingue.md), com a visão ampliada, conceitos alternativos e histórico de escopo. As possibilidades registradas nesse caderno não entram automaticamente nesta versão do PRD.
+**Documento complementar:** [Ideias e decisões do produto](Ideias-e-Decisoes-Mundo-Meu-Filho-Bilingue.md), com a visão ampliada, conceitos alternativos e histórico de escopo. As possibilidades registradas nesse caderno não entram automaticamente nesta versão do PRD.
+
+## Atualizações depois da versão 0.1
+
+O texto abaixo desta seção é a proposta original de 29/09/2026. Estas decisões do usuário, já implementadas, a substituem onde houver conflito. O detalhe de cada uma está em `openspec/changes/`.
+
+| Data | Decisão | Substitui |
+|---|---|---|
+| 29/09/2026 | Contas com e-mail e senha e progresso no servidor (Vercel + API numa VPS). | "Progresso local" (seção 10). |
+| 29/09–13/10/2026 | Jardim com 13 missões e mais três jogos: montar frases, quiz da sombra e montar palavras como quebra-cabeça. | "Catálogo inicial: seis missões" (seção 7). |
+| 14/10/2026 | Exercícios divididos pelas três apostilas da pasta: Curious Ones 1, Curious Ones 2 e Explorers 1, seguindo os capítulos de cada livro (93 missões). Novos jogos Escolher e Ligar. Figuras recortadas dos PDFs das apostilas. | Catálogo da seção 7 e a referência só ao Curious Ones Stage 1 (seção 2). |
+| 14/10/2026 | Prova no fim de cada capítulo: sem ajuda, a primeira resposta vale; a criança só vê a comemoração e a área dos pais mostra "acertou X de Y". Exercícios continuam sem nota. | "A área dos pais não mostra notas" vale agora só para os exercícios. |
+| 14/10/2026 | Teste de alinhamento no primeiro acesso, que sugere a apostila; o adulto confirma ou troca. | — |
+| 14/10/2026 | Continua sem áudio. As atividades de som da Explorers viram leitura de palavras e figuras, com o adulto lendo em voz alta. A Explorers é para quem já começa a ler. | "Nunca exigir leitura" vale para as Curious Ones. |
+| 15/10/2026 | Abas separadas: Exercícios, Provas e Teste de alinhamento. | Jornada da seção 6. |
+| 15/10/2026 | Papéis de conta: família e admin. O admin gera links de acesso (por e-mail, uso único, 7 dias) para famílias entrarem ou trocarem a senha. Admin só se dá por comando na VPS. | Contas criadas só pela equipe por comando. |
+
+Continuam valendo: acompanhamento dos pais, sem som, toque como interação principal, arrastar nunca obrigatório, sem punição, ajuda progressiva após dois erros nos exercícios, alvos de pelo menos 56 px e layout a partir de 360 px.
 
 ## 1. Visão do produto
 

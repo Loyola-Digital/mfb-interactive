@@ -8,7 +8,7 @@
 
 Este documento reúne a visão do produto, as alternativas exploradas, as atividades inspiradas na apostila, o plano de produção com IA e a evolução do escopo. Preserva também ideias que ficaram fora da primeira versão.
 
-O detalhamento funcional do piloto está no [PRD — Mundo Meu Filho Bilíngue](C:/Users/Lucas/Documents/Codex/2026-09-29/hoje/outputs/PRD-Mundo-Meu-Filho-Bilingue-MVP.md). Este caderno amplia o registro de ideias; uma possibilidade descrita aqui não entra automaticamente no escopo do PRD.
+O detalhamento funcional do piloto está no [PRD — Mundo Meu Filho Bilíngue](PRD-Mundo-Meu-Filho-Bilingue-MVP.md). Este caderno amplia o registro de ideias; uma possibilidade descrita aqui não entra automaticamente no escopo do PRD.
 
 ## 1. Ponto de partida
 
@@ -324,6 +324,10 @@ Essa sequência é uma proposta de produção. Não existe cronograma fechado, o
 | Mudança de escopo | Usuário definiu que não haverá voz nesta fase. |
 | PRD | Foram propostas seis missões, três tipos de jogo, navegador e progresso local. |
 | Consolidação atual | Registro ampliado de ideias, alternativas, decisões e recursos adiados. |
+| 29/09/2026 — implementação | Personagem guia: o coelhinho. Contas com e-mail e senha, progresso no servidor (Vercel + VPS). |
+| 29/09–13/10/2026 | Jardim completo com 13 missões; jogos de montar frases ("It's a bee"), quiz da sombra e montar palavras como quebra-cabeça com peças que se encaixam. |
+| 14/10/2026 | Leitura das três apostilas da pasta (Curious Ones 1 e 2, Explorers 1). Exercícios divididos por apostila e capítulo, prova no fim de cada capítulo (acertos só para os pais) e teste de alinhamento na entrada. Continua sem áudio. Figuras recortadas das próprias apostilas, porque não havia créditos para gerar arte nova. |
+| 15/10/2026 | Exercícios, provas e teste de alinhamento em abas separadas. Papéis de conta (família e admin); o admin envia links de acesso às famílias. |
 
 ## 17. Pontos ainda abertos
 
@@ -331,7 +335,9 @@ Essa sequência é uma proposta de produção. Não existe cronograma fechado, o
 - Validação da Fernanda sobre objetivos, palavras, sequência e adaptação sem voz.
 - Escolha final do personagem e do estilo visual.
 - Seleção dos recursos existentes da pasta que serão aproveitados.
-- Confirmação ou ajuste das premissas do piloto: seis missões, navegador, uma criança por progresso local e ausência total de som.
+- Validação da Fernanda, página a página, dos exercícios e provas das três apostilas (cada missão indica a página em `bookRef`).
+- Licença das figuras das apostilas (bancos de imagem) para uso no app digital.
+- Uma criança por conta: perfis para irmãos continuam fora do piloto.
 - Famílias e aparelhos usados no teste.
 - Orçamento, prazo e forma de distribuição após validar o protótipo.
 - Prioridade das próximas atividades e dos recursos de conta, perfis e edição de conteúdo.
