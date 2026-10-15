@@ -20,6 +20,13 @@ O teste SHALL ter rodadas de Escolher em modo prova, quatro por nível, começan
 - **WHEN** a criança acerta 4 de 4 no nível da Curious Ones 1 e 1 de 4 no da Curious Ones 2
 - **THEN** o teste sugere a Curious Ones 2
 
+### Requirement: Aba do teste
+Depois da primeira escolha de apostila, o teste SHALL ficar na aba Teste de alinhamento, que mostra a apostila atual e a última sugestão e permite refazer o teste.
+
+#### Scenario: Refazer pela aba
+- **WHEN** o adulto abre a aba Teste de alinhamento depois de já ter feito o teste
+- **THEN** vê a última sugestão e o botão "Refazer o teste"
+
 ### Requirement: Confirmação pelo adulto
 O resultado SHALL mostrar a sugestão e permitir confirmar ou escolher outra apostila. A sugestão (`placement`) e a escolha (`bookChosen`) SHALL ser registradas no progresso. O teste SHALL poder ser refeito pela área dos pais.
 

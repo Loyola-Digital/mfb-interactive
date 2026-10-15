@@ -34,3 +34,9 @@
 ## 6. Verificação
 
 - [x] 6.1 `npm test`, `npm run typecheck`, `npm run build`, busca por hex; jogar no navegador em 360 px um exercício de cada tipo, uma prova e o alinhamento
+
+## 7. Abas separadas (pedido de 15/10/2026)
+
+- [x] 7.1 Abas fixas Exercícios, Provas e Teste de alinhamento; provas fora da trilha de exercícios
+- [x] 7.2 Aba Provas com uma prova por capítulo, exercícios feitos e "feita"/"ainda não feita"; voltar e "próxima prova" dentro da aba
+- [x] 7.3 Aba Teste de alinhamento com a última sugestão e "Refazer o teste"; verificar as três abas em 390 px

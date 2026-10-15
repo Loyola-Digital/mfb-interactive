@@ -13,8 +13,15 @@ O conteúdo SHALL ter as apostilas Curious Ones Stage 1 (`CO1`), Curious Ones St
 - **WHEN** o app carrega `missions.json`
 - **THEN** as três apostilas aparecem com seus capítulos e missões, e um conteúdo com id repetido ou apostila sem capítulo é rejeitado
 
+### Requirement: Abas Exercícios, Provas e Teste de alinhamento
+Depois que a apostila for escolhida, o app SHALL ter três abas fixas no topo: **Exercícios** (a trilha), **Provas** (lista das provas) e **Teste de alinhamento**. Exercícios e Provas SHALL mostrar o seletor de apostila; o Teste de alinhamento não depende de apostila.
+
+#### Scenario: Navegar pelas abas
+- **WHEN** o adulto toca em "Provas"
+- **THEN** aparece a lista de provas da apostila atual, e a aba Provas fica marcada
+
 ### Requirement: Trilha da apostila atual
-O jardim SHALL mostrar só as missões da apostila atual, em zigue-zague calculado, com o nome de cada capítulo no início do trecho e as provas marcadas como prova. Um seletor no topo SHALL permitir trocar de apostila sem perder o progresso das outras.
+A aba Exercícios SHALL mostrar só os exercícios da apostila atual, sem as provas, em zigue-zague calculado e com o nome de cada capítulo no início do trecho. Um seletor no topo SHALL permitir trocar de apostila sem perder o progresso das outras.
 
 #### Scenario: Trocar de apostila
 - **WHEN** o adulto escolhe Explorers 1 no seletor

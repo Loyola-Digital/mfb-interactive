@@ -267,8 +267,6 @@ h1, h2, p { margin: 0; }
 }
 .book-tab.is-current { background: var(--yellow); }
 .chapter-label { position: absolute; transform: translate(-50%, -50%); z-index: 1; max-width: 42%; white-space: normal; text-align: center; background: var(--surface); border: 2px solid var(--ink); box-shadow: var(--shadow-soft); }
-.spot--test { border-radius: var(--radius-lg); border-color: var(--coral-ink); background: var(--coral-tint); }
-.spot__test { position: absolute; top: calc(100% + 4px); white-space: nowrap; background: var(--coral); color: var(--on-accent); }
 .spot .shape, .spot .icon-letters { width: 100%; height: 100%; }
 .book-choices { display: grid; gap: var(--space-3); }
 .book-choice { display: grid; justify-items: start; gap: var(--space-1); text-align: left; height: auto; padding: var(--space-3) var(--space-4); }
@@ -328,3 +326,23 @@ h1, h2, p { margin: 0; }
 .match-pair { display: grid; gap: var(--space-2); flex: 0 1 104px; min-width: 0; }
 .word--big.word--long { font-size: clamp(22px, 6vw, 30px); }
 .result-art--test { width: min(50vw, 200px); }
+
+/* Abas principais: Exercícios, Provas, Teste de alinhamento */
+.section-tabs { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: var(--space-3); border: 2px solid var(--ink); border-radius: var(--radius-md); overflow: hidden; background: var(--surface); }
+.section-tab { display: grid; place-items: center; min-height: 52px; padding: var(--space-2); text-align: center; text-decoration: none; color: var(--ink); font: 800 15px/1.1 var(--font-display); }
+.section-tab + .section-tab { border-left: 2px solid var(--ink); }
+.section-tab.is-current { background: var(--yellow); }
+
+/* Aba Provas */
+.tests-intro { margin-bottom: var(--space-3); }
+.tests-intro a { color: var(--ink); font-weight: 700; }
+.test-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+.test-card { display: grid; grid-template-columns: 72px 1fr; gap: var(--space-3); align-items: center; padding: var(--space-4); }
+.test-card.is-done { background: var(--leaf-tint); }
+.test-card__icon { width: 72px; height: 72px; border-radius: var(--radius-md); border: 3px solid var(--coral-ink); background: var(--surface); display: grid; place-items: center; padding: 6px; overflow: hidden; }
+.test-card__icon img { width: 100%; height: 100%; object-fit: contain; }
+.test-card__body { display: grid; gap: var(--space-1); justify-items: start; min-width: 0; }
+.test-card__status { display: flex; align-items: center; gap: var(--space-1); font-weight: 700; }
+.test-card__check { width: 22px; height: 22px; border-radius: 50%; background: var(--leaf); border: 2px solid var(--ink); display: grid; place-items: center; }
+.test-card__check svg { width: 14px; height: 14px; fill: none; stroke: var(--ink); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.test-card__go { grid-column: 1 / -1; }

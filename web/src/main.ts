@@ -12,6 +12,7 @@ import { showLogin } from './screens/login.ts';
 import { showMission } from './screens/mission.ts';
 import { showParents } from './screens/parents.ts';
 import { showPlacement, showPlacementOffer } from './screens/placement.ts';
+import { showTests } from './screens/tests.ts';
 import { showWelcome } from './screens/welcome.ts';
 import { safeStorage } from './storage.ts';
 
@@ -133,6 +134,7 @@ async function route() {
   if (name === 'alinhamento') return showPlacement(app);
   if (!progress.state.welcomeSeen) return showWelcome(app);
   if (!progress.state.book) return showPlacementOffer(app);
+  if (name === 'provas') return showTests(app);
   return showGarden(app);
 }
 

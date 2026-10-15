@@ -6,6 +6,13 @@ Prova de fim de capítulo, feita sem ajuda, com os acertos mostrados só ao adul
 
 ## ADDED Requirements
 
+### Requirement: Aba Provas
+A aba Provas SHALL listar, para a apostila atual, uma prova por capítulo que tenha prova, na ordem do livro, com o nome do capítulo, quantos exercícios do capítulo já foram concluídos e se a prova já foi feita. Os acertos MUST NOT aparecer nesta aba, que a criança vê; ficam na área dos pais. Ao sair ou terminar uma prova, o app SHALL voltar à aba Provas, e "Próxima" SHALL levar à próxima prova.
+
+#### Scenario: Lista de provas da Curious Ones 1
+- **WHEN** o adulto abre a aba Provas com a Curious Ones 1 escolhida
+- **THEN** aparecem as provas de Cores e formas, Números, Comparar e Letras, cada uma com o botão "Fazer a prova"
+
 ### Requirement: Modo prova
 A prova SHALL usar rodadas de Escolher sem demonstração, sem botão de ajuda e sem destacar a resposta. A primeira opção tocada SHALL ser a resposta da rodada; certa ou errada, a rodada SHALL avançar com a mesma transição, sem marcar erro para a criança. A tela de preparação SHALL avisar o adulto para não ajudar.
 

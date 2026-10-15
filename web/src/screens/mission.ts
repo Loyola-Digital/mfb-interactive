@@ -6,14 +6,15 @@ import { missionResult, playMission } from '../games/index.ts';
 import type { GameHandle } from '../games/types.ts';
 import type { App } from '../main.ts';
 import { confirmDialog, esc, logo, mount } from '../ui.ts';
-import { bookMissions } from './garden.ts';
+import { bookList, sectionOf } from './sections.ts';
 
 export function showMission(app: App, id: string) {
   const mission = app.missions.find((m) => m.id === id);
   if (!mission || !isPlayable(mission)) return app.go('#/');
-  // Abrir uma missão de outra apostila (link, "próxima") passa a usar essa apostila no jardim.
+  // Abrir uma missão de outra apostila (link, "próxima") passa a usar essa apostila nas abas.
   app.chooseBook(mission.book);
-  const number = bookMissions(app, mission.book).indexOf(mission) + 1;
+  // Exercícios e provas são numerados cada um na sua aba.
+  const number = bookList(app, Boolean(mission.test), mission.book).indexOf(mission) + 1;
   showPrep(app, mission, number);
 }
 
@@ -29,12 +30,12 @@ function showPrep(app: App, m: PlayableMission, number: number) {
       <p><strong class="body-strong">Como acompanhar:</strong> ${esc(m.adultTip)}</p>
       <div class="actions">
         <button class="mfb-btn mfb-btn--primary" data-play>${m.test ? 'Começar a prova' : 'Vamos brincar'}</button>
-        <button class="mfb-btn mfb-btn--outline" data-garden>Voltar ao jardim</button>
+        <button class="mfb-btn mfb-btn--outline" data-garden>${m.test ? 'Voltar às provas' : 'Voltar ao jardim'}</button>
       </div>
     </section>
   </div>`);
   app.root.querySelector('[data-play]')!.addEventListener('click', () => showPlay(app, m, number));
-  app.root.querySelector('[data-garden]')!.addEventListener('click', () => app.go('#/'));
+  app.root.querySelector('[data-garden]')!.addEventListener('click', () => app.go(sectionOf(m)));
 }
 
 function showPlay(app: App, m: PlayableMission, number: number) {
@@ -74,18 +75,18 @@ function showPlay(app: App, m: PlayableMission, number: number) {
 
   app.root.querySelector('[data-help]')!.addEventListener('click', () => handle?.help());
   // Sair não registra nada: a missão recomeça do início na próxima vez e conclusões anteriores ficam.
-  app.root.querySelector('[data-exit]')!.addEventListener('click', () => app.go('#/'));
+  app.root.querySelector('[data-exit]')!.addEventListener('click', () => app.go(sectionOf(m)));
   app.root.querySelector('[data-skip]')!.addEventListener('click', async () => {
     const ok = await confirmDialog('Pular esta brincadeira? Ela fica registrada como pulada, não como concluída.', 'Pular');
     if (!ok) return;
     app.progress.record('skipped', m.id, attemptId);
-    app.go('#/');
+    app.go(sectionOf(m));
   });
 }
 
 function showResult(app: App, m: PlayableMission, number: number) {
-  // Próxima na ordem do jardim; abre a preparação do adulto, nunca o jogo direto.
-  const list = bookMissions(app, m.book);
+  // Próxima da mesma aba (exercício → exercício, prova → prova); abre a preparação do adulto, nunca o jogo direto.
+  const list = bookList(app, Boolean(m.test), m.book);
   const next = list.slice(list.indexOf(m) + 1).find(isPlayable);
   // Na prova a criança só vê a comemoração; os acertos ficam na área dos pais.
   const scene = m.test
@@ -98,15 +99,15 @@ function showResult(app: App, m: PlayableMission, number: number) {
       <h2 class="heading">Para brincar fora da tela</h2>
       <p>${esc(m.offScreen)}</p>
       <div class="actions">
-        ${next ? `<button class="mfb-btn mfb-btn--primary result-card__next" data-next>Próxima missão: ${esc(next.title)}</button>` : ''}
+        ${next ? `<button class="mfb-btn mfb-btn--primary result-card__next" data-next>${m.test ? 'Próxima prova' : 'Próxima missão'}: ${esc(next.title)}</button>` : ''}
         <button class="mfb-btn ${next ? 'mfb-btn--outline' : 'mfb-btn--primary'}" data-again>Repetir</button>
-        <button class="mfb-btn mfb-btn--outline" data-garden>Voltar ao jardim</button>
+        <button class="mfb-btn mfb-btn--outline" data-garden>${m.test ? 'Voltar às provas' : 'Voltar ao jardim'}</button>
         <button class="mfb-btn mfb-btn--outline" data-end>Encerrar</button>
       </div>
     </section>
   </div>`);
   if (next) app.root.querySelector('[data-next]')!.addEventListener('click', () => app.go(`#/missao/${next.id}`));
   app.root.querySelector('[data-again]')!.addEventListener('click', () => showPlay(app, m, number));
-  app.root.querySelector('[data-garden]')!.addEventListener('click', () => app.go('#/'));
+  app.root.querySelector('[data-garden]')!.addEventListener('click', () => app.go(sectionOf(m)));
   app.root.querySelector('[data-end]')!.addEventListener('click', () => app.go('#/fim'));
 }

@@ -31,6 +31,9 @@ Script local (PyMuPDF) acha cada rótulo de palavra na página e recorta a figur
 ### 6. Dados extras no evento
 `progress_events.data` (TEXT JSON, opcional) com migração `ALTER TABLE` se a coluna não existir. Validação: `data` só aceita `{ right, total }` inteiros (0 ≤ right ≤ total ≤ 50) ou `{ book }` de um id conhecido pelo formato.
 
+### 7. Três abas separadas
+Pedido do usuário em 15/10/2026: exercícios, provas e teste de alinhamento em abas próprias. A trilha do jardim passa a ter só exercícios; as provas ganham uma lista por capítulo (`#/provas`) e o teste uma aba (`#/alinhamento`). A aba Provas não mostra acertos, porque a criança vê a tela; eles continuam na área dos pais.
+
 ## Risks / Trade-offs
 
 - [Atividades de som sem áudio] → viram leitura (Explorers) ou o adulto lê o enunciado; anotado no `adultTip`.
