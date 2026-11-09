@@ -1,6 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { artKeys, isPlayable, validateContent, type PlayableMission } from './content.ts';
+import { artKeys, audioSlug, audioTexts, isPlayable, validateContent, type PlayableMission } from './content.ts';
 
 const texts = { bookRef: 'p. 26', goal: 'Objetivo.', word: 'green', meaning: 'verde', adultTip: 'Mostre o modelo.', offScreen: 'Procure algo.' };
 const base = { version: 1, available: true, icon: 'sapo', ...texts };
@@ -71,6 +71,18 @@ describe('validateContent', () => {
     expect(() => ok({ ...pick, game: { rounds: [round, { ...round, prompt: { text: '3', count: 3 } }] } })).toThrow('count');
   });
 
+  it('Ouvir: rodada só com áudio vale; sem enunciado nem áudio, não; dois textos no mesmo arquivo, não', () => {
+    const listen = { audio: 'bear', options: round.options, answer: 0 };
+    expect(ok({ ...pick, audio: 'bear', game: { rounds: [round, listen] } })[0]).toMatchObject({ audio: 'bear' });
+    expect(() => ok({ ...pick, game: { rounds: [round, { options: round.options, answer: 0 }] } })).toThrow('prompt ou audio');
+    expect(() => ok({ ...pick, game: { rounds: [round, { ...listen, audio: ' ' }] } })).toThrow('audio vazio');
+    expect(() => ok({ ...pick, game: { rounds: [listen, { ...listen, audio: 'Bear!' }] } })).toThrow('mesmo arquivo bear.mp3');
+  });
+
+  it('nome do arquivo de áudio: som da letra, nome da letra, palavra e frase', () => {
+    expect(['/t/', 'B', 'a', 'apple', "It's a bee", 'I am in bed'].map(audioSlug)).toEqual(['som-t', 'letra-b', 'a', 'apple', 'its-a-bee', 'i-am-in-bed']);
+  });
+
   it('Ligar: recusa pares de menos e carta repetida na mesma coluna', () => {
     expect(() => ok({ ...match, game: { pairs: match.game.pairs.slice(0, 2) } })).toThrow('pairs');
     expect(() => ok({ ...match, game: { pairs: [...match.game.pairs, [{ text: 'A' }, { text: 'z' }]] } })).toThrow('repetidas');
@@ -115,6 +127,15 @@ describe('arquivo real de conteúdo', () => {
     expect(byId('CO1-04')).toMatchObject({ type: 'colors', word: 'yellow', game: { target: 'yellow' } });
     expect(byId('CO1-09')).toMatchObject({ type: 'quantities', game: { slots: 1 } });
     expect(byId('CO1-24')).toMatchObject({ type: 'spelling', game: { word: 'FROG', art: 'sapo' } });
+  });
+
+  it('as rodadas de ouvir e os sons das letras estão no conteúdo', () => {
+    const texts = audioTexts(content);
+    expect(texts.get('red')).toContain('CO1-25');
+    expect(texts.get('/k/')).toEqual(expect.arrayContaining(['CO2-17', 'CO2-18']));
+    expect(texts.get('I am tall')).toEqual(['EX1-23', 'EX1-38']);
+    const listen = content.missions.filter((m) => isPlayable(m) && m.type === 'pick' && m.game.rounds.some((r) => !r.prompt));
+    expect(listen.length).toBeGreaterThanOrEqual(12);
   });
 
   it('o teste de alinhamento tem 4 rodadas por apostila', () => {

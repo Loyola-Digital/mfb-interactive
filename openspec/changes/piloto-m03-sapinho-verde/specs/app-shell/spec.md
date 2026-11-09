@@ -2,23 +2,19 @@
 
 ## Purpose
 
-Define como a família acessa o piloto pelo navegador, o que vê ao entrar (boas-vindas e jardim) e as garantias transversais de silêncio, toque e layout que valem para todas as telas.
+Define como a família acessa o piloto pelo navegador, o que vê ao entrar (boas-vindas e jardim) e as garantias transversais de privacidade, toque e layout que valem para todas as telas.
 
 ## ADDED Requirements
 
-### Requirement: Experiência totalmente silenciosa
-O app SHALL funcionar integralmente sem som. Nenhum recurso SHALL carregar ou reproduzir áudio, e o app MUST NOT pedir acesso ao microfone, câmera ou localização. O único dado pessoal solicitado SHALL ser o e-mail do responsável, no login (ver `account-access`); nenhum dado da criança é pedido.
-
-#### Scenario: Nenhum áudio carregado
-- **WHEN** o fluxo completo da M03 é executado do início ao fim
-- **THEN** nenhuma requisição de arquivo de áudio é feita e nenhum elemento de áudio ou vídeo com som existe na página
+### Requirement: Sem permissões e sem dados da criança
+O app MUST NOT pedir acesso ao microfone, câmera ou localização. O único dado pessoal solicitado SHALL ser o e-mail do responsável, no login (ver `account-access`); nenhum dado da criança é pedido. (Em 09/11/2026 o app passou a ter som de saída; ver a mudança `atividades-de-ouvir`.)
 
 #### Scenario: Nenhuma permissão solicitada
 - **WHEN** o app é aberto pela primeira vez em Chrome Android ou Safari iOS e o fluxo da M03 é percorrido
 - **THEN** o navegador não exibe nenhum pedido de permissão
 
 ### Requirement: Boas-vindas ao responsável
-No primeiro acesso de cada conta, depois do login, o app SHALL mostrar uma tela para o adulto explicando que ele acompanha a criança, que o app não tem som e que o progresso fica salvo na conta, com um botão "COMEÇAR" que leva ao jardim.
+No primeiro acesso de cada conta, depois do login, o app SHALL mostrar uma tela para o adulto explicando que ele acompanha a criança, que as brincadeiras de ouvir falam em inglês e que o progresso fica salvo na conta, com um botão "COMEÇAR" que leva ao jardim.
 
 #### Scenario: Primeiro acesso da conta
 - **WHEN** uma conta que nunca passou pelas boas-vindas faz login

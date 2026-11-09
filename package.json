@@ -12,6 +12,8 @@
     "start": "node server/src/main.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
+    "audios": "node scripts/audios.ts",
+    "audios:fish": "node scripts/fish-audio.ts",
     "conta:criar": "node server/src/cli.ts criar",
     "conta:senha": "node server/src/cli.ts senha",
     "conta:desativar": "node server/src/cli.ts desativar",

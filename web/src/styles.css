@@ -362,3 +362,19 @@ h1, h2, p { margin: 0; }
 .admin-link[hidden] { display: none; }
 .admin-link { display: grid; gap: var(--space-2); margin-top: var(--space-4); padding: var(--space-4); border-radius: var(--radius-md); background: var(--yellow-tint); }
 .admin-link__url { width: 100%; min-height: 48px; padding: var(--space-2) var(--space-3); border: 2px solid var(--ink); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); font: 14px/1.3 var(--font-sans); }
+
+/* Alto-falante: ouvir de novo (rodadas de ouvir, tela de resultado) */
+.speaker {
+  flex: none; width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--ink); background: var(--yellow);
+  display: grid; place-items: center; padding: 0; cursor: pointer; box-shadow: var(--shadow-card);
+}
+.speaker svg, .icon-speaker svg { width: 62%; height: 62%; fill: none; stroke: var(--ink); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.speaker .speaker__body, .icon-speaker .speaker__body { fill: var(--surface); }
+.speaker--big { width: 120px; height: 120px; }
+.speaker.is-playing { animation: pulse-plain 1s ease-in-out infinite; }
+.pick__prompt { position: relative; }
+.pick__prompt > .speaker:not(.speaker--big) { position: absolute; top: calc(-1 * var(--space-4)); right: calc(-1 * var(--space-4)); }
+.pick__prompt--listen { background: var(--yellow-tint); }
+.speaker__say { color: var(--ink-muted); text-align: center; }
+.icon-speaker { display: grid; place-items: center; width: 100%; height: 100%; }
+.result-scene__word { display: flex; align-items: center; justify-content: center; gap: var(--space-3); flex-wrap: wrap; }

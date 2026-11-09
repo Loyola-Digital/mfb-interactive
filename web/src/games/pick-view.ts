@@ -1,6 +1,7 @@
 // Tela do Escolher: enunciado no alto, opções embaixo, uma rodada por vez.
 // Na prova a escolha só "aperta" a carta e passa à próxima, sem mostrar se acertou.
 import { card, cardLabel, rabbit } from '../art.ts';
+import { say, speaker, stop } from '../audio.ts';
 import { esc, reducedMotion } from '../ui.ts';
 import { createDemo, nudge } from './demo.ts';
 import { init, reduce, type PickEffect } from './pick.ts';
@@ -29,11 +30,15 @@ export const pickGame: GameModule<'pick'> = {
     function renderRound(i: number) {
       const r = rounds[i];
       dots.forEach((d, j) => d.classList.toggle('is-current', j === i));
-      stage.innerHTML = `<div class="pick__prompt mfb-card" aria-label="${esc(cardLabel(r.prompt))}">${card(r.prompt)}</div>
+      const prompt = r.prompt
+        ? `<div class="pick__prompt mfb-card" aria-label="${esc(cardLabel(r.prompt))}">${card(r.prompt)}${r.audio ? speaker(r.audio) : ''}</div>`
+        : `<div class="pick__prompt pick__prompt--listen mfb-card">${speaker(r.audio!, true)}</div>`;
+      stage.innerHTML = `${prompt}
         <div class="pick__options pick__options--${r.options.length}" role="group" aria-label="Opções">
           ${r.options.map((o, j) => `<button type="button" class="option pick-card" data-i="${j}" aria-label="${esc(cardLabel(o))}">${card(o)}</button>`).join('')}
         </div>`;
       rabbitBox.innerHTML = rabbit('waiting');
+      if (r.audio) say(r.audio, stage.querySelector('[data-say]'));
     }
 
     function apply(e: PickEffect) {
@@ -95,6 +100,7 @@ export const pickGame: GameModule<'pick'> = {
       destroy() {
         demo.cancel();
         clearTimeout(timer);
+        stop();
       },
     };
   },

@@ -328,6 +328,7 @@ Essa sequência é uma proposta de produção. Não existe cronograma fechado, o
 | 29/09–13/10/2026 | Jardim completo com 13 missões; jogos de montar frases ("It's a bee"), quiz da sombra e montar palavras como quebra-cabeça com peças que se encaixam. |
 | 14/10/2026 | Leitura das três apostilas da pasta (Curious Ones 1 e 2, Explorers 1). Exercícios divididos por apostila e capítulo, prova no fim de cada capítulo (acertos só para os pais) e teste de alinhamento na entrada. Continua sem áudio. Figuras recortadas das próprias apostilas, porque não havia créditos para gerar arte nova. |
 | 15/10/2026 | Exercícios, provas e teste de alinhamento em abas separadas. Papéis de conta (família e admin); o admin envia links de acesso às famílias. |
+| 09/11/2026 | Volta o áudio, só de saída: atividades "Ouça e toque" nas três apostilas, som das letras, enunciado e resultado falados. A lista de gravação fica em `web/src/assets/audio/LISTA.csv`; até lá, fala a voz do navegador. Microfone e reconhecimento de fala continuam fora. |
 
 ## 17. Pontos ainda abertos
 
@@ -337,6 +338,7 @@ Essa sequência é uma proposta de produção. Não existe cronograma fechado, o
 - Seleção dos recursos existentes da pasta que serão aproveitados.
 - Validação da Fernanda, página a página, dos exercícios e provas das três apostilas (cada missão indica a página em `bookRef`).
 - Licença das figuras das apostilas (bancos de imagem) para uso no app digital.
+- Sons das letras (`/t/`, 20 arquivos): precisam de gravação humana. As 110 palavras e frases já foram geradas com a voz da professora no Fish Audio (09/11/2026).
 - Uma criança por conta: perfis para irmãos continuam fora do piloto.
 - Famílias e aparelhos usados no teste.
 - Orçamento, prazo e forma de distribuição após validar o protótipo.

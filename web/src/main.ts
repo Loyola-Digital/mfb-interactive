@@ -4,6 +4,7 @@ import './styles.css';
 
 import type { Book, Content, Mission, PlacementLevel } from '../../shared/content.ts';
 import { api, ApiError, OfflineError, type Me, type Role } from './api.ts';
+import { bindSpeakers, stop as stopAudio } from './audio.ts';
 import { loadContent } from './content-loader.ts';
 import { createProgressClient } from './progress-client.ts';
 import { showEnd, showError } from './screens/status.ts';
@@ -117,6 +118,7 @@ async function ensureSession(): Promise<'ok' | 'login' | 'offline'> {
 }
 
 async function route() {
+  stopAudio();
   leave?.();
   leave = null;
   progressListener = null;
@@ -154,6 +156,7 @@ async function route() {
   return showGarden(app, lastMission);
 }
 
+bindSpeakers(document);
 window.addEventListener('hashchange', () => void route());
 // Reenvia a fila quando a conexão volta ou o app volta a ficar visível.
 window.addEventListener('online', () => void progress.sync());

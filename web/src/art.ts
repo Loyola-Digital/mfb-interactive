@@ -63,12 +63,15 @@ export function rabbit(pose: RabbitPose): string {
   return `<img class="rabbit rabbit--${pose}" src="${RABBIT[pose]}" alt="" aria-hidden="true" draggable="false">`;
 }
 
+export const speakerIcon = `<svg viewBox="0 0 48 48" aria-hidden="true"><path class="speaker__body" d="M7 18h8l11-9v30l-11-9H7z"/><path d="M32 17a10 10 0 0 1 0 14M37 11a18 18 0 0 1 0 26"/></svg>`;
+
 /**
  * Ilustração da missão no jardim.
- * "tulipas" = duas tulipas; "sombra:abelha" = sombra do desenho; "letras:BEE" = peças de letra.
+ * "tulipas" = duas tulipas; "sombra:abelha" = sombra do desenho; "letras:BEE" = peças de letra; "ouvir" = alto-falante.
  */
 export function missionIcon(key: string): string {
   if (key === 'tulipas') return `<span class="icon-pair">${img('tulipa')}${img('tulipa')}</span>`;
+  if (key === 'ouvir') return `<span class="icon-speaker">${speakerIcon}</span>`;
   const [kind, value] = key.split(':');
   if (kind === 'sombra') return img(value, 'silhouette');
   if (kind === 'shape') return shape(value as Shape);

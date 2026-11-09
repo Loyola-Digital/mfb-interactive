@@ -58,8 +58,10 @@ export function missionIconKey(m: Mission): string {
     case 'sentence': case 'spelling': return m.game.art;
     case 'quiz': return m.game.options[0].art;
     case 'pick': {
-      const c = [m.game.rounds[0].prompt, ...m.game.rounds[0].options].find((x) => x.art);
+      // Rodada só de ouvir: o ponto mostra o alto-falante.
       const p = m.game.rounds[0].prompt;
+      if (!p) return 'ouvir';
+      const c = [p, ...m.game.rounds[0].options].find((x) => x.art);
       return c?.art ?? (p.shape ? `shape:${p.shape}` : `letras:${(p.text ?? '?').slice(0, 3)}`);
     }
     case 'match': return m.game.pairs.flat().find((x) => x.art)?.art ?? 'pedra';

@@ -11,7 +11,7 @@ export function showWelcome(app: App) {
         <h1 class="display">Vamos brincar <span class="mfb-scribble">juntos</span></h1>
         <ul class="welcome__list">
           <li class="mfb-card"><strong class="body-strong">Você acompanha.</strong> Antes de cada brincadeira, um cartão curto mostra o objetivo e a palavra em inglês. Fique perto e ajude sem jogar pela criança.</li>
-          <li class="mfb-card"><strong class="body-strong">Não tem som.</strong> Tudo é mostrado com imagens e movimentos. Se quiser, diga as palavras em voz alta com a criança.</li>
+          <li class="mfb-card"><strong class="body-strong">Deixe o som ligado.</strong> As brincadeiras de ouvir falam palavras em inglês; toque no alto-falante para ouvir de novo. O app nunca usa o microfone.</li>
           <li class="mfb-card"><strong class="body-strong">O progresso fica na sua conta.</strong> Entre com o mesmo e-mail em outro aparelho e continue de onde parou.</li>
         </ul>
         <button class="mfb-btn mfb-btn--primary" data-start>Começar</button>

@@ -25,8 +25,10 @@ O texto abaixo desta seção é a proposta original de 29/09/2026. Estas decisõ
 | 14/10/2026 | Continua sem áudio. As atividades de som da Explorers viram leitura de palavras e figuras, com o adulto lendo em voz alta. A Explorers é para quem já começa a ler. | "Nunca exigir leitura" vale para as Curious Ones. |
 | 15/10/2026 | Abas separadas: Exercícios, Provas e Teste de alinhamento. | Jornada da seção 6. |
 | 15/10/2026 | Papéis de conta: família e admin. O admin gera links de acesso (por e-mail, uso único, 7 dias) para famílias entrarem ou trocarem a senha. Admin só se dá por comando na VPS. | Contas criadas só pela equipe por comando. |
+| 15/10/2026 | Jardim dividido em telas, uma por capítulo, com setas. | Jardim numa página só, com rolagem. |
+| 09/11/2026 | O app passa a ter som. Atividades de ouvir ("Ouça e toque", 15 missões novas, 108 ao todo), som das letras nos exercícios de som inicial e final, palavra do enunciado falada e palavra ou frase falada no resultado, com alto-falante para ouvir de novo. Enquanto as gravações não existem, fala a voz do navegador em inglês. Sem microfone, sem música e sem efeitos. | "Sem voz", "experiência totalmente silenciosa" (cabeçalho, RF01 e seção 13). |
 
-Continuam valendo: acompanhamento dos pais, sem som, toque como interação principal, arrastar nunca obrigatório, sem punição, ajuda progressiva após dois erros nos exercícios, alvos de pelo menos 56 px e layout a partir de 360 px.
+Continuam valendo: acompanhamento dos pais, toque como interação principal, arrastar nunca obrigatório, sem punição, ajuda progressiva após dois erros nos exercícios, alvos de pelo menos 56 px e layout a partir de 360 px.
 
 ## 1. Visão do produto
 

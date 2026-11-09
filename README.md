@@ -1,8 +1,8 @@
 # Mundo Meu Filho Bilíngue — piloto
 
-Jogos visuais de inglês baseados nas apostilas da Fernanda Zapparoli, acompanhados pelos pais. Sem som. O progresso fica na conta da família, no servidor.
+Jogos de inglês baseados nas apostilas da Fernanda Zapparoli, acompanhados pelos pais. As atividades de ouvir falam em inglês (sem microfone). O progresso fica na conta da família, no servidor.
 
-- **Três apostilas:** Curious Ones 1 (a partir de 3 anos), Curious Ones 2 (a partir de 4 anos) e Explorers 1 (Ensino Fundamental I). Cada uma segue os capítulos do livro, com exercícios e uma prova no fim do capítulo (93 missões ao todo).
+- **Três apostilas:** Curious Ones 1 (a partir de 3 anos), Curious Ones 2 (a partir de 4 anos) e Explorers 1 (Ensino Fundamental I). Cada uma segue os capítulos do livro, com exercícios e uma prova no fim do capítulo (108 missões ao todo, 15 delas de ouvir).
 - **Três abas:** **Exercícios** (trilha no jardim, uma tela por capítulo), **Provas** (uma por capítulo, sem ajuda; os acertos aparecem só na área dos pais) e **Teste de alinhamento** (sugere por qual apostila começar; aparece sozinho no primeiro acesso).
 - **Área dos pais:** o que foi praticado por apostila e capítulo, acertos das provas, apostila atual e, para admin, a administração de links de acesso.
 
@@ -13,6 +13,7 @@ Jogos visuais de inglês baseados nas apostilas da Fernanda Zapparoli, acompanha
 - `shared/` — esquema do conteúdo e agregação do progresso, usados pelos dois.
 - `web/public/content/missions.json` — apostilas, capítulos, missões e teste de alinhamento. Editar aqui não exige mexer em código.
 - `web/public/content/img/` — figuras recortadas dos PDFs das apostilas (uma `.webp` por palavra).
+- `web/src/assets/audio/` — gravações das falas (uma `.mp3` por texto) e a lista do que gravar (`LISTA.csv`).
 - `design-system/` — marca Meu Filho Bilíngue (ver `CLAUDE.md`).
 - `openspec/` — especificações e plano das mudanças.
 
@@ -26,6 +27,8 @@ placement[]      teste de alinhamento: 4 rodadas por apostila
 ```
 
 Tipos de jogo: `paths` (caminho), `colors` (pintar), `quantities` (plantar), `pick` (escolher: várias rodadas, usado também nas provas e no alinhamento), `match` (ligar pares), `sentence` (montar frase), `spelling` (montar palavra) e `quiz` (completar pela sombra). Cada missão traz `bookRef` com a página da apostila. O arquivo é validado ao carregar (`shared/content.ts`); `npm test` também confere que toda figura usada existe.
+
+**Áudio:** uma rodada do `pick` pode ter `audio` (texto em inglês falado ao abrir a rodada; sem `prompt`, a rodada é só de ouvir) e a missão pode ter `audio` (falado no resultado). `"/t/"` é o som da letra, `"B"` o nome da letra. Cada texto vira um arquivo em `web/src/assets/audio/` (`/t/` → `som-t.mp3`, `I am tall` → `i-am-tall.mp3`); sem o arquivo, fala a voz do navegador. `npm run audios` atualiza a lista de gravação; o `README.md` da pasta explica como gravar.
 
 Requer **Node 24+** (o servidor roda TypeScript direto, sem build).
 

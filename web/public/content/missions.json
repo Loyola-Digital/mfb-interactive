@@ -10,7 +10,7 @@
           "missions": [
             {
               "id": "CO1-01",
-              "version": 1,
+              "version": 2,
               "type": "paths",
               "title": "Vamos ao jardim",
               "available": true,
@@ -45,11 +45,12 @@
                   "y": 14
                 },
                 "goalArt": "portao"
-              }
+              },
+              "audio": "rabbit"
             },
             {
               "id": "CO1-02",
-              "version": 1,
+              "version": 2,
               "type": "paths",
               "title": "Passeio do coelhinho",
               "available": true,
@@ -88,7 +89,8 @@
                   "y": 15
                 },
                 "goalArt": "cenouras"
-              }
+              },
+              "audio": "rabbit"
             }
           ]
         },
@@ -97,7 +99,7 @@
           "missions": [
             {
               "id": "CO1-03",
-              "version": 1,
+              "version": 2,
               "type": "colors",
               "title": "O sapinho verde",
               "available": true,
@@ -115,11 +117,12 @@
                   "coral"
                 ],
                 "target": "leaf"
-              }
+              },
+              "audio": "green"
             },
             {
               "id": "CO1-04",
-              "version": 1,
+              "version": 2,
               "type": "colors",
               "title": "A banana amarela",
               "available": true,
@@ -138,7 +141,8 @@
                   "coral"
                 ],
                 "target": "yellow"
-              }
+              },
+              "audio": "yellow"
             },
             {
               "id": "CO1-05",
@@ -318,6 +322,113 @@
               }
             },
             {
+              "id": "CO1-25",
+              "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: cores",
+              "available": true,
+              "bookRef": "Curious Ones — Stage 1, pp. 18–27 (“This crayon is…” e “Draw lines from the crayons to the pictures”). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir o nome da cor em inglês e tocar no giz certo.",
+              "word": "red, blue, yellow, green, orange, purple",
+              "meaning": "vermelho, azul, amarelo, verde, laranja, roxo",
+              "adultTip": "O app fala em inglês ao abrir cada rodada. Deixe a criança ouvir e escolher sozinha; toque no alto-falante amarelo para ouvir de novo. Evite traduzir antes de ela tentar.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "red",
+                    "options": [
+                      {
+                        "art": "crayon-blue"
+                      },
+                      {
+                        "art": "crayon-red"
+                      },
+                      {
+                        "art": "crayon-yellow"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "blue",
+                    "options": [
+                      {
+                        "art": "crayon-blue"
+                      },
+                      {
+                        "art": "crayon-green"
+                      },
+                      {
+                        "art": "crayon-orange"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "yellow",
+                    "options": [
+                      {
+                        "art": "crayon-purple"
+                      },
+                      {
+                        "art": "crayon-red"
+                      },
+                      {
+                        "art": "crayon-yellow"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "green",
+                    "options": [
+                      {
+                        "art": "crayon-green"
+                      },
+                      {
+                        "art": "crayon-yellow"
+                      },
+                      {
+                        "art": "crayon-blue"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "orange",
+                    "options": [
+                      {
+                        "art": "crayon-red"
+                      },
+                      {
+                        "art": "crayon-orange"
+                      },
+                      {
+                        "art": "crayon-purple"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "purple",
+                    "options": [
+                      {
+                        "art": "crayon-green"
+                      },
+                      {
+                        "art": "crayon-blue"
+                      },
+                      {
+                        "art": "crayon-purple"
+                      }
+                    ],
+                    "answer": 2
+                  }
+                ]
+              }
+            },
+            {
               "id": "CO1-07",
               "version": 1,
               "type": "pick",
@@ -488,6 +599,113 @@
               }
             },
             {
+              "id": "CO1-26",
+              "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: formas",
+              "available": true,
+              "bookRef": "Curious Ones — Stage 1, pp. 28–45 (circle, square, triangle, rectangle, oval, diamond). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir o nome da forma em inglês e tocar nela.",
+              "word": "circle, square, triangle, rectangle, oval, diamond",
+              "meaning": "círculo, quadrado, triângulo, retângulo, oval, losango",
+              "adultTip": "O app fala em inglês ao abrir cada rodada. Deixe a criança ouvir e escolher sozinha; toque no alto-falante amarelo para ouvir de novo. Evite traduzir antes de ela tentar.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "circle",
+                    "options": [
+                      {
+                        "shape": "square"
+                      },
+                      {
+                        "shape": "circle"
+                      },
+                      {
+                        "shape": "triangle"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "triangle",
+                    "options": [
+                      {
+                        "shape": "triangle"
+                      },
+                      {
+                        "shape": "oval"
+                      },
+                      {
+                        "shape": "square"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "square",
+                    "options": [
+                      {
+                        "shape": "diamond"
+                      },
+                      {
+                        "shape": "circle"
+                      },
+                      {
+                        "shape": "square"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "oval",
+                    "options": [
+                      {
+                        "shape": "oval"
+                      },
+                      {
+                        "shape": "rectangle"
+                      },
+                      {
+                        "shape": "circle"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "rectangle",
+                    "options": [
+                      {
+                        "shape": "triangle"
+                      },
+                      {
+                        "shape": "rectangle"
+                      },
+                      {
+                        "shape": "diamond"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "diamond",
+                    "options": [
+                      {
+                        "shape": "square"
+                      },
+                      {
+                        "shape": "oval"
+                      },
+                      {
+                        "shape": "diamond"
+                      }
+                    ],
+                    "answer": 2
+                  }
+                ]
+              }
+            },
+            {
               "id": "CO1-P1",
               "version": 1,
               "type": "pick",
@@ -614,7 +832,7 @@
           "missions": [
             {
               "id": "CO1-09",
-              "version": 1,
+              "version": 2,
               "type": "quantities",
               "title": "Uma flor",
               "available": true,
@@ -628,11 +846,12 @@
               "game": {
                 "slots": 1,
                 "numeral": "1"
-              }
+              },
+              "audio": "one"
             },
             {
               "id": "CO1-10",
-              "version": 1,
+              "version": 2,
               "type": "quantities",
               "title": "Duas flores",
               "available": true,
@@ -646,7 +865,8 @@
               "game": {
                 "slots": 2,
                 "numeral": "2"
-              }
+              },
+              "audio": "two"
             },
             {
               "id": "CO1-11",
@@ -929,7 +1149,7 @@
             },
             {
               "id": "CO1-14",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Zero: nenhum",
               "available": true,
@@ -1001,6 +1221,114 @@
                       }
                     ],
                     "answer": 0
+                  }
+                ]
+              },
+              "audio": "zero"
+            },
+            {
+              "id": "CO1-27",
+              "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: números",
+              "available": true,
+              "bookRef": "Curious Ones — Stage 1, pp. 48–59 (“Count orally”, “Circle the correct number in each box”). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir o número em inglês e tocar no numeral.",
+              "word": "one to ten",
+              "meaning": "um a dez",
+              "adultTip": "O app fala em inglês ao abrir cada rodada. Deixe a criança ouvir e escolher sozinha; toque no alto-falante amarelo para ouvir de novo. Evite traduzir antes de ela tentar.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "three",
+                    "options": [
+                      {
+                        "text": "3"
+                      },
+                      {
+                        "text": "5"
+                      },
+                      {
+                        "text": "1"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "one",
+                    "options": [
+                      {
+                        "text": "4"
+                      },
+                      {
+                        "text": "1"
+                      },
+                      {
+                        "text": "2"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "five",
+                    "options": [
+                      {
+                        "text": "2"
+                      },
+                      {
+                        "text": "3"
+                      },
+                      {
+                        "text": "5"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "eight",
+                    "options": [
+                      {
+                        "text": "8"
+                      },
+                      {
+                        "text": "6"
+                      },
+                      {
+                        "text": "9"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "six",
+                    "options": [
+                      {
+                        "text": "9"
+                      },
+                      {
+                        "text": "6"
+                      },
+                      {
+                        "text": "7"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "ten",
+                    "options": [
+                      {
+                        "text": "7"
+                      },
+                      {
+                        "text": "1"
+                      },
+                      {
+                        "text": "10"
+                      }
+                    ],
+                    "answer": 2
                   }
                 ]
               }
@@ -1140,7 +1468,7 @@
           "missions": [
             {
               "id": "CO1-15",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Maior ou menor",
               "available": true,
@@ -1167,7 +1495,8 @@
                         "size": "big"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "taller"
                   },
                   {
                     "prompt": {
@@ -1183,7 +1512,8 @@
                         "size": "big"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "shorter"
                   },
                   {
                     "prompt": {
@@ -1199,7 +1529,8 @@
                         "size": "small"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "longer"
                   },
                   {
                     "prompt": {
@@ -1215,7 +1546,8 @@
                         "size": "big"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "shorter"
                   },
                   {
                     "prompt": {
@@ -1231,14 +1563,15 @@
                         "size": "small"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "taller"
                   }
                 ]
               }
             },
             {
               "id": "CO1-16",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Cheio ou vazio",
               "available": true,
@@ -1263,7 +1596,8 @@
                         "art": "full-basket"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "empty"
                   },
                   {
                     "prompt": {
@@ -1277,7 +1611,8 @@
                         "art": "full-cup"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "full"
                   },
                   {
                     "prompt": {
@@ -1291,7 +1626,8 @@
                         "art": "empty-gumball"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "empty"
                   },
                   {
                     "prompt": {
@@ -1305,14 +1641,15 @@
                         "art": "empty-bottle"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "full"
                   }
                 ]
               }
             },
             {
               "id": "CO1-P3",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: comparar",
               "available": true,
@@ -1339,7 +1676,8 @@
                         "size": "small"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "taller"
                   },
                   {
                     "prompt": {
@@ -1355,7 +1693,8 @@
                         "size": "small"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "shorter"
                   },
                   {
                     "prompt": {
@@ -1369,7 +1708,8 @@
                         "art": "empty-gumball"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "empty"
                   },
                   {
                     "prompt": {
@@ -1383,7 +1723,8 @@
                         "art": "empty-basket"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "full"
                   }
                 ]
               }
@@ -1909,6 +2250,113 @@
               }
             },
             {
+              "id": "CO1-28",
+              "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: figuras",
+              "available": true,
+              "bookRef": "Curious Ones — Stage 1, pp. 86–97 (A a E: “Circle the pictures whose names begin with…”, “Trace the paths from the pictures to the letters”). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir o nome da figura em inglês e tocar nela.",
+              "word": "apple, bear, duck, fish, pig, zebra",
+              "meaning": "maçã, urso, pato, peixe, porco, zebra",
+              "adultTip": "O app fala em inglês ao abrir cada rodada. Deixe a criança ouvir e escolher sozinha; toque no alto-falante amarelo para ouvir de novo. Evite traduzir antes de ela tentar.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "apple",
+                    "options": [
+                      {
+                        "art": "duck"
+                      },
+                      {
+                        "art": "apple"
+                      },
+                      {
+                        "art": "cat"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "bear",
+                    "options": [
+                      {
+                        "art": "bear"
+                      },
+                      {
+                        "art": "pig"
+                      },
+                      {
+                        "art": "egg"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "duck",
+                    "options": [
+                      {
+                        "art": "fish"
+                      },
+                      {
+                        "art": "zebra"
+                      },
+                      {
+                        "art": "duck"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "fish",
+                    "options": [
+                      {
+                        "art": "fish"
+                      },
+                      {
+                        "art": "apple"
+                      },
+                      {
+                        "art": "bear"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "pig",
+                    "options": [
+                      {
+                        "art": "duck"
+                      },
+                      {
+                        "art": "pig"
+                      },
+                      {
+                        "art": "fish"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "zebra",
+                    "options": [
+                      {
+                        "art": "bear"
+                      },
+                      {
+                        "art": "cat"
+                      },
+                      {
+                        "art": "zebra"
+                      }
+                    ],
+                    "answer": 2
+                  }
+                ]
+              }
+            },
+            {
               "id": "CO1-22",
               "version": 1,
               "type": "match",
@@ -2041,8 +2489,115 @@
               }
             },
             {
-              "id": "CO1-24",
+              "id": "CO1-29",
               "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: letras",
+              "available": true,
+              "bookRef": "Curious Ones — Stage 1, pp. 154–157 (“Draw lines from the uppercase letters to the matching lowercase letters”). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir o nome da letra em inglês e tocar nela.",
+              "word": "A, B, D, M, S, T",
+              "meaning": "nomes das letras",
+              "adultTip": "O app fala em inglês ao abrir cada rodada. Deixe a criança ouvir e escolher sozinha; toque no alto-falante amarelo para ouvir de novo. Evite traduzir antes de ela tentar.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "A",
+                    "options": [
+                      {
+                        "text": "A"
+                      },
+                      {
+                        "text": "E"
+                      },
+                      {
+                        "text": "O"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "B",
+                    "options": [
+                      {
+                        "text": "D"
+                      },
+                      {
+                        "text": "B"
+                      },
+                      {
+                        "text": "P"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "D",
+                    "options": [
+                      {
+                        "text": "B"
+                      },
+                      {
+                        "text": "T"
+                      },
+                      {
+                        "text": "D"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "M",
+                    "options": [
+                      {
+                        "text": "M"
+                      },
+                      {
+                        "text": "N"
+                      },
+                      {
+                        "text": "W"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "S",
+                    "options": [
+                      {
+                        "text": "C"
+                      },
+                      {
+                        "text": "S"
+                      },
+                      {
+                        "text": "Z"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "T",
+                    "options": [
+                      {
+                        "text": "D"
+                      },
+                      {
+                        "text": "P"
+                      },
+                      {
+                        "text": "T"
+                      }
+                    ],
+                    "answer": 2
+                  }
+                ]
+              }
+            },
+            {
+              "id": "CO1-24",
+              "version": 2,
               "type": "spelling",
               "title": "Palavra FROG",
               "available": true,
@@ -2056,7 +2611,8 @@
               "game": {
                 "word": "FROG",
                 "art": "sapo"
-              }
+              },
+              "audio": "frog"
             },
             {
               "id": "CO1-P4",
@@ -2192,7 +2748,7 @@
           "missions": [
             {
               "id": "CO2-01",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Qual vem antes?",
               "available": true,
@@ -2291,11 +2847,12 @@
                     "answer": 2
                   }
                 ]
-              }
+              },
+              "audio": "before"
             },
             {
               "id": "CO2-02",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Qual vem depois?",
               "available": true,
@@ -2394,11 +2951,12 @@
                     "answer": 1
                   }
                 ]
-              }
+              },
+              "audio": "after"
             },
             {
               "id": "CO2-03",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Qual fica no meio?",
               "available": true,
@@ -2480,11 +3038,12 @@
                     "answer": 0
                   }
                 ]
-              }
+              },
+              "audio": "between"
             },
             {
               "id": "CO2-04",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Um a mais",
               "available": true,
@@ -2561,11 +3120,12 @@
                     "answer": 0
                   }
                 ]
-              }
+              },
+              "audio": "one more"
             },
             {
               "id": "CO2-05",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Um a menos",
               "available": true,
@@ -2637,6 +3197,114 @@
                       {
                         "art": "bird",
                         "count": 7
+                      }
+                    ],
+                    "answer": 2
+                  }
+                ]
+              },
+              "audio": "one fewer"
+            },
+            {
+              "id": "CO2-24",
+              "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: números",
+              "available": true,
+              "bookRef": "Curious Ones — Stage 2, p. 14 (“Trace the number that comes before”). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir o número em inglês e tocar no numeral.",
+              "word": "zero to ten",
+              "meaning": "zero a dez",
+              "adultTip": "O app fala em inglês ao abrir cada rodada. Deixe a criança ouvir e escolher sozinha; toque no alto-falante amarelo para ouvir de novo. Evite traduzir antes de ela tentar.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "seven",
+                    "options": [
+                      {
+                        "text": "7"
+                      },
+                      {
+                        "text": "4"
+                      },
+                      {
+                        "text": "9"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "nine",
+                    "options": [
+                      {
+                        "text": "6"
+                      },
+                      {
+                        "text": "9"
+                      },
+                      {
+                        "text": "5"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "six",
+                    "options": [
+                      {
+                        "text": "8"
+                      },
+                      {
+                        "text": "3"
+                      },
+                      {
+                        "text": "6"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "ten",
+                    "options": [
+                      {
+                        "text": "10"
+                      },
+                      {
+                        "text": "2"
+                      },
+                      {
+                        "text": "7"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "eight",
+                    "options": [
+                      {
+                        "text": "3"
+                      },
+                      {
+                        "text": "8"
+                      },
+                      {
+                        "text": "1"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "zero",
+                    "options": [
+                      {
+                        "text": "6"
+                      },
+                      {
+                        "text": "9"
+                      },
+                      {
+                        "text": "0"
                       }
                     ],
                     "answer": 2
@@ -2762,7 +3430,7 @@
           "missions": [
             {
               "id": "CO2-06",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Mais ou menos",
               "available": true,
@@ -2789,7 +3457,8 @@
                         "count": 2
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "more"
                   },
                   {
                     "prompt": {
@@ -2805,7 +3474,8 @@
                         "count": 1
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "less"
                   },
                   {
                     "prompt": {
@@ -2821,7 +3491,8 @@
                         "count": 3
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "more"
                   },
                   {
                     "prompt": {
@@ -2837,14 +3508,15 @@
                         "count": 4
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "less"
                   }
                 ]
               }
             },
             {
               "id": "CO2-07",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Igual ao modelo",
               "available": true,
@@ -2926,11 +3598,12 @@
                     "answer": 1
                   }
                 ]
-              }
+              },
+              "audio": "same"
             },
             {
               "id": "CO2-08",
-              "version": 1,
+              "version": 3,
               "type": "pick",
               "title": "Qual é diferente?",
               "available": true,
@@ -2958,7 +3631,8 @@
                         "art": "mouse"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "different"
                   },
                   {
                     "prompt": {
@@ -2975,7 +3649,8 @@
                         "art": "moon"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "different"
                   },
                   {
                     "prompt": {
@@ -2992,7 +3667,8 @@
                         "art": "bee"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "different"
                   },
                   {
                     "prompt": {
@@ -3009,10 +3685,12 @@
                         "art": "school_bus"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "different"
                   }
                 ]
-              }
+              },
+              "audio": "different"
             },
             {
               "id": "CO2-09",
@@ -3119,7 +3797,7 @@
             },
             {
               "id": "CO2-10",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Verão ou inverno",
               "available": true,
@@ -3147,7 +3825,8 @@
                         "art": "sled"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "winter"
                   },
                   {
                     "prompt": {
@@ -3164,7 +3843,8 @@
                         "art": "fan"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "summer"
                   },
                   {
                     "prompt": {
@@ -3181,7 +3861,8 @@
                         "art": "coat"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "winter"
                   },
                   {
                     "prompt": {
@@ -3198,14 +3879,15 @@
                         "art": "watermelon"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "summer"
                   }
                 ]
               }
             },
             {
               "id": "CO2-P2",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: comparar",
               "available": true,
@@ -3232,7 +3914,8 @@
                         "count": 5
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "more"
                   },
                   {
                     "prompt": {
@@ -3266,7 +3949,8 @@
                         "art": "moon"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "different"
                   },
                   {
                     "prompt": {
@@ -3300,7 +3984,8 @@
                         "art": "fan"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "winter"
                   }
                 ]
               }
@@ -3312,7 +3997,7 @@
           "missions": [
             {
               "id": "CO2-11",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Feliz ou triste",
               "available": true,
@@ -3337,7 +4022,8 @@
                         "art": "sad"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "happy"
                   },
                   {
                     "prompt": {
@@ -3351,7 +4037,8 @@
                         "art": "sad"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "sad"
                   },
                   {
                     "prompt": {
@@ -3365,14 +4052,15 @@
                         "art": "sad"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "happy"
                   }
                 ]
               }
             },
             {
               "id": "CO2-12",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Os sentidos",
               "available": true,
@@ -3400,7 +4088,8 @@
                         "art": "rose"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "hear"
                   },
                   {
                     "prompt": {
@@ -3417,7 +4106,8 @@
                         "art": "teddy_bear"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "touch"
                   },
                   {
                     "prompt": {
@@ -3434,7 +4124,8 @@
                         "art": "apple"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "hear"
                   }
                 ]
               }
@@ -3548,8 +4239,97 @@
               }
             },
             {
-              "id": "CO2-P3",
+              "id": "CO2-25",
               "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: opostos",
+              "available": true,
+              "bookRef": "Curious Ones — Stage 2, pp. 48–51 (“Draw lines to match the opposites”). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir a palavra em inglês e tocar na figura certa do par de opostos.",
+              "word": "hot, night, up, dry, big, open",
+              "meaning": "quente, noite, para cima, seco, grande, aberto",
+              "adultTip": "O app fala em inglês ao abrir cada rodada. Deixe a criança ouvir e escolher sozinha; toque no alto-falante amarelo para ouvir de novo. Evite traduzir antes de ela tentar.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "hot",
+                    "options": [
+                      {
+                        "art": "hot"
+                      },
+                      {
+                        "art": "cold"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "night",
+                    "options": [
+                      {
+                        "art": "day"
+                      },
+                      {
+                        "art": "night"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "up",
+                    "options": [
+                      {
+                        "art": "up"
+                      },
+                      {
+                        "art": "down"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "dry",
+                    "options": [
+                      {
+                        "art": "wet"
+                      },
+                      {
+                        "art": "dry"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "big",
+                    "options": [
+                      {
+                        "art": "big"
+                      },
+                      {
+                        "art": "little"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "open",
+                    "options": [
+                      {
+                        "art": "closed"
+                      },
+                      {
+                        "art": "open"
+                      }
+                    ],
+                    "answer": 1
+                  }
+                ]
+              }
+            },
+            {
+              "id": "CO2-P3",
+              "version": 2,
               "type": "pick",
               "title": "Prova: emoções e opostos",
               "available": true,
@@ -3574,7 +4354,8 @@
                         "art": "sad"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "sad"
                   },
                   {
                     "prompt": {
@@ -3720,7 +4501,7 @@
             },
             {
               "id": "CO2-16",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Som do T, B e M",
               "available": true,
@@ -3729,7 +4510,7 @@
               "goal": "Achar a figura que começa com o som da letra.",
               "word": "tire, bell, mouse, toes, bed, milk",
               "meaning": "palavras com o som das letras",
-              "adultTip": "Faça o som da letra (não o nome): /t/, /b/, /m/. Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
+              "adultTip": "Toque no alto-falante para ouvir o som da letra (não o nome). Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
               "offScreen": "Brinquem de achar em casa coisas que começam com o mesmo som.",
               "game": {
                 "rounds": [
@@ -3748,7 +4529,8 @@
                         "art": "mouse"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/t/"
                   },
                   {
                     "prompt": {
@@ -3765,7 +4547,8 @@
                         "art": "tire"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/b/"
                   },
                   {
                     "prompt": {
@@ -3782,7 +4565,8 @@
                         "art": "bed"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/m/"
                   },
                   {
                     "prompt": {
@@ -3799,7 +4583,8 @@
                         "art": "toes"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/t/"
                   },
                   {
                     "prompt": {
@@ -3816,7 +4601,8 @@
                         "art": "bed"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/b/"
                   },
                   {
                     "prompt": {
@@ -3833,14 +4619,15 @@
                         "art": "tub"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/m/"
                   }
                 ]
               }
             },
             {
               "id": "CO2-17",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Som do K, D e N",
               "available": true,
@@ -3849,7 +4636,7 @@
               "goal": "Achar a figura que começa com o som da letra.",
               "word": "kite, duck, nest, king, drum, net",
               "meaning": "palavras com o som das letras",
-              "adultTip": "Faça o som da letra (não o nome): /t/, /b/, /m/. Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
+              "adultTip": "Toque no alto-falante para ouvir o som da letra (não o nome). Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
               "offScreen": "Brinquem de achar em casa coisas que começam com o mesmo som.",
               "game": {
                 "rounds": [
@@ -3868,7 +4655,8 @@
                         "art": "nest"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/k/"
                   },
                   {
                     "prompt": {
@@ -3885,7 +4673,8 @@
                         "art": "kite"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/d/"
                   },
                   {
                     "prompt": {
@@ -3902,7 +4691,8 @@
                         "art": "nest"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/n/"
                   },
                   {
                     "prompt": {
@@ -3919,7 +4709,8 @@
                         "art": "nut"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/k/"
                   },
                   {
                     "prompt": {
@@ -3936,7 +4727,8 @@
                         "art": "net"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/d/"
                   },
                   {
                     "prompt": {
@@ -3953,14 +4745,15 @@
                         "art": "kite"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/n/"
                   }
                 ]
               }
             },
             {
               "id": "CO2-18",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Som do P, H e C",
               "available": true,
@@ -3969,7 +4762,7 @@
               "goal": "Achar a figura que começa com o som da letra.",
               "word": "pumpkin, hat, cat, pen, hen, cake",
               "meaning": "palavras com o som das letras",
-              "adultTip": "Faça o som da letra (não o nome): /t/, /b/, /m/. Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
+              "adultTip": "Toque no alto-falante para ouvir o som da letra (não o nome). Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
               "offScreen": "Brinquem de achar em casa coisas que começam com o mesmo som.",
               "game": {
                 "rounds": [
@@ -3988,7 +4781,8 @@
                         "art": "hat"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/p/"
                   },
                   {
                     "prompt": {
@@ -4005,7 +4799,8 @@
                         "art": "hat"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/h/"
                   },
                   {
                     "prompt": {
@@ -4022,7 +4817,8 @@
                         "art": "hen"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/k/"
                   },
                   {
                     "prompt": {
@@ -4039,7 +4835,8 @@
                         "art": "hive"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/p/"
                   },
                   {
                     "prompt": {
@@ -4056,7 +4853,8 @@
                         "art": "pie"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/h/"
                   },
                   {
                     "prompt": {
@@ -4073,14 +4871,15 @@
                         "art": "pumpkin"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/k/"
                   }
                 ]
               }
             },
             {
               "id": "CO2-19",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Som do W, F e G",
               "available": true,
@@ -4089,7 +4888,7 @@
               "goal": "Achar a figura que começa com o som da letra.",
               "word": "wagon, fish, goat, wig, fan, gift",
               "meaning": "palavras com o som das letras",
-              "adultTip": "Faça o som da letra (não o nome): /t/, /b/, /m/. Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
+              "adultTip": "Toque no alto-falante para ouvir o som da letra (não o nome). Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
               "offScreen": "Brinquem de achar em casa coisas que começam com o mesmo som.",
               "game": {
                 "rounds": [
@@ -4108,7 +4907,8 @@
                         "art": "goat"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/w/"
                   },
                   {
                     "prompt": {
@@ -4125,7 +4925,8 @@
                         "art": "goat"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/f/"
                   },
                   {
                     "prompt": {
@@ -4142,7 +4943,8 @@
                         "art": "wall"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/g/"
                   },
                   {
                     "prompt": {
@@ -4159,7 +4961,8 @@
                         "art": "wig"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/w/"
                   },
                   {
                     "prompt": {
@@ -4176,7 +4979,8 @@
                         "art": "fan"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/f/"
                   },
                   {
                     "prompt": {
@@ -4193,14 +4997,15 @@
                         "art": "fox"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/g/"
                   }
                 ]
               }
             },
             {
               "id": "CO2-20",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Som do L, J e S",
               "available": true,
@@ -4209,7 +5014,7 @@
               "goal": "Achar a figura que começa com o som da letra.",
               "word": "lion, jam, sun, leaf, jet, sock",
               "meaning": "palavras com o som das letras",
-              "adultTip": "Faça o som da letra (não o nome): /t/, /b/, /m/. Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
+              "adultTip": "Toque no alto-falante para ouvir o som da letra (não o nome). Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
               "offScreen": "Brinquem de achar em casa coisas que começam com o mesmo som.",
               "game": {
                 "rounds": [
@@ -4228,7 +5033,8 @@
                         "art": "sun"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/l/"
                   },
                   {
                     "prompt": {
@@ -4245,7 +5051,8 @@
                         "art": "sock"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/j/"
                   },
                   {
                     "prompt": {
@@ -4262,7 +5069,8 @@
                         "art": "sun"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/s/"
                   },
                   {
                     "prompt": {
@@ -4279,7 +5087,8 @@
                         "art": "leaf"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/l/"
                   },
                   {
                     "prompt": {
@@ -4296,7 +5105,8 @@
                         "art": "lamb"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/j/"
                   },
                   {
                     "prompt": {
@@ -4313,14 +5123,15 @@
                         "art": "sock"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/s/"
                   }
                 ]
               }
             },
             {
               "id": "CO2-21",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Som do Y, R e V",
               "available": true,
@@ -4329,7 +5140,7 @@
               "goal": "Achar a figura que começa com o som da letra.",
               "word": "yak, rose, van, yarn, rock, violin",
               "meaning": "palavras com o som das letras",
-              "adultTip": "Faça o som da letra (não o nome): /t/, /b/, /m/. Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
+              "adultTip": "Toque no alto-falante para ouvir o som da letra (não o nome). Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
               "offScreen": "Brinquem de achar em casa coisas que começam com o mesmo som.",
               "game": {
                 "rounds": [
@@ -4348,7 +5159,8 @@
                         "art": "van"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/y/"
                   },
                   {
                     "prompt": {
@@ -4365,7 +5177,8 @@
                         "art": "rose"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/r/"
                   },
                   {
                     "prompt": {
@@ -4382,7 +5195,8 @@
                         "art": "yo-yo"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/v/"
                   },
                   {
                     "prompt": {
@@ -4399,7 +5213,8 @@
                         "art": "rock"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/y/"
                   },
                   {
                     "prompt": {
@@ -4416,7 +5231,8 @@
                         "art": "yak"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/r/"
                   },
                   {
                     "prompt": {
@@ -4433,14 +5249,15 @@
                         "art": "yo-yo"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/v/"
                   }
                 ]
               }
             },
             {
               "id": "CO2-22",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Som do Z e Q",
               "available": true,
@@ -4449,7 +5266,7 @@
               "goal": "Achar a figura que começa com o som da letra.",
               "word": "zebra, queen, zipper, quilt",
               "meaning": "palavras com o som das letras",
-              "adultTip": "Faça o som da letra (não o nome): /t/, /b/, /m/. Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
+              "adultTip": "Toque no alto-falante para ouvir o som da letra (não o nome). Depois diga o nome de cada figura e deixe a criança escolher a que começa com o mesmo som.",
               "offScreen": "Brinquem de achar em casa coisas que começam com o mesmo som.",
               "game": {
                 "rounds": [
@@ -4468,7 +5285,8 @@
                         "art": "box"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/z/"
                   },
                   {
                     "prompt": {
@@ -4485,7 +5303,8 @@
                         "art": "fox"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/q/"
                   },
                   {
                     "prompt": {
@@ -4502,7 +5321,8 @@
                         "art": "quilt"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/z/"
                   },
                   {
                     "prompt": {
@@ -4519,14 +5339,247 @@
                         "art": "zebra"
                       }
                     ],
+                    "answer": 1,
+                    "audio": "/q/"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "CO2-26",
+              "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: que som?",
+              "available": true,
+              "bookRef": "Curious Ones — Stage 2, pp. 77–95 (“Beginning Sound”: circle the picture that begins with the same sound). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir o som da letra e tocar na letra que faz esse som.",
+              "word": "/t/, /m/, /s/, /p/, /f/, /l/",
+              "meaning": "sons das letras",
+              "adultTip": "O app faz o som da letra (não o nome). Deixe a criança ouvir e tocar na letra; toque no alto-falante para ouvir de novo.",
+              "offScreen": "Faça o som de uma letra e a criança procura em casa algo que começa com ele.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "/t/",
+                    "options": [
+                      {
+                        "text": "t"
+                      },
+                      {
+                        "text": "b"
+                      },
+                      {
+                        "text": "m"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "/m/",
+                    "options": [
+                      {
+                        "text": "b"
+                      },
+                      {
+                        "text": "m"
+                      },
+                      {
+                        "text": "t"
+                      }
+                    ],
                     "answer": 1
+                  },
+                  {
+                    "audio": "/s/",
+                    "options": [
+                      {
+                        "text": "l"
+                      },
+                      {
+                        "text": "j"
+                      },
+                      {
+                        "text": "s"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "/p/",
+                    "options": [
+                      {
+                        "text": "p"
+                      },
+                      {
+                        "text": "h"
+                      },
+                      {
+                        "text": "k"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "/f/",
+                    "options": [
+                      {
+                        "text": "w"
+                      },
+                      {
+                        "text": "f"
+                      },
+                      {
+                        "text": "g"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "/l/",
+                    "options": [
+                      {
+                        "text": "s"
+                      },
+                      {
+                        "text": "j"
+                      },
+                      {
+                        "text": "l"
+                      }
+                    ],
+                    "answer": 2
+                  }
+                ]
+              }
+            },
+            {
+              "id": "CO2-27",
+              "version": 1,
+              "type": "pick",
+              "title": "Ouça: com que letra começa?",
+              "available": true,
+              "bookRef": "Curious Ones — Stage 2, pp. 77–95 (“Beginning Sound”: circle the picture that begins with the same sound). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir o nome da figura e tocar na letra do primeiro som.",
+              "word": "bell, mouse, sun, fish, pen, nest",
+              "meaning": "sino, rato, sol, peixe, caneta, ninho",
+              "adultTip": "O app fala o nome da figura. Ajude a criança a esticar o primeiro som (“b-b-bell”) e tocar na letra.",
+              "offScreen": "Diga palavras em inglês e a criança fala só o primeiro som.",
+              "game": {
+                "rounds": [
+                  {
+                    "prompt": {
+                      "art": "bell"
+                    },
+                    "audio": "bell",
+                    "options": [
+                      {
+                        "text": "b"
+                      },
+                      {
+                        "text": "t"
+                      },
+                      {
+                        "text": "m"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "prompt": {
+                      "art": "mouse"
+                    },
+                    "audio": "mouse",
+                    "options": [
+                      {
+                        "text": "t"
+                      },
+                      {
+                        "text": "m"
+                      },
+                      {
+                        "text": "b"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "art": "sun"
+                    },
+                    "audio": "sun",
+                    "options": [
+                      {
+                        "text": "l"
+                      },
+                      {
+                        "text": "j"
+                      },
+                      {
+                        "text": "s"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "prompt": {
+                      "art": "fish"
+                    },
+                    "audio": "fish",
+                    "options": [
+                      {
+                        "text": "f"
+                      },
+                      {
+                        "text": "w"
+                      },
+                      {
+                        "text": "g"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "prompt": {
+                      "art": "pen"
+                    },
+                    "audio": "pen",
+                    "options": [
+                      {
+                        "text": "h"
+                      },
+                      {
+                        "text": "p"
+                      },
+                      {
+                        "text": "k"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "art": "nest"
+                    },
+                    "audio": "nest",
+                    "options": [
+                      {
+                        "text": "k"
+                      },
+                      {
+                        "text": "d"
+                      },
+                      {
+                        "text": "n"
+                      }
+                    ],
+                    "answer": 2
                   }
                 ]
               }
             },
             {
               "id": "CO2-23",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Som do fim",
               "available": true,
@@ -4535,7 +5588,7 @@
               "goal": "Achar a figura cujo nome termina com o som da letra.",
               "word": "cat, lock, bed, pen, map, box",
               "meaning": "gato, cadeado, cama, caneta, mapa, caixa",
-              "adultTip": "Diga o nome de cada figura esticando o final: “ca-t”, “lo-ck”. A letra do modelo mostra o som do fim.",
+              "adultTip": "Toque no alto-falante para ouvir o som do fim. Diga o nome de cada figura esticando o final: “ca-t”, “lo-ck”.",
               "offScreen": "Brinquem de achar palavras que terminam com o mesmo som.",
               "game": {
                 "rounds": [
@@ -4554,7 +5607,8 @@
                         "art": "bib"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/t/"
                   },
                   {
                     "prompt": {
@@ -4571,7 +5625,8 @@
                         "art": "tub"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/k/"
                   },
                   {
                     "prompt": {
@@ -4588,7 +5643,8 @@
                         "art": "drum"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/d/"
                   },
                   {
                     "prompt": {
@@ -4605,7 +5661,8 @@
                         "art": "hat"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "/n/"
                   },
                   {
                     "prompt": {
@@ -4622,7 +5679,8 @@
                         "art": "map"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/p/"
                   },
                   {
                     "prompt": {
@@ -4639,14 +5697,15 @@
                         "art": "box"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/x/"
                   }
                 ]
               }
             },
             {
               "id": "CO2-P4",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: letras e sons",
               "available": true,
@@ -4674,7 +5733,8 @@
                         "art": "bell"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/t/"
                   },
                   {
                     "prompt": {
@@ -4691,7 +5751,8 @@
                         "art": "duck"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/d/"
                   },
                   {
                     "prompt": {
@@ -4708,7 +5769,8 @@
                         "art": "hat"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/h/"
                   },
                   {
                     "prompt": {
@@ -4725,7 +5787,8 @@
                         "art": "fish"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/f/"
                   },
                   {
                     "prompt": {
@@ -4742,7 +5805,8 @@
                         "art": "lion"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "/s/"
                   },
                   {
                     "prompt": {
@@ -4759,7 +5823,8 @@
                         "art": "rose"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "/r/"
                   }
                 ]
               }
@@ -4910,7 +5975,7 @@
             },
             {
               "id": "EX1-03",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Vogal ou consoante?",
               "available": true,
@@ -4935,7 +6000,8 @@
                         "text": "vowel"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "A"
                   },
                   {
                     "prompt": {
@@ -4949,7 +6015,8 @@
                         "text": "vowel"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "B"
                   },
                   {
                     "prompt": {
@@ -4963,7 +6030,8 @@
                         "text": "consonant"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "E"
                   },
                   {
                     "prompt": {
@@ -4977,7 +6045,8 @@
                         "text": "vowel"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "M"
                   },
                   {
                     "prompt": {
@@ -4991,7 +6060,8 @@
                         "text": "consonant"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "O"
                   },
                   {
                     "prompt": {
@@ -5005,14 +6075,122 @@
                         "text": "consonant"
                       }
                     ],
+                    "answer": 1,
+                    "audio": "T"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "EX1-34",
+              "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: letras",
+              "available": true,
+              "bookRef": "Explorers — Stage 1, pp. 10–11 (“There are 21 consonants and 5 vowels”). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir o nome da letra e tocar na minúscula.",
+              "word": "B, E, G, M, R, U",
+              "meaning": "nomes das letras",
+              "adultTip": "O app fala em inglês ao abrir cada rodada. Deixe a criança ouvir e escolher sozinha; toque no alto-falante amarelo para ouvir de novo. Evite traduzir antes de ela tentar.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "B",
+                    "options": [
+                      {
+                        "text": "d"
+                      },
+                      {
+                        "text": "b"
+                      },
+                      {
+                        "text": "p"
+                      }
+                    ],
                     "answer": 1
+                  },
+                  {
+                    "audio": "E",
+                    "options": [
+                      {
+                        "text": "e"
+                      },
+                      {
+                        "text": "a"
+                      },
+                      {
+                        "text": "i"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "G",
+                    "options": [
+                      {
+                        "text": "j"
+                      },
+                      {
+                        "text": "q"
+                      },
+                      {
+                        "text": "g"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "M",
+                    "options": [
+                      {
+                        "text": "n"
+                      },
+                      {
+                        "text": "m"
+                      },
+                      {
+                        "text": "w"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "R",
+                    "options": [
+                      {
+                        "text": "r"
+                      },
+                      {
+                        "text": "l"
+                      },
+                      {
+                        "text": "y"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "U",
+                    "options": [
+                      {
+                        "text": "o"
+                      },
+                      {
+                        "text": "a"
+                      },
+                      {
+                        "text": "u"
+                      }
+                    ],
+                    "answer": 2
                   }
                 ]
               }
             },
             {
               "id": "EX1-P1",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: alfabeto",
               "available": true,
@@ -5040,7 +6218,8 @@
                         "text": "q"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "G"
                   },
                   {
                     "prompt": {
@@ -5057,7 +6236,8 @@
                         "text": "D"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "D"
                   },
                   {
                     "prompt": {
@@ -5071,7 +6251,8 @@
                         "text": "vowel"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "I"
                   },
                   {
                     "prompt": {
@@ -5085,7 +6266,8 @@
                         "text": "vowel"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "K"
                   },
                   {
                     "prompt": {
@@ -5099,7 +6281,8 @@
                         "text": "consonant"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "U"
                   }
                 ]
               }
@@ -5625,8 +6808,240 @@
               }
             },
             {
-              "id": "EX1-09",
+              "id": "EX1-35",
               "version": 1,
+              "type": "pick",
+              "title": "Ouça: qual vogal?",
+              "available": true,
+              "bookRef": "Explorers — Stage 1, pp. 14–21 (Short Vowel A). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir a palavra e tocar na vogal do meio.",
+              "word": "cat, pig, sun, fox, bed, bug",
+              "meaning": "gato, porco, sol, raposa, cama, inseto",
+              "adultTip": "O app fala a palavra. Repitam juntos esticando o meio (“c-aaa-t”) e a criança toca na vogal.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "prompt": {
+                      "art": "cat"
+                    },
+                    "audio": "cat",
+                    "options": [
+                      {
+                        "text": "a"
+                      },
+                      {
+                        "text": "i"
+                      },
+                      {
+                        "text": "u"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "prompt": {
+                      "art": "pig"
+                    },
+                    "audio": "pig",
+                    "options": [
+                      {
+                        "text": "e"
+                      },
+                      {
+                        "text": "i"
+                      },
+                      {
+                        "text": "o"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "art": "sun"
+                    },
+                    "audio": "sun",
+                    "options": [
+                      {
+                        "text": "a"
+                      },
+                      {
+                        "text": "o"
+                      },
+                      {
+                        "text": "u"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "prompt": {
+                      "art": "fox"
+                    },
+                    "audio": "fox",
+                    "options": [
+                      {
+                        "text": "o"
+                      },
+                      {
+                        "text": "i"
+                      },
+                      {
+                        "text": "e"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "prompt": {
+                      "art": "bed"
+                    },
+                    "audio": "bed",
+                    "options": [
+                      {
+                        "text": "a"
+                      },
+                      {
+                        "text": "e"
+                      },
+                      {
+                        "text": "u"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "art": "bug"
+                    },
+                    "audio": "bug",
+                    "options": [
+                      {
+                        "text": "o"
+                      },
+                      {
+                        "text": "i"
+                      },
+                      {
+                        "text": "u"
+                      }
+                    ],
+                    "answer": 2
+                  }
+                ]
+              }
+            },
+            {
+              "id": "EX1-36",
+              "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: palavras",
+              "available": true,
+              "bookRef": "Explorers — Stage 1, pp. 14–21 (Short Vowel A). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir a palavra e tocar na palavra escrita, que muda só a vogal.",
+              "word": "pin, bug, hat, ten, cut, net",
+              "meaning": "alfinete, inseto, chapéu, dez, cortar, rede",
+              "adultTip": "O app fala a palavra; as três opções mudam só a vogal. Peça para a criança ler cada uma baixinho antes de tocar.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "pin",
+                    "options": [
+                      {
+                        "text": "pan"
+                      },
+                      {
+                        "text": "pin"
+                      },
+                      {
+                        "text": "pen"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "bug",
+                    "options": [
+                      {
+                        "text": "bug"
+                      },
+                      {
+                        "text": "big"
+                      },
+                      {
+                        "text": "bag"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "hat",
+                    "options": [
+                      {
+                        "text": "hot"
+                      },
+                      {
+                        "text": "hut"
+                      },
+                      {
+                        "text": "hat"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "ten",
+                    "options": [
+                      {
+                        "text": "tin"
+                      },
+                      {
+                        "text": "ten"
+                      },
+                      {
+                        "text": "tan"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "cut",
+                    "options": [
+                      {
+                        "text": "cut"
+                      },
+                      {
+                        "text": "cat"
+                      },
+                      {
+                        "text": "cot"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "net",
+                    "options": [
+                      {
+                        "text": "nut"
+                      },
+                      {
+                        "text": "not"
+                      },
+                      {
+                        "text": "net"
+                      }
+                    ],
+                    "answer": 2
+                  }
+                ]
+              }
+            },
+            {
+              "id": "EX1-09",
+              "version": 2,
               "type": "spelling",
               "title": "Monte: CAT",
               "available": true,
@@ -5639,11 +7054,12 @@
               "game": {
                 "word": "CAT",
                 "art": "cat"
-              }
+              },
+              "audio": "cat"
             },
             {
               "id": "EX1-10",
-              "version": 1,
+              "version": 2,
               "type": "spelling",
               "title": "Monte: SUN",
               "available": true,
@@ -5656,11 +7072,12 @@
               "game": {
                 "word": "SUN",
                 "art": "sun"
-              }
+              },
+              "audio": "sun"
             },
             {
               "id": "EX1-11",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Rimas",
               "available": true,
@@ -5688,7 +7105,8 @@
                         "text": "hat"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "cat"
                   },
                   {
                     "prompt": {
@@ -5705,7 +7123,8 @@
                         "text": "tag"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "rag"
                   },
                   {
                     "prompt": {
@@ -5722,7 +7141,8 @@
                         "text": "sat"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "sick"
                   },
                   {
                     "prompt": {
@@ -5739,7 +7159,8 @@
                         "text": "pup"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "cup"
                   },
                   {
                     "prompt": {
@@ -5756,7 +7177,8 @@
                         "text": "bat"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "best"
                   },
                   {
                     "prompt": {
@@ -5773,14 +7195,15 @@
                         "text": "cat"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "egg"
                   }
                 ]
               }
             },
             {
               "id": "EX1-P2",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: vogais curtas",
               "available": true,
@@ -5893,7 +7316,8 @@
                         "text": "hat"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "cat"
                   }
                 ]
               }
@@ -6505,8 +7929,97 @@
               }
             },
             {
-              "id": "EX1-18",
+              "id": "EX1-37",
               "version": 1,
+              "type": "pick",
+              "title": "Ouça: curta ou longa?",
+              "available": true,
+              "bookRef": "Explorers — Stage 1, pp. 58–65 (Long Vowel A). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir a palavra e escolher entre a vogal curta e a longa.",
+              "word": "cape, kit, tube, cub, robe, pine",
+              "meaning": "capa, kit, tubo, filhote, roupão, pinheiro",
+              "adultTip": "O app fala a palavra. A vogal longa “diz o próprio nome” e vem com o e mudo no fim (cap → cape).",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "cape",
+                    "options": [
+                      {
+                        "text": "cap"
+                      },
+                      {
+                        "text": "cape"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "kit",
+                    "options": [
+                      {
+                        "text": "kit"
+                      },
+                      {
+                        "text": "kite"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "tube",
+                    "options": [
+                      {
+                        "text": "tub"
+                      },
+                      {
+                        "text": "tube"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "cub",
+                    "options": [
+                      {
+                        "text": "cub"
+                      },
+                      {
+                        "text": "cube"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "robe",
+                    "options": [
+                      {
+                        "text": "rob"
+                      },
+                      {
+                        "text": "robe"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "pine",
+                    "options": [
+                      {
+                        "text": "pine"
+                      },
+                      {
+                        "text": "pin"
+                      }
+                    ],
+                    "answer": 0
+                  }
+                ]
+              }
+            },
+            {
+              "id": "EX1-18",
+              "version": 2,
               "type": "spelling",
               "title": "Monte: CAKE",
               "available": true,
@@ -6519,11 +8032,12 @@
               "game": {
                 "word": "CAKE",
                 "art": "cake"
-              }
+              },
+              "audio": "cake"
             },
             {
               "id": "EX1-19",
-              "version": 1,
+              "version": 2,
               "type": "spelling",
               "title": "Monte: BEE",
               "available": true,
@@ -6536,11 +8050,12 @@
               "game": {
                 "word": "BEE",
                 "art": "abelha"
-              }
+              },
+              "audio": "bee"
             },
             {
               "id": "EX1-20",
-              "version": 1,
+              "version": 2,
               "type": "spelling",
               "title": "Monte: KITE",
               "available": true,
@@ -6553,7 +8068,8 @@
               "game": {
                 "word": "KITE",
                 "art": "kite"
-              }
+              },
+              "audio": "kite"
             },
             {
               "id": "EX1-P3",
@@ -6682,7 +8198,7 @@
           "missions": [
             {
               "id": "EX1-21",
-              "version": 1,
+              "version": 2,
               "type": "quiz",
               "title": "a ___",
               "available": true,
@@ -6709,7 +8225,8 @@
                   }
                 ],
                 "answer": "fox"
-              }
+              },
+              "audio": "a fox"
             },
             {
               "id": "EX1-22",
@@ -6829,7 +8346,7 @@
             },
             {
               "id": "EX1-23",
-              "version": 1,
+              "version": 2,
               "type": "sentence",
               "title": "I am tall",
               "available": true,
@@ -6846,11 +8363,12 @@
                   "tall"
                 ],
                 "art": "tall"
-              }
+              },
+              "audio": "I am tall"
             },
             {
               "id": "EX1-24",
-              "version": 1,
+              "version": 2,
               "type": "sentence",
               "title": "We are ten",
               "available": true,
@@ -6867,11 +8385,12 @@
                   "ten"
                 ],
                 "art": "ten"
-              }
+              },
+              "audio": "We are ten"
             },
             {
               "id": "EX1-25",
-              "version": 1,
+              "version": 2,
               "type": "sentence",
               "title": "I am in bed",
               "available": true,
@@ -6889,6 +8408,114 @@
                   "bed"
                 ],
                 "art": "bed"
+              },
+              "audio": "I am in bed"
+            },
+            {
+              "id": "EX1-38",
+              "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: frases",
+              "available": true,
+              "bookRef": "Explorers — Stage 1, pp. 118–119 (“I am tall”). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir a frase e tocar na figura que ela descreve.",
+              "word": "I am tall, We are ten, I am in bed, a fox, an egg, an apple",
+              "meaning": "Eu sou alto, Nós somos dez, Estou na cama, uma raposa, um ovo, uma maçã",
+              "adultTip": "O app fala a frase. Depois que a criança tocar, repitam a frase juntos.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "I am tall",
+                    "options": [
+                      {
+                        "art": "tall"
+                      },
+                      {
+                        "art": "bed"
+                      },
+                      {
+                        "art": "ten"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "We are ten",
+                    "options": [
+                      {
+                        "art": "bed"
+                      },
+                      {
+                        "art": "ten"
+                      },
+                      {
+                        "art": "tall"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "I am in bed",
+                    "options": [
+                      {
+                        "art": "ten"
+                      },
+                      {
+                        "art": "tall"
+                      },
+                      {
+                        "art": "bed"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "a fox",
+                    "options": [
+                      {
+                        "art": "fox"
+                      },
+                      {
+                        "art": "cat"
+                      },
+                      {
+                        "art": "bug"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "an egg",
+                    "options": [
+                      {
+                        "art": "bug"
+                      },
+                      {
+                        "art": "egg"
+                      },
+                      {
+                        "art": "pen"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "an apple",
+                    "options": [
+                      {
+                        "art": "cat"
+                      },
+                      {
+                        "art": "hat"
+                      },
+                      {
+                        "art": "apple"
+                      }
+                    ],
+                    "answer": 2
+                  }
+                ]
               }
             },
             {
@@ -7318,8 +8945,115 @@
               }
             },
             {
-              "id": "EX1-30",
+              "id": "EX1-39",
               "version": 1,
+              "type": "pick",
+              "title": "Ouça e toque: palavras novas",
+              "available": true,
+              "bookRef": "Explorers — Stage 1, pp. 122–125 (New word list: at, bat, cat, hat, mat, rat). Atividade de ouvir criada para o app.",
+              "goal": "Ouvir a palavra e tocar nela entre palavras da mesma família.",
+              "word": "rake, hen, hill, mat, well, feed",
+              "meaning": "rastelo, galinha, morro, tapete, poço, alimentar",
+              "adultTip": "O app fala a palavra; as opções mudam só a primeira letra. Peça para a criança prestar atenção no começo.",
+              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
+              "game": {
+                "rounds": [
+                  {
+                    "audio": "rake",
+                    "options": [
+                      {
+                        "text": "lake"
+                      },
+                      {
+                        "text": "cake"
+                      },
+                      {
+                        "text": "rake"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "hen",
+                    "options": [
+                      {
+                        "text": "hen"
+                      },
+                      {
+                        "text": "ten"
+                      },
+                      {
+                        "text": "pen"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "hill",
+                    "options": [
+                      {
+                        "text": "fill"
+                      },
+                      {
+                        "text": "hill"
+                      },
+                      {
+                        "text": "bill"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "audio": "mat",
+                    "options": [
+                      {
+                        "text": "bat"
+                      },
+                      {
+                        "text": "hat"
+                      },
+                      {
+                        "text": "mat"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "audio": "well",
+                    "options": [
+                      {
+                        "text": "well"
+                      },
+                      {
+                        "text": "bell"
+                      },
+                      {
+                        "text": "fell"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "audio": "feed",
+                    "options": [
+                      {
+                        "text": "seed"
+                      },
+                      {
+                        "text": "feed"
+                      },
+                      {
+                        "text": "need"
+                      }
+                    ],
+                    "answer": 1
+                  }
+                ]
+              }
+            },
+            {
+              "id": "EX1-30",
+              "version": 2,
               "type": "sentence",
               "title": "Nate ate cake",
               "available": true,
@@ -7336,11 +9070,12 @@
                   "cake"
                 ],
                 "art": "cake"
-              }
+              },
+              "audio": "Nate ate cake"
             },
             {
               "id": "EX1-31",
-              "version": 1,
+              "version": 2,
               "type": "sentence",
               "title": "Jill will win",
               "available": true,
@@ -7357,7 +9092,8 @@
                   "win"
                 ],
                 "art": "jill"
-              }
+              },
+              "audio": "Jill will win"
             },
             {
               "id": "EX1-P5",

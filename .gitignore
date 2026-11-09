@@ -4,3 +4,5 @@ dist/
 *.db-*
 .vercel/
 server/.dev-conta.txt
+.fish-audio-key
+audio-amostras/

@@ -71,7 +71,10 @@ export interface Card {
 }
 
 export interface PickRound {
-  prompt: Card;
+  /** Enunciado; pode faltar quando a rodada é só de ouvir (`audio`). */
+  prompt?: Card;
+  /** Texto em inglês falado ao abrir a rodada e no alto-falante. "/t/" = som da letra. */
+  audio?: string;
   options: Card[];
   /** Índice da opção certa. */
   answer: number;
@@ -94,6 +97,8 @@ interface MissionBase {
   icon?: string;
   /** Prova: Escolher sem ajuda, conta acertos. */
   test?: boolean;
+  /** Texto em inglês falado na tela de resultado, junto da palavra. */
+  audio?: string;
 }
 
 interface Texts {
@@ -193,7 +198,16 @@ export function validateContent(data: unknown): Content {
     return { book: l.book as BookId, rounds: l.rounds as PickRound[] };
   });
 
-  return { books, missions, placement };
+  const content = { books, missions, placement };
+  const files = new Map<string, string>();
+  for (const text of audioTexts(content).keys()) {
+    const file = audioSlug(text);
+    if (!file) throw new Error(`áudio "${text}" sem letras para o nome do arquivo`);
+    const other = files.get(file);
+    if (other !== undefined && other !== text) throw new Error(`áudios "${other}" e "${text}" dariam o mesmo arquivo ${file}.mp3`);
+    files.set(file, text);
+  }
+  return content;
 }
 
 function validateMission(m: unknown, book: BookId, chapter: string, ids: Set<string>): Mission {
@@ -207,6 +221,7 @@ function validateMission(m: unknown, book: BookId, chapter: string, ids: Set<str
   if (!isText(m.title)) throw new Error(`${m.id}: title ausente`);
   if (typeof m.available !== 'boolean') throw new Error(`${m.id}: available ausente`);
   if (m.icon !== undefined && !isText(m.icon)) throw new Error(`${m.id}: icon vazio`);
+  if (m.audio !== undefined && !isText(m.audio)) throw new Error(`${m.id}: audio vazio`);
   if (m.test !== undefined && (m.test !== true || m.type !== 'pick')) throw new Error(`${m.id}: prova só pode ser do tipo pick`);
   if (/-P\d/.test(m.id) !== (m.test === true)) throw new Error(`${m.id}: provas usam o id ${book}-PN e test: true`);
   if (m.available) {
@@ -274,7 +289,9 @@ function validateCard(where: string, c: unknown): void {
 
 function validateRound(where: string, r: unknown): void {
   if (!isObj(r)) throw new Error(`${where}: não é um objeto`);
-  validateCard(`${where} prompt`, r.prompt);
+  if (r.audio !== undefined && !isText(r.audio)) throw new Error(`${where}: audio vazio`);
+  if (r.prompt === undefined && r.audio === undefined) throw new Error(`${where}: precisa de prompt ou audio`);
+  if (r.prompt !== undefined) validateCard(`${where} prompt`, r.prompt);
   if (!Array.isArray(r.options) || r.options.length < 2 || r.options.length > 4) throw new Error(`${where}: precisa de 2 a 4 opções`);
   r.options.forEach((o, i) => validateCard(`${where} opção ${i + 1}`, o));
   if (!isInt(r.answer, 0, r.options.length - 1)) throw new Error(`${where}: answer fora das opções`);
@@ -327,10 +344,39 @@ export function artKeys(content: Content): Set<string> {
       case 'sentence': keys.add(m.game.art); break;
       case 'quiz': m.game.options.forEach((o) => keys.add(o.art)); break;
       case 'spelling': keys.add(m.game.art); break;
-      case 'pick': m.game.rounds.forEach((r) => { card(r.prompt); r.options.forEach(card); }); break;
+      case 'pick': m.game.rounds.forEach((r) => { if (r.prompt) card(r.prompt); r.options.forEach(card); }); break;
       case 'match': m.game.pairs.forEach((p) => p.forEach(card)); break;
     }
   }
-  content.placement.forEach((l) => l.rounds.forEach((r) => { card(r.prompt); r.options.forEach(card); }));
+  content.placement.forEach((l) => l.rounds.forEach((r) => { if (r.prompt) card(r.prompt); r.options.forEach(card); }));
   return keys;
+}
+
+/**
+ * Nome do arquivo de áudio (sem .mp3) para um texto falado.
+ * "/t/" → "som-t" (som da letra); "B" → "letra-b" (nome da letra); "It's a bee" → "its-a-bee".
+ */
+export function audioSlug(text: string): string {
+  const t = text.trim();
+  const sound = /^\/([a-z]+)\/$/.exec(t);
+  if (sound) return `som-${sound[1]}`;
+  if (/^[A-Z]$/.test(t)) return `letra-${t.toLowerCase()}`;
+  return t.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+/** Todos os textos falados do conteúdo, com as missões que usam cada um (para a lista de gravação). */
+export function audioTexts(content: Content): Map<string, string[]> {
+  const uses = new Map<string, string[]>();
+  const add = (text: string | undefined, where: string) => {
+    if (!text) return;
+    const list = uses.get(text) ?? [];
+    if (!list.includes(where)) list.push(where);
+    uses.set(text, list);
+  };
+  for (const m of content.missions) {
+    add(m.audio, m.id);
+    if (isPlayable(m) && m.type === 'pick') m.game.rounds.forEach((r) => add(r.audio, m.id));
+  }
+  content.placement.forEach((l) => l.rounds.forEach((r) => add(r.audio, `alinhamento ${l.book}`)));
+  return uses;
 }

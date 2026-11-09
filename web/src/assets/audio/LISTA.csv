@@ -1,0 +1,131 @@
+arquivo,texto,tipo,missoes,situacao
+a-fox.mp3,a fox,frase,EX1-21 EX1-38,ok
+an-apple.mp3,an apple,frase,EX1-38,ok
+an-egg.mp3,an egg,frase,EX1-38,ok
+i-am-in-bed.mp3,I am in bed,frase,EX1-25 EX1-38,ok
+i-am-tall.mp3,I am tall,frase,EX1-23 EX1-38,ok
+jill-will-win.mp3,Jill will win,frase,EX1-31,ok
+nate-ate-cake.mp3,Nate ate cake,frase,EX1-30,ok
+one-fewer.mp3,one fewer,frase,CO2-05,ok
+one-more.mp3,one more,frase,CO2-04,ok
+we-are-ten.mp3,We are ten,frase,EX1-24 EX1-38,ok
+letra-a.mp3,A,nome da letra,CO1-29 EX1-03,ok
+letra-b.mp3,B,nome da letra,CO1-29 EX1-03 EX1-34,ok
+letra-d.mp3,D,nome da letra,CO1-29 EX1-P1,ok
+letra-e.mp3,E,nome da letra,EX1-03 EX1-34,ok
+letra-g.mp3,G,nome da letra,EX1-34 EX1-P1,ok
+letra-i.mp3,I,nome da letra,EX1-P1,ok
+letra-k.mp3,K,nome da letra,EX1-P1,ok
+letra-m.mp3,M,nome da letra,CO1-29 EX1-03 EX1-34,ok
+letra-o.mp3,O,nome da letra,EX1-03,ok
+letra-r.mp3,R,nome da letra,EX1-34,ok
+letra-s.mp3,S,nome da letra,CO1-29,ok
+letra-t.mp3,T,nome da letra,CO1-29 EX1-03,ok
+letra-u.mp3,U,nome da letra,EX1-34 EX1-P1,ok
+after.mp3,after,palavra,CO2-02,ok
+apple.mp3,apple,palavra,CO1-28,ok
+bear.mp3,bear,palavra,CO1-28,ok
+bed.mp3,bed,palavra,EX1-35,ok
+bee.mp3,bee,palavra,EX1-19,ok
+before.mp3,before,palavra,CO2-01,ok
+bell.mp3,bell,palavra,CO2-27,ok
+best.mp3,best,palavra,EX1-11,ok
+between.mp3,between,palavra,CO2-03,ok
+big.mp3,big,palavra,CO2-25,ok
+blue.mp3,blue,palavra,CO1-25,ok
+bug.mp3,bug,palavra,EX1-35 EX1-36,ok
+cake.mp3,cake,palavra,EX1-18,ok
+cape.mp3,cape,palavra,EX1-37,ok
+cat.mp3,cat,palavra,EX1-35 EX1-09 EX1-11 EX1-P2,ok
+circle.mp3,circle,palavra,CO1-26,ok
+cub.mp3,cub,palavra,EX1-37,ok
+cup.mp3,cup,palavra,EX1-11,ok
+cut.mp3,cut,palavra,EX1-36,ok
+diamond.mp3,diamond,palavra,CO1-26,ok
+different.mp3,different,palavra,CO2-08 CO2-P2,ok
+dry.mp3,dry,palavra,CO2-25,ok
+duck.mp3,duck,palavra,CO1-28,ok
+egg.mp3,egg,palavra,EX1-11,ok
+eight.mp3,eight,palavra,CO1-27 CO2-24,ok
+empty.mp3,empty,palavra,CO1-16 CO1-P3,ok
+feed.mp3,feed,palavra,EX1-39,ok
+fish.mp3,fish,palavra,CO1-28 CO2-27,ok
+five.mp3,five,palavra,CO1-27,ok
+fox.mp3,fox,palavra,EX1-35,ok
+frog.mp3,frog,palavra,CO1-24,ok
+full.mp3,full,palavra,CO1-16 CO1-P3,ok
+green.mp3,green,palavra,CO1-03 CO1-25,ok
+happy.mp3,happy,palavra,CO2-11,ok
+hat.mp3,hat,palavra,EX1-36,ok
+hear.mp3,hear,palavra,CO2-12,ok
+hen.mp3,hen,palavra,EX1-39,ok
+hill.mp3,hill,palavra,EX1-39,ok
+hot.mp3,hot,palavra,CO2-25,ok
+kit.mp3,kit,palavra,EX1-37,ok
+kite.mp3,kite,palavra,EX1-20,ok
+less.mp3,less,palavra,CO2-06,ok
+longer.mp3,longer,palavra,CO1-15,ok
+mat.mp3,mat,palavra,EX1-39,ok
+more.mp3,more,palavra,CO2-06 CO2-P2,ok
+mouse.mp3,mouse,palavra,CO2-27,ok
+nest.mp3,nest,palavra,CO2-27,ok
+net.mp3,net,palavra,EX1-36,ok
+night.mp3,night,palavra,CO2-25,ok
+nine.mp3,nine,palavra,CO2-24,ok
+one.mp3,one,palavra,CO1-09 CO1-27,ok
+open.mp3,open,palavra,CO2-25,ok
+orange.mp3,orange,palavra,CO1-25,ok
+oval.mp3,oval,palavra,CO1-26,ok
+pen.mp3,pen,palavra,CO2-27,ok
+pig.mp3,pig,palavra,CO1-28 EX1-35,ok
+pin.mp3,pin,palavra,EX1-36,ok
+pine.mp3,pine,palavra,EX1-37,ok
+purple.mp3,purple,palavra,CO1-25,ok
+rabbit.mp3,rabbit,palavra,CO1-01 CO1-02,ok
+rag.mp3,rag,palavra,EX1-11,ok
+rake.mp3,rake,palavra,EX1-39,ok
+rectangle.mp3,rectangle,palavra,CO1-26,ok
+red.mp3,red,palavra,CO1-25,ok
+robe.mp3,robe,palavra,EX1-37,ok
+sad.mp3,sad,palavra,CO2-11 CO2-P3,ok
+same.mp3,same,palavra,CO2-07,ok
+seven.mp3,seven,palavra,CO2-24,ok
+shorter.mp3,shorter,palavra,CO1-15 CO1-P3,ok
+sick.mp3,sick,palavra,EX1-11,ok
+six.mp3,six,palavra,CO1-27 CO2-24,ok
+square.mp3,square,palavra,CO1-26,ok
+summer.mp3,summer,palavra,CO2-10,ok
+sun.mp3,sun,palavra,CO2-27 EX1-35 EX1-10,ok
+taller.mp3,taller,palavra,CO1-15 CO1-P3,ok
+ten.mp3,ten,palavra,CO1-27 CO2-24 EX1-36,ok
+three.mp3,three,palavra,CO1-27,ok
+touch.mp3,touch,palavra,CO2-12,ok
+triangle.mp3,triangle,palavra,CO1-26,ok
+tube.mp3,tube,palavra,EX1-37,ok
+two.mp3,two,palavra,CO1-10,ok
+up.mp3,up,palavra,CO2-25,ok
+well.mp3,well,palavra,EX1-39,ok
+winter.mp3,winter,palavra,CO2-10 CO2-P2,ok
+yellow.mp3,yellow,palavra,CO1-04 CO1-25,ok
+zebra.mp3,zebra,palavra,CO1-28,ok
+zero.mp3,zero,palavra,CO1-14 CO2-24,ok
+som-b.mp3,/b/,som da letra,CO2-16,falta
+som-d.mp3,/d/,som da letra,CO2-17 CO2-23 CO2-P4,falta
+som-f.mp3,/f/,som da letra,CO2-19 CO2-26 CO2-P4,falta
+som-g.mp3,/g/,som da letra,CO2-19,falta
+som-h.mp3,/h/,som da letra,CO2-18 CO2-P4,falta
+som-j.mp3,/j/,som da letra,CO2-20,falta
+som-k.mp3,/k/,som da letra,CO2-17 CO2-18 CO2-23,falta
+som-l.mp3,/l/,som da letra,CO2-20 CO2-26,falta
+som-m.mp3,/m/,som da letra,CO2-16 CO2-26,falta
+som-n.mp3,/n/,som da letra,CO2-17 CO2-23,falta
+som-p.mp3,/p/,som da letra,CO2-18 CO2-26 CO2-23,falta
+som-q.mp3,/q/,som da letra,CO2-22,falta
+som-r.mp3,/r/,som da letra,CO2-21 CO2-P4,falta
+som-s.mp3,/s/,som da letra,CO2-20 CO2-26 CO2-P4,falta
+som-t.mp3,/t/,som da letra,CO2-16 CO2-26 CO2-23 CO2-P4,falta
+som-v.mp3,/v/,som da letra,CO2-21,falta
+som-w.mp3,/w/,som da letra,CO2-19,falta
+som-x.mp3,/x/,som da letra,CO2-23,falta
+som-y.mp3,/y/,som da letra,CO2-21,falta
+som-z.mp3,/z/,som da letra,CO2-22,falta

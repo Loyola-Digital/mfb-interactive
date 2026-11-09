@@ -2,6 +2,7 @@
 import { isPlayable, type PlayableMission } from '../../../shared/content.ts';
 import { uuid } from '../../../shared/progress.ts';
 import { rabbit } from '../art.ts';
+import { say, speaker } from '../audio.ts';
 import { missionResult, playMission } from '../games/index.ts';
 import type { GameHandle } from '../games/types.ts';
 import type { App } from '../main.ts';
@@ -91,7 +92,7 @@ function showResult(app: App, m: PlayableMission, number: number) {
   // Na prova a criança só vê a comemoração; os acertos ficam na área dos pais.
   const scene = m.test
     ? `<div class="result-art result-art--test">${rabbit('celebrating')}</div><p class="result-scene__word"><span class="word word--big">Great job!</span></p>`
-    : `${missionResult(m)}<p class="result-scene__word"><span class="word word--big${m.word.length > 14 ? ' word--long' : ''}">${esc(m.word)}</span></p>`;
+    : `${missionResult(m)}<p class="result-scene__word"><span class="word word--big${m.word.length > 14 ? ' word--long' : ''}">${esc(m.word)}</span>${m.audio ? speaker(m.audio) : ''}</p>`;
   mount(app.root, `<div class="screen screen--result">
     <section class="result-scene" aria-label="Resultado">${scene}</section>
     <section class="mfb-card adult-card result-card">
@@ -106,6 +107,7 @@ function showResult(app: App, m: PlayableMission, number: number) {
       </div>
     </section>
   </div>`);
+  if (m.audio && !m.test) say(m.audio, app.root.querySelector('.result-scene [data-say]'));
   if (next) app.root.querySelector('[data-next]')!.addEventListener('click', () => app.go(`#/missao/${next.id}`));
   app.root.querySelector('[data-again]')!.addEventListener('click', () => showPlay(app, m, number));
   app.root.querySelector('[data-garden]')!.addEventListener('click', () => app.go(sectionOf(m)));
