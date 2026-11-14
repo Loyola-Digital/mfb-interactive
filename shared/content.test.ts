@@ -79,8 +79,23 @@ describe('validateContent', () => {
     expect(() => ok({ ...pick, game: { rounds: [listen, { ...listen, audio: 'Bear!' }] } })).toThrow('mesmo arquivo bear.mp3');
   });
 
-  it('nome do arquivo de áudio: som da letra, nome da letra, palavra e frase', () => {
-    expect(['/t/', 'B', 'a', 'apple', "It's a bee", 'I am in bed'].map(audioSlug)).toEqual(['som-t', 'letra-b', 'a', 'apple', 'its-a-bee', 'i-am-in-bed']);
+  it('nome do arquivo de áudio: som da letra, nome da letra, palavra, frase e instrução em português', () => {
+    expect(['/t/', 'B', 'a', 'apple', "It's a bee", 'I am in bed', 'Qual é igual a esta?'].map(audioSlug))
+      .toEqual(['som-t', 'letra-b', 'a', 'apple', 'its-a-bee', 'i-am-in-bed', 'qual-e-igual-a-esta']);
+  });
+
+  it('Instrução precisa de pt e en; fala da carta não pode ser vazia; ambas entram na lista de gravação', () => {
+    const instruction = { pt: 'Qual é?', en: 'Which one?' };
+    expect(() => ok({ ...pick, instruction: { pt: 'Qual é?' } })).toThrow('pt e en');
+    const spoken = { prompt: round.prompt, options: [{ art: 'bear', audio: 'bear' }, { art: 'cup' }], answer: 0 };
+    expect(() => ok({ ...pick, game: { rounds: [round, { ...spoken, options: [{ art: 'bear', audio: '' }, { art: 'cup' }] }] } })).toThrow('audio vazio');
+    const content = validateContent({
+      books: [book('CO1', [{ ...pick, instruction, game: { rounds: [round, spoken] } }]), book('CO2', [{ ...soon, id: 'CO2-01' }]), book('EX1', [{ ...soon, id: 'EX1-01' }])],
+      placement,
+    });
+    const texts = audioTexts(content);
+    expect([texts.get('Qual é?'), texts.get('Which one?'), texts.get('bear')]).toEqual([['CO1-06'], ['CO1-06'], ['CO1-06']]);
+    expect(texts.get('Good job!')).toEqual(['acertos e erros']);
   });
 
   it('Ligar: recusa pares de menos e carta repetida na mesma coluna', () => {
@@ -136,6 +151,26 @@ describe('arquivo real de conteúdo', () => {
     expect(texts.get('I am tall')).toEqual(['EX1-23', 'EX1-38']);
     const listen = content.missions.filter((m) => isPlayable(m) && m.type === 'pick' && m.game.rounds.some((r) => !r.prompt));
     expect(listen.length).toBeGreaterThanOrEqual(12);
+  });
+
+  it('toda atividade fala o que fazer; as provas falam a palavra ou a letra das figuras', () => {
+    expect(content.missions.filter((m) => !m.test && !m.instruction).map((m) => m.id)).toEqual([]);
+    const silent = (id: string) => byId(id).type === 'pick' && (byId(id) as Extract<PlayableMission, { type: 'pick' }>).game.rounds.filter((r) => !r.audio).length;
+    for (const id of ['CO1-P1', 'CO1-P4', 'EX1-P1', 'EX1-P2', 'EX1-P3', 'EX1-P4', 'EX1-P5', 'CO2-P4']) expect(silent(id), id).toBe(0);
+    // A prova de vogais curtas é toda figura → palavra escrita.
+    const p2 = byId('EX1-P2') as Extract<PlayableMission, { type: 'pick' }>;
+    expect(p2.game.rounds.every((r) => r.prompt?.art && r.options.every((o) => o.text))).toBe(true);
+  });
+
+  it('Explorers: letra e palavra de A a Z (sem X), a palavra certa começa com a letra e é falada', () => {
+    const ids = ['EX1-01', 'EX1-02', 'EX1-34', 'EX1-40'];
+    const rounds = ids.flatMap((id) => (byId(id) as Extract<PlayableMission, { type: 'pick' }>).game.rounds);
+    expect(rounds.map((r) => r.audio).join('')).toBe('ABCDEFGHIJKLMNOPQRSTUVWYZ');
+    for (const r of rounds) {
+      const right = r.options[r.answer];
+      expect(right.audio?.[0], right.audio).toBe(r.audio!.toLowerCase());
+      expect(r.options.filter((o) => o.text?.[0] === r.audio!.toLowerCase()), r.audio).toEqual([right]);
+    }
   });
 
   it('o teste de alinhamento tem 4 rodadas por apostila', () => {

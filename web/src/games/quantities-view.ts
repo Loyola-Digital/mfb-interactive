@@ -1,10 +1,13 @@
 // Tela do jogo de Quantidades: pegar tulipa no cesto e plantar uma em cada cova.
 import { img, rabbit } from '../art.ts';
+import { cheer, oops, say, sayNext, speaker } from '../audio.ts';
 import { esc, reducedMotion } from '../ui.ts';
 import { createDemo, nudge } from './demo.ts';
 import { init, reduce, type QuantitiesEffect } from './quantities.ts';
 import type { GameModule } from './types.ts';
 
+// Cada tulipa plantada é contada em voz alta.
+const COUNT = ['one', 'two', 'three', 'four', 'five'];
 const tulips = (n: number, cls = '') => Array.from({ length: n }, () => img('tulipa', cls)).join('');
 
 export const quantitiesGame: GameModule<'quantities'> = {
@@ -15,7 +18,7 @@ export const quantitiesGame: GameModule<'quantities'> = {
     root.innerHTML = `<div class="qty game">
       <div class="game-model mfb-card" aria-label="Modelo">
         <span class="numeral">${esc(g.numeral)}</span>
-        <span class="word">${esc(mission.word)}</span>
+        <span class="word">${esc(mission.word)}</span>${mission.audio ? speaker(mission.audio) : ''}
         <span class="qty__model-flowers">${tulips(g.slots)}</span>
       </div>
       <div class="qty__bed">
@@ -53,6 +56,7 @@ export const quantitiesGame: GameModule<'quantities'> = {
           setHolding(false);
           slots.forEach((s) => s.classList.remove('is-hint'));
           slots[effect.index].classList.add('is-filled');
+          say(COUNT[slots.filter((s) => s.classList.contains('is-filled')).length - 1]);
           break;
         case 'emptyHand':
           nudge(basket);
@@ -60,6 +64,7 @@ export const quantitiesGame: GameModule<'quantities'> = {
         case 'invalid':
           nudge(slots[effect.index]);
           nudge(rabbitBox, 'is-thinking');
+          oops();
           break;
         case 'autoHelp':
           slots[effect.index].classList.add('is-hint');
@@ -69,6 +74,7 @@ export const quantitiesGame: GameModule<'quantities'> = {
         case 'completed':
           demo.cancel();
           rabbitBox.innerHTML = rabbit('celebrating');
+          cheer();
           completeTimer = window.setTimeout(hooks.onComplete, reducedMotion() ? 600 : 1600);
           break;
       }
@@ -84,6 +90,7 @@ export const quantitiesGame: GameModule<'quantities'> = {
       r.effects.forEach(apply);
     });
 
+    if (mission.audio) sayNext(mission.audio, el.querySelector('.game-model [data-say]'));
     if (hooks.demoFirst) {
       requestAnimationFrame(showDemo);
       hooks.onDemoSeen();

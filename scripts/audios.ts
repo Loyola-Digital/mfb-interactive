@@ -7,7 +7,9 @@ const root = new URL('../', import.meta.url);
 const dir = new URL('web/src/assets/audio/', root);
 const content = validateContent(JSON.parse(readFileSync(new URL('web/public/content/missions.json', root), 'utf8')));
 
-const kind = (t: string) => (/^\/[a-z]+\/$/.test(t) ? 'som da letra' : /^[A-Z]$/.test(t) ? 'nome da letra' : t.includes(' ') ? 'frase' : 'palavra');
+// Instruções em português: mesma voz, mas o resto da lista é inglês.
+const portuguese = new Set(content.missions.flatMap((m) => (m.instruction ? [m.instruction.pt] : [])));
+const kind = (t: string) => (/^\/[a-z]+\/$/.test(t) ? 'som da letra' : /^[A-Z]$/.test(t) ? 'nome da letra' : portuguese.has(t) ? 'português' : t.includes(' ') ? 'frase' : 'palavra');
 const csv = (v: string) => (/[",;\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v);
 
 const rows = [...audioTexts(content)].map(([text, uses]) => {
@@ -22,7 +24,7 @@ writeFileSync(
 );
 const missing = rows.filter((r) => !r.ok);
 console.log(`${rows.length} áudios, ${missing.length} faltando. Lista em web/src/assets/audio/LISTA.csv`);
-for (const k of ['som da letra', 'nome da letra', 'palavra', 'frase']) {
+for (const k of ['som da letra', 'nome da letra', 'palavra', 'frase', 'português']) {
   const list = missing.filter((r) => r.kind === k);
   if (list.length) console.log(`\n${k} (${list.length}): ${list.map((r) => r.text).join(' · ')}`);
 }

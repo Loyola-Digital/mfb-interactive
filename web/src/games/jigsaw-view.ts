@@ -1,6 +1,7 @@
 // Quebra-cabeça de palavra/frase: bicho grande, tabuleiro com os contornos e peças espalhadas.
 // A peça encaixa arrastando até o espaço ou tocando na peça e depois no espaço (o PRD exige que só toque baste).
 import { img, rabbit } from '../art.ts';
+import { cheer, oops, sayNext, speaker } from '../audio.ts';
 import { esc, reducedMotion, shuffled } from '../ui.ts';
 import { createDemo, nudge } from './demo.ts';
 import { init, reduce, type JigsawEffect } from './jigsaw.ts';
@@ -41,7 +42,7 @@ function shape(i: number, n: number, w: number, cls: string): string {
     <path d="${piecePath(w, i > 0, i < n - 1)}"/></svg>`;
 }
 
-export function playJigsaw(root: HTMLElement, opts: { kind: string; art: string; pieces: JigsawPiece[]; hooks: GameHooks }): GameHandle {
+export function playJigsaw(root: HTMLElement, opts: { kind: string; art: string; audio?: string; pieces: JigsawPiece[]; hooks: GameHooks }): GameHandle {
   const { pieces, hooks } = opts;
   const n = pieces.length;
   let state = init(n);
@@ -49,7 +50,7 @@ export function playJigsaw(root: HTMLElement, opts: { kind: string; art: string;
   const boardW = pieces.reduce((s, p) => s + p.width, 0);
 
   root.innerHTML = `<div class="jig game jig--${opts.kind}">
-    <div class="jig__art">${img(opts.art)}</div>
+    <div class="jig__art">${img(opts.art)}${opts.audio ? speaker(opts.audio) : ''}</div>
     <div class="jig__board" style="width:${boardW}px; height:${H}px">
       ${pieces.map((p, i) => {
         const left = pieces.slice(0, i).reduce((s, q) => s + q.width, 0);
@@ -146,6 +147,7 @@ export function playJigsaw(root: HTMLElement, opts: { kind: string; art: string;
         nudge(pieceEls[effect.piece]);
         nudge(slots[effect.slot]);
         nudge(rabbitBox, 'is-thinking');
+        oops();
         break;
       case 'autoHelp':
         slots[effect.piece].classList.add('is-hint');
@@ -156,6 +158,7 @@ export function playJigsaw(root: HTMLElement, opts: { kind: string; art: string;
         demo.cancel();
         el.classList.add('is-complete');
         rabbitBox.innerHTML = rabbit('celebrating');
+        cheer();
         completeTimer = window.setTimeout(hooks.onComplete, reducedMotion() ? 700 : 2000);
         break;
     }
@@ -218,6 +221,7 @@ export function playJigsaw(root: HTMLElement, opts: { kind: string; art: string;
   // A tela já está no documento: dá para medir e espalhar as peças sem esperar um quadro.
   relayout();
   el.classList.add('is-ready');
+  if (opts.audio) sayNext(opts.audio, el.querySelector('.jig__art [data-say]'));
   if (hooks.demoFirst) {
     requestAnimationFrame(() => demo.run([pieceEls[0], slots[0]]));
     hooks.onDemoSeen();

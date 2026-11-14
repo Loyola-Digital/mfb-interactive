@@ -17,7 +17,6 @@ h1, h2, p { margin: 0; }
 .adult-card { display: grid; gap: var(--space-4); border: 1px solid var(--hairline); }
 .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .actions > .mfb-btn { flex: 1 1 160px; }
-.actions > .result-card__next { flex-basis: 100%; }
 
 .form { display: grid; gap: var(--space-4); }
 .field { display: grid; gap: var(--space-2); }
@@ -113,7 +112,7 @@ h1, h2, p { margin: 0; }
 .garden__rabbit { position: absolute; width: 60px; transform: translate(36px, -90%); pointer-events: none; z-index: 1; }
 
 /* ---------- missão (área da criança) ---------- */
-.screen--play { min-height: 100dvh; display: grid; grid-template-rows: auto 1fr; max-width: 720px; margin: 0 auto; position: relative; background: var(--leaf-tint); }
+.screen--play { min-height: 100dvh; display: grid; grid-template-rows: auto 1fr; grid-template-columns: minmax(0, 1fr); max-width: 720px; margin: 0 auto; position: relative; background: var(--leaf-tint); }
 .adult-bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); padding: var(--space-3) var(--space-4); background: var(--surface); border-bottom: 1px solid var(--hairline); }
 .adult-bar__title { min-width: 0; color: var(--ink-muted); text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .play-area { position: relative; }
@@ -188,7 +187,8 @@ h1, h2, p { margin: 0; }
 
 /* Quebra-cabeça (montar palavra e frase) */
 .jig { position: relative; grid-template-rows: auto auto 1fr; justify-items: center; overflow: hidden; touch-action: manipulation; }
-.jig__art { width: min(42vw, 170px); }
+.jig__art { position: relative; width: min(42vw, 170px); }
+.jig__art > .speaker { position: absolute; top: 0; right: calc(-1 * var(--space-6)); }
 .jig.is-complete .jig__art { animation: hop .7s ease-in-out 2; }
 .jig__board { position: relative; margin-top: var(--space-2); }
 .jig__tray { align-self: stretch; justify-self: stretch; min-height: 190px; }
@@ -241,9 +241,28 @@ h1, h2, p { margin: 0; }
 
 .result-art--word { width: min(50vw, 200px); }
 
-/* ---------- resultado ---------- */
-.screen--result { max-width: 560px; margin: 0 auto; padding: var(--space-4) var(--space-4) var(--space-7); display: grid; gap: var(--space-5); }
-.result-scene { position: relative; overflow: hidden; display: grid; justify-items: center; gap: var(--space-3); padding: var(--space-5) var(--space-4); border-radius: var(--radius-lg); background: var(--leaf-tint); }
+/* ---------- fim da atividade, na tela do jogo ---------- */
+.finish { display: grid; align-content: center; justify-items: center; gap: var(--space-6); padding: var(--space-5) var(--space-4) var(--space-7); }
+.result-scene { position: relative; overflow: hidden; display: grid; justify-items: center; gap: var(--space-3); width: 100%; }
+.finish__actions { display: flex; align-items: center; justify-content: center; gap: var(--space-5); }
+.finish__next, .finish__again { display: grid; place-items: center; padding: 0; border-radius: 50%; border: 4px solid var(--ink); cursor: pointer; box-shadow: var(--shadow-card); }
+.finish__next { width: 112px; height: 112px; background: var(--coral); animation: pulse-plain 1.4s ease-in-out 1.5s 3; }
+.finish__again { width: 64px; height: 64px; background: var(--surface); }
+.finish__next svg, .finish__again svg { width: 58%; height: 58%; fill: none; stroke: var(--ink); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* O que fazer: toque para ouvir de novo (português e inglês) */
+.ask { flex: 0 1 auto; display: inline-flex; align-items: center; gap: var(--space-2); max-width: 100%; padding: var(--space-1) var(--space-3) var(--space-1) var(--space-1); border: 2px solid var(--ink); border-radius: var(--radius-pill); background: var(--yellow); color: var(--ink); cursor: pointer; font: inherit; }
+.ask svg { flex: none; width: 30px; height: 30px; fill: none; stroke: var(--ink); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.ask .speaker__body { fill: var(--surface); }
+/* Até duas linhas: no celular a frase inteira cabe entre Sair e Pular. */
+.ask span { min-width: 0; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; white-space: normal; text-align: left; line-height: 1.15; }
+.ask.is-playing svg { animation: pulse-plain 1s ease-in-out infinite; }
+/* Celular: a instrução ganha a própria linha, embaixo de Sair e Pular. */
+@media (max-width: 479px) {
+  .adult-bar:has(.ask) { flex-wrap: wrap; row-gap: var(--space-2); padding-block: var(--space-2); }
+  .adult-bar .ask { order: 1; flex: 1 0 100%; justify-content: center; }
+  .ask span { -webkit-line-clamp: 1; line-clamp: 1; }
+}
 .result-art { position: relative; width: min(70vw, 280px); animation: pop .6s ease; }
 .result-art--paths .result-art__goal { width: 80%; margin: 0 auto; }
 .result-art--qty { display: flex; justify-content: center; gap: var(--space-3); width: min(80vw, 340px); padding-top: var(--space-6); }

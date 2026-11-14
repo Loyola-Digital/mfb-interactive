@@ -1,6 +1,7 @@
 // Tela do jogo de Cores: traduz toques em eventos de colors.ts e anima os efeitos.
 import type { Paint } from '../../../shared/content.ts';
 import { check, paintable, rabbit } from '../art.ts';
+import { cheer, oops, sayNext, speaker } from '../audio.ts';
 import { esc, reducedMotion } from '../ui.ts';
 import { init, reduce, type ColorsEffect, type ColorsEvent } from './colors.ts';
 import { createDemo, nudge } from './demo.ts';
@@ -16,7 +17,7 @@ export const colorsGame: GameModule<'colors'> = {
     root.innerHTML = `<div class="colors game">
       <div class="game-model mfb-card" aria-label="Modelo">
         <div class="game-model__art">${paintable(game.drawing, 'Modelo pintado', game.target)}</div>
-        <span class="word">${esc(mission.word)}</span>
+        <span class="word">${esc(mission.word)}</span>${mission.audio ? speaker(mission.audio) : ''}
       </div>
       <div class="colors__stage">
         <button type="button" class="colors__drawing" aria-label="Desenho para pintar">${paintable(game.drawing, 'Desenho para pintar')}</button>
@@ -58,6 +59,7 @@ export const colorsGame: GameModule<'colors'> = {
           drawingBtn.classList.add('is-preview');
           nudge(el.querySelector('.game-model')!);
           nudge(rabbitBox, 'is-thinking');
+          oops();
           break;
         case 'autoHelp':
           targetBtn().classList.add('is-hint');
@@ -71,6 +73,7 @@ export const colorsGame: GameModule<'colors'> = {
           drawingBtn.classList.add('is-done');
           paintBtns.forEach((b) => b.classList.remove('is-hint'));
           rabbitBox.innerHTML = rabbit('celebrating');
+          cheer();
           completeTimer = window.setTimeout(hooks.onComplete, reducedMotion() ? 600 : 1400);
           break;
       }
@@ -88,6 +91,7 @@ export const colorsGame: GameModule<'colors'> = {
       if ((e.target as Element).closest('.colors__drawing')) dispatch({ type: 'tapDrawing' });
     });
 
+    if (mission.audio) sayNext(mission.audio, el.querySelector('.game-model [data-say]'));
     if (hooks.demoFirst) {
       requestAnimationFrame(showDemo);
       hooks.onDemoSeen();

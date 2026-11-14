@@ -11,6 +11,7 @@ export const sentenceGame: GameModule<'sentence'> = {
     return playJigsaw(root, {
       kind: 'sentence',
       art,
+      audio: mission.audio,
       hooks,
       pieces: words.map((w, i) => ({
         face: i === last ? `${img(art, 'jig-mini')}<span class="jig-word">${esc(w)}</span>` : `<span class="jig-word">${esc(w)}</span>`,

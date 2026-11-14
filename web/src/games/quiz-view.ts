@@ -1,5 +1,6 @@
 // Tela do Quiz da sombra: "It's a ___" com a sombra do bicho; a criança escolhe o desenho.
 import { img, rabbit } from '../art.ts';
+import { cheer, oops } from '../audio.ts';
 import { esc, reducedMotion, shuffled } from '../ui.ts';
 import { init, reduce, type ChoiceEffect } from './choice.ts';
 import { createDemo, nudge } from './demo.ts';
@@ -41,6 +42,7 @@ export const quizGame: GameModule<'quiz'> = {
           o.disabled = true;
           nudge(o);
           nudge(rabbitBox, 'is-thinking');
+          oops();
           break;
         }
         case 'autoHelp':
@@ -54,6 +56,7 @@ export const quizGame: GameModule<'quiz'> = {
           blank.insertAdjacentHTML('afterend', `<span class="quiz__answer word">${esc(answer.word)}</span>`);
           optionFor(effect.option).classList.add('is-right');
           rabbitBox.innerHTML = rabbit('celebrating');
+          cheer();
           completeTimer = window.setTimeout(hooks.onComplete, reducedMotion() ? 700 : 1800);
           break;
       }

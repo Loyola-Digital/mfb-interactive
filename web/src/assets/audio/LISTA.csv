@@ -1,114 +1,281 @@
 arquivo,texto,tipo,missoes,situacao
 a-fox.mp3,a fox,frase,EX1-21 EX1-38,ok
+a-or-an.mp3,A or an?,frase,EX1-22,ok
 an-apple.mp3,an apple,frase,EX1-38,ok
 an-egg.mp3,an egg,frase,EX1-38,ok
+eight-ten.mp3,"eight, ten",frase,CO2-03,ok
+find-the-same-color.mp3,Find the same color.,frase,CO1-05,ok
+find-the-same-shape.mp3,Find the same shape.,frase,CO1-07,ok
+find-the-word.mp3,Find the word.,frase,EX1-04 EX1-05 EX1-06 EX1-07 EX1-08 EX1-12 EX1-13 EX1-14 EX1-15 EX1-16 EX1-17 EX1-26 EX1-27 EX1-28 EX1-29,ok
+five-seven.mp3,"five, seven",frase,CO2-03,ok
+good-job.mp3,Good job!,frase,acertos e erros,ok
+help-the-rabbit.mp3,Help the rabbit!,frase,CO1-01 CO1-02,ok
+how-many.mp3,How many?,frase,CO1-11 CO1-12,ok
 i-am-in-bed.mp3,I am in bed,frase,EX1-25 EX1-38,ok
 i-am-tall.mp3,I am tall,frase,EX1-23 EX1-38,ok
 jill-will-win.mp3,Jill will win,frase,EX1-31,ok
+listen-and-touch-the-letter.mp3,Listen and touch the letter.,frase,CO2-26,ok
+listen-and-touch-the-vowel.mp3,Listen and touch the vowel.,frase,EX1-35,ok
+listen-and-touch.mp3,Listen and touch.,frase,CO1-25 CO1-26 CO1-27 CO1-15 CO1-16 CO1-28 CO1-29 CO2-24 CO2-06 CO2-10 CO2-11 CO2-12 CO2-25 EX1-36 EX1-37 EX1-38 EX1-39,ok
+make-the-sentence.mp3,Make the sentence.,frase,EX1-23 EX1-24 EX1-25 EX1-30 EX1-31,ok
+make-the-word.mp3,Make the word.,frase,CO1-24 EX1-09 EX1-10 EX1-18 EX1-19 EX1-20,ok
+match-the-big-and-small-letters.mp3,Match the big and small letters.,frase,CO1-22 CO1-23,ok
+match-the-colors.mp3,Match the colors.,frase,CO1-06,ok
+match-the-numbers.mp3,Match the numbers.,frase,CO1-13,ok
+match-the-opposites.mp3,Match the opposites.,frase,CO2-13 CO2-14,ok
+match-the-pictures-and-words.mp3,Match the pictures and words.,frase,EX1-32 EX1-33,ok
+match-the-same-letters.mp3,Match the same letters.,frase,CO2-15,ok
+match-the-shapes.mp3,Match the shapes.,frase,CO1-08,ok
 nate-ate-cake.mp3,Nate ate cake,frase,EX1-30,ok
 one-fewer.mp3,one fewer,frase,CO2-05,ok
 one-more.mp3,one more,frase,CO2-04,ok
+one-three.mp3,"one, three",frase,CO2-03,ok
+oops-try-again.mp3,Oops! Try again.,frase,acertos e erros,ok
+pick-a-color-and-paint.mp3,Pick a color and paint!,frase,CO1-03 CO1-04,ok
+plant-the-flowers.mp3,Plant the flowers!,frase,CO1-09 CO1-10,ok
+three-five.mp3,"three, five",frase,CO2-03,ok
+two-four.mp3,"two, four",frase,CO2-P1,ok
+vowel-or-consonant.mp3,Vowel or consonant?,frase,EX1-03,ok
 we-are-ten.mp3,We are ten,frase,EX1-24 EX1-38,ok
-letra-a.mp3,A,nome da letra,CO1-29 EX1-03,ok
-letra-b.mp3,B,nome da letra,CO1-29 EX1-03 EX1-34,ok
-letra-d.mp3,D,nome da letra,CO1-29 EX1-P1,ok
-letra-e.mp3,E,nome da letra,EX1-03 EX1-34,ok
-letra-g.mp3,G,nome da letra,EX1-34 EX1-P1,ok
-letra-i.mp3,I,nome da letra,EX1-P1,ok
-letra-k.mp3,K,nome da letra,EX1-P1,ok
-letra-m.mp3,M,nome da letra,CO1-29 EX1-03 EX1-34,ok
-letra-o.mp3,O,nome da letra,EX1-03,ok
-letra-r.mp3,R,nome da letra,EX1-34,ok
-letra-s.mp3,S,nome da letra,CO1-29,ok
-letra-t.mp3,T,nome da letra,CO1-29 EX1-03,ok
-letra-u.mp3,U,nome da letra,EX1-34 EX1-P1,ok
+well-done.mp3,Well done!,frase,acertos e erros,ok
+what-comes-after.mp3,What comes after?,frase,CO2-02,ok
+what-comes-before.mp3,What comes before?,frase,CO2-01,ok
+what-comes-in-between.mp3,What comes in between?,frase,CO2-03,ok
+what-is-it.mp3,What is it?,frase,EX1-21,ok
+what-letter-does-it-start-with.mp3,What letter does it start with?,frase,CO2-27,ok
+which-one-ends-with-this-sound.mp3,Which one ends with this sound?,frase,CO2-23,ok
+which-one-goes-with-it.mp3,Which one goes with it?,frase,CO2-09,ok
+which-one-has-one-fewer.mp3,Which one has one fewer?,frase,CO2-05,ok
+which-one-has-one-more.mp3,Which one has one more?,frase,CO2-04,ok
+which-one-has-zero.mp3,Which one has zero?,frase,CO1-14,ok
+which-one-is-different.mp3,Which one is different?,frase,CO2-08,ok
+which-one-is-the-same.mp3,Which one is the same?,frase,CO2-07,ok
+which-one-rhymes.mp3,Which one rhymes?,frase,EX1-11,ok
+which-one-starts-with-this-letter.mp3,Which one starts with this letter?,frase,CO1-17 CO1-18 CO1-19 CO1-20 CO1-21 EX1-01 EX1-02 EX1-34 EX1-40,ok
+which-one-starts-with-this-sound.mp3,Which one starts with this sound?,frase,CO2-16 CO2-17 CO2-18 CO2-19 CO2-20 CO2-21 CO2-22,ok
+letra-a.mp3,A,nome da letra,CO1-17 CO1-22 CO1-29 EX1-01 EX1-03,ok
+letra-b.mp3,B,nome da letra,CO1-17 CO1-22 CO1-29 CO1-P4 CO2-15 EX1-01 EX1-03 alinhamento CO1,ok
+letra-c.mp3,C,nome da letra,CO1-17 CO1-22 EX1-01,ok
+letra-d.mp3,D,nome da letra,CO1-17 CO1-22 CO1-29 CO1-P4 CO2-15 EX1-01 EX1-P1,ok
+letra-e.mp3,E,nome da letra,CO1-17 CO1-22 EX1-01 EX1-03,ok
+letra-f.mp3,F,nome da letra,CO1-18 CO1-22 EX1-01,ok
+letra-g.mp3,G,nome da letra,CO1-18 CO1-23 CO1-P4 EX1-02 EX1-P1,ok
+letra-h.mp3,H,nome da letra,CO1-18 CO1-23 CO2-15 EX1-02,ok
+letra-i.mp3,I,nome da letra,CO1-18 EX1-02 EX1-P1,ok
+letra-j.mp3,J,nome da letra,CO1-18 EX1-02,ok
+letra-k.mp3,K,nome da letra,CO1-19 EX1-02 EX1-P1,ok
+letra-l.mp3,L,nome da letra,CO1-19 CO1-P4 EX1-02,ok
+letra-m.mp3,M,nome da letra,CO1-19 CO1-23 CO1-29 EX1-34 EX1-03,ok
+letra-n.mp3,N,nome da letra,CO1-19 CO1-23 CO2-15 EX1-34,ok
+letra-o.mp3,O,nome da letra,CO1-19 EX1-34 EX1-03,ok
+letra-p.mp3,P,nome da letra,CO1-20 CO1-P4 CO2-15 EX1-34,ok
+letra-q.mp3,Q,nome da letra,CO1-20 CO1-23 CO2-15 EX1-34,ok
+letra-r.mp3,R,nome da letra,CO1-20 CO1-23 EX1-34,ok
+letra-s.mp3,S,nome da letra,CO1-20 CO1-29 EX1-40,ok
+letra-t.mp3,T,nome da letra,CO1-20 CO1-29 EX1-40 EX1-03,ok
+letra-u.mp3,U,nome da letra,CO1-21 EX1-40 EX1-P1,ok
+letra-v.mp3,V,nome da letra,CO1-21 EX1-40,ok
+letra-w.mp3,W,nome da letra,CO1-21 EX1-40,ok
+letra-y.mp3,Y,nome da letra,CO1-21 EX1-40,ok
+letra-z.mp3,Z,nome da letra,CO1-21 CO1-P4 EX1-40,ok
 after.mp3,after,palavra,CO2-02,ok
-apple.mp3,apple,palavra,CO1-28,ok
-bear.mp3,bear,palavra,CO1-28,ok
-bed.mp3,bed,palavra,EX1-35,ok
-bee.mp3,bee,palavra,EX1-19,ok
+ant.mp3,ant,palavra,EX1-01,ok
+apple.mp3,apple,palavra,CO1-17 CO1-28 EX1-22 EX1-P4 alinhamento EX1,ok
+bag.mp3,bag,palavra,EX1-04,ok
+ball.mp3,ball,palavra,EX1-01 EX1-17 EX1-P3,ok
+bat.mp3,bat,palavra,EX1-26 EX1-P5,ok
+bear.mp3,bear,palavra,CO1-17 CO1-28,ok
+bed.mp3,bed,palavra,EX1-08 EX1-35 EX1-P2 EX1-P4,ok
+bee.mp3,bee,palavra,CO2-P2 EX1-13 EX1-19 EX1-P3 EX1-32,ok
 before.mp3,before,palavra,CO2-01,ok
-bell.mp3,bell,palavra,CO2-27,ok
+bell.mp3,bell,palavra,CO2-27 EX1-08 EX1-28 EX1-33,ok
 best.mp3,best,palavra,EX1-11,ok
 between.mp3,between,palavra,CO2-03,ok
-big.mp3,big,palavra,CO2-25,ok
-blue.mp3,blue,palavra,CO1-25,ok
-bug.mp3,bug,palavra,EX1-35 EX1-36,ok
-cake.mp3,cake,palavra,EX1-18,ok
-cape.mp3,cape,palavra,EX1-37,ok
-cat.mp3,cat,palavra,EX1-35 EX1-09 EX1-11 EX1-P2,ok
-circle.mp3,circle,palavra,CO1-26,ok
+bib.mp3,bib,palavra,EX1-05,ok
+big.mp3,big,palavra,CO2-14 CO2-25,ok
+bike.mp3,bike,palavra,EX1-14,ok
+blue.mp3,blue,palavra,CO1-05 CO1-06 CO1-25 CO1-P1,ok
+boat.mp3,boat,palavra,EX1-15 EX1-P3,ok
+bone.mp3,bone,palavra,EX1-15,ok
+box.mp3,box,palavra,EX1-07,ok
+bug.mp3,bug,palavra,EX1-06 EX1-35 EX1-36 EX1-22,ok
+cake.mp3,cake,palavra,EX1-12 EX1-18 EX1-P3 EX1-27 EX1-P5 EX1-32 alinhamento EX1,ok
+cape.mp3,cape,palavra,EX1-12 EX1-37,ok
+carrot.mp3,carrot,palavra,CO1-17,ok
+cat.mp3,cat,palavra,EX1-01 EX1-04 EX1-35 EX1-09 EX1-11 EX1-P2 EX1-22 EX1-26 EX1-32 alinhamento EX1,ok
+circle.mp3,circle,palavra,CO1-07 CO1-08 CO1-26 CO1-P1 alinhamento CO1,ok
+closed.mp3,closed,palavra,CO2-13,ok
+cold.mp3,cold,palavra,CO2-13,ok
 cub.mp3,cub,palavra,EX1-37,ok
-cup.mp3,cup,palavra,EX1-11,ok
+cube.mp3,cube,palavra,EX1-16 EX1-P3,ok
+cup.mp3,cup,palavra,EX1-06 EX1-11,ok
 cut.mp3,cut,palavra,EX1-36,ok
-diamond.mp3,diamond,palavra,CO1-26,ok
+cute.mp3,cute,palavra,EX1-16,ok
+day.mp3,day,palavra,CO2-13 CO2-P3 alinhamento CO2,ok
+diamond.mp3,diamond,palavra,CO1-07 CO1-08 CO1-26 CO1-P1,ok
+dice.mp3,dice,palavra,EX1-14,ok
 different.mp3,different,palavra,CO2-08 CO2-P2,ok
-dry.mp3,dry,palavra,CO2-25,ok
-duck.mp3,duck,palavra,CO1-28,ok
-egg.mp3,egg,palavra,EX1-11,ok
-eight.mp3,eight,palavra,CO1-27 CO2-24,ok
-empty.mp3,empty,palavra,CO1-16 CO1-P3,ok
+down.mp3,down,palavra,CO2-13,ok
+drum.mp3,drum,palavra,CO2-P2,ok
+dry.mp3,dry,palavra,CO2-13 CO2-25,ok
+duck.mp3,duck,palavra,CO1-17 CO1-28 EX1-01,ok
+egg.mp3,egg,palavra,CO1-17 EX1-01 EX1-11 EX1-22 EX1-P4,ok
+eight.mp3,eight,palavra,CO1-12 CO1-27 CO2-01 CO2-02 CO2-24,ok
+empty.mp3,empty,palavra,CO1-16 CO1-P3 CO2-14,ok
+fall.mp3,fall,palavra,EX1-17,ok
 feed.mp3,feed,palavra,EX1-39,ok
-fish.mp3,fish,palavra,CO1-28 CO2-27,ok
-five.mp3,five,palavra,CO1-27,ok
-fox.mp3,fox,palavra,EX1-35,ok
+feet.mp3,feet,palavra,EX1-13,ok
+fin.mp3,fin,palavra,EX1-05 EX1-29,ok
+fish.mp3,fish,palavra,CO1-18 CO1-28 CO2-27 EX1-01,ok
+five.mp3,five,palavra,CO1-11 CO1-13 CO1-27 CO2-01 CO2-02 alinhamento CO2,ok
+flute.mp3,flute,palavra,EX1-16,ok
+four.mp3,four,palavra,CO1-11 CO1-13 CO2-01 CO2-02 CO2-03 CO2-P1,ok
+fox.mp3,fox,palavra,EX1-07 EX1-35 EX1-P2 EX1-P4,ok
 frog.mp3,frog,palavra,CO1-24,ok
-full.mp3,full,palavra,CO1-16 CO1-P3,ok
-green.mp3,green,palavra,CO1-03 CO1-25,ok
+full.mp3,full,palavra,CO1-16 CO1-P3 CO2-14,ok
+gate.mp3,gate,palavra,EX1-12 EX1-27 EX1-32,ok
+goat.mp3,goat,palavra,EX1-02 EX1-15,ok
+grapes.mp3,grapes,palavra,CO1-18,ok
+great.mp3,Great!,palavra,acertos e erros,ok
+green.mp3,green,palavra,CO1-03 CO1-05 CO1-06 CO1-25,ok
 happy.mp3,happy,palavra,CO2-11,ok
-hat.mp3,hat,palavra,EX1-36,ok
-hear.mp3,hear,palavra,CO2-12,ok
-hen.mp3,hen,palavra,EX1-39,ok
-hill.mp3,hill,palavra,EX1-39,ok
-hot.mp3,hot,palavra,CO2-25,ok
+hat.mp3,hat,palavra,EX1-04 EX1-36 EX1-P2 EX1-26 EX1-32,ok
+hear.mp3,hear,palavra,CO2-12 CO2-P3,ok
+heart.mp3,heart,palavra,CO1-18,ok
+hen.mp3,hen,palavra,EX1-02 EX1-08 EX1-39,ok
+hill.mp3,hill,palavra,EX1-29 EX1-39,ok
+hot.mp3,hot,palavra,CO2-13 CO2-25 CO2-P3,ok
+igloo.mp3,igloo,palavra,CO1-18 EX1-02 EX1-22,ok
+in.mp3,in,palavra,CO2-14,ok
+jar.mp3,jar,palavra,CO1-18,ok
+jet.mp3,jet,palavra,EX1-02,ok
+key.mp3,key,palavra,EX1-02,ok
+king.mp3,king,palavra,CO1-19,ok
 kit.mp3,kit,palavra,EX1-37,ok
-kite.mp3,kite,palavra,EX1-20,ok
+kite.mp3,kite,palavra,EX1-14 EX1-20 EX1-P3,ok
+lake.mp3,lake,palavra,EX1-12 EX1-27 EX1-P5 EX1-33,ok
+leaf.mp3,leaf,palavra,EX1-02,ok
 less.mp3,less,palavra,CO2-06,ok
+lettuce.mp3,lettuce,palavra,CO1-19,ok
+little.mp3,little,palavra,CO2-14 CO2-P3,ok
 longer.mp3,longer,palavra,CO1-15,ok
 mat.mp3,mat,palavra,EX1-39,ok
-more.mp3,more,palavra,CO2-06 CO2-P2,ok
+moon.mp3,moon,palavra,EX1-34,ok
+more.mp3,more,palavra,CO2-06 CO2-P2 alinhamento CO2,ok
 mouse.mp3,mouse,palavra,CO2-27,ok
+mule.mp3,mule,palavra,EX1-16,ok
+mushroom.mp3,mushroom,palavra,CO1-19,ok
+necklace.mp3,necklace,palavra,CO1-19,ok
 nest.mp3,nest,palavra,CO2-27,ok
-net.mp3,net,palavra,EX1-36,ok
-night.mp3,night,palavra,CO2-25,ok
-nine.mp3,nine,palavra,CO2-24,ok
-one.mp3,one,palavra,CO1-09 CO1-27,ok
-open.mp3,open,palavra,CO2-25,ok
-orange.mp3,orange,palavra,CO1-25,ok
-oval.mp3,oval,palavra,CO1-26,ok
-pen.mp3,pen,palavra,CO2-27,ok
-pig.mp3,pig,palavra,CO1-28 EX1-35,ok
-pin.mp3,pin,palavra,EX1-36,ok
+net.mp3,net,palavra,EX1-08 EX1-36,ok
+night.mp3,night,palavra,CO2-13 CO2-25,ok
+nine.mp3,nine,palavra,CO1-12 CO2-01 CO2-02 CO2-03 CO2-24 EX1-14,ok
+nut.mp3,nut,palavra,EX1-34 EX1-06,ok
+octopus.mp3,octopus,palavra,CO1-19 EX1-34 EX1-22,ok
+off.mp3,off,palavra,CO2-14,ok
+on.mp3,on,palavra,CO2-14,ok
+one.mp3,one,palavra,CO1-09 CO1-11 CO1-13 CO1-27 CO2-01 CO2-02,ok
+open.mp3,open,palavra,CO2-13 CO2-25,ok
+orange.mp3,orange,palavra,CO1-05 CO1-25,ok
+out.mp3,out,palavra,CO2-14,ok
+oval.mp3,oval,palavra,CO1-07 CO1-08 CO1-26,ok
+ox.mp3,ox,palavra,EX1-07,ok
+pan.mp3,pan,palavra,EX1-04,ok
+pen.mp3,pen,palavra,CO2-27 EX1-08 EX1-22 EX1-28 EX1-P5,ok
+penguin.mp3,penguin,palavra,EX1-34,ok
+pig.mp3,pig,palavra,CO1-20 CO1-28 EX1-05 EX1-35 EX1-P2,ok
+pin.mp3,pin,palavra,EX1-05 EX1-36 EX1-29,ok
 pine.mp3,pine,palavra,EX1-37,ok
-purple.mp3,purple,palavra,CO1-25,ok
-rabbit.mp3,rabbit,palavra,CO1-01 CO1-02,ok
+pipe.mp3,pipe,palavra,EX1-14,ok
+purple.mp3,purple,palavra,CO1-05 CO1-06 CO1-25,ok
+quail.mp3,quail,palavra,CO1-20,ok
+queen.mp3,queen,palavra,EX1-34,ok
+rabbit.mp3,rabbit,palavra,CO1-01 CO1-02 EX1-34,ok
 rag.mp3,rag,palavra,EX1-11,ok
-rake.mp3,rake,palavra,EX1-39,ok
-rectangle.mp3,rectangle,palavra,CO1-26,ok
-red.mp3,red,palavra,CO1-25,ok
-robe.mp3,robe,palavra,EX1-37,ok
+rake.mp3,rake,palavra,EX1-12 EX1-27 EX1-39,ok
+rectangle.mp3,rectangle,palavra,CO1-07 CO1-08 CO1-26,ok
+red.mp3,red,palavra,CO1-05 CO1-06 CO1-25 CO1-P1 alinhamento CO1,ok
+robe.mp3,robe,palavra,EX1-15 EX1-37,ok
+rock.mp3,rock,palavra,EX1-07,ok
+rocket.mp3,rocket,palavra,CO1-20,ok
 sad.mp3,sad,palavra,CO2-11 CO2-P3,ok
 same.mp3,same,palavra,CO2-07,ok
-seven.mp3,seven,palavra,CO2-24,ok
+seed.mp3,seed,palavra,EX1-13 EX1-29 EX1-P5 EX1-33,ok
+seven.mp3,seven,palavra,CO1-12 CO2-02 CO2-24,ok
+sheep.mp3,sheep,palavra,EX1-13,ok
 shorter.mp3,shorter,palavra,CO1-15 CO1-P3,ok
 sick.mp3,sick,palavra,EX1-11,ok
-six.mp3,six,palavra,CO1-27 CO2-24,ok
-square.mp3,square,palavra,CO1-26,ok
+six.mp3,six,palavra,CO1-12 CO1-27 CO2-01 CO2-02 CO2-03 CO2-24 CO2-P1,ok
+snail.mp3,snail,palavra,CO1-20,ok
+soap.mp3,soap,palavra,EX1-15,ok
+sock.mp3,sock,palavra,EX1-40,ok
+square.mp3,square,palavra,CO1-07 CO1-26,ok
 summer.mp3,summer,palavra,CO2-10,ok
-sun.mp3,sun,palavra,CO2-27 EX1-35 EX1-10,ok
+sun.mp3,sun,palavra,CO2-27 EX1-06 EX1-35 EX1-10 EX1-P2 alinhamento EX1,ok
+tall.mp3,tall,palavra,EX1-17,ok
 taller.mp3,taller,palavra,CO1-15 CO1-P3,ok
-ten.mp3,ten,palavra,CO1-27 CO2-24 EX1-36,ok
-three.mp3,three,palavra,CO1-27,ok
+ten.mp3,ten,palavra,CO1-12 CO1-27 CO2-02 CO2-24 EX1-36 EX1-P4 EX1-28 EX1-33,ok
+three.mp3,three,palavra,CO1-11 CO1-13 CO1-27 CO2-01,ok
+top.mp3,top,palavra,EX1-07,ok
 touch.mp3,touch,palavra,CO2-12,ok
-triangle.mp3,triangle,palavra,CO1-26,ok
-tube.mp3,tube,palavra,EX1-37,ok
-two.mp3,two,palavra,CO1-10,ok
-up.mp3,up,palavra,CO2-25,ok
-well.mp3,well,palavra,EX1-39,ok
+tree.mp3,tree,palavra,EX1-40 EX1-13,ok
+triangle.mp3,triangle,palavra,CO1-07 CO1-26 CO1-P1,ok
+tub.mp3,tub,palavra,EX1-06,ok
+tube.mp3,tube,palavra,EX1-16 EX1-37,ok
+turtle.mp3,turtle,palavra,CO1-20,ok
+two.mp3,two,palavra,CO1-10 CO1-11 CO1-13 CO2-01 CO2-02 CO2-03,ok
+umbrella.mp3,umbrella,palavra,CO1-21 EX1-40,ok
+up.mp3,up,palavra,CO2-13 CO2-25,ok
+van.mp3,van,palavra,EX1-40 EX1-04,ok
+violin.mp3,violin,palavra,CO1-21,ok
+wagon.mp3,wagon,palavra,CO1-21,ok
+wall.mp3,wall,palavra,EX1-17,ok
+well.mp3,well,palavra,EX1-28 EX1-39 EX1-33,ok
+wet.mp3,wet,palavra,CO2-13,ok
+wig.mp3,wig,palavra,EX1-40 EX1-05,ok
 winter.mp3,winter,palavra,CO2-10 CO2-P2,ok
-yellow.mp3,yellow,palavra,CO1-04 CO1-25,ok
-zebra.mp3,zebra,palavra,CO1-28,ok
-zero.mp3,zero,palavra,CO1-14 CO2-24,ok
+yak.mp3,yak,palavra,CO1-21,ok
+yellow.mp3,yellow,palavra,CO1-04 CO1-05 CO1-06 CO1-25 CO1-P1,ok
+yo-yo.mp3,yo-yo,palavra,EX1-40,ok
+zebra.mp3,zebra,palavra,CO1-21 CO1-28,ok
+zero.mp3,zero,palavra,CO1-14 CO1-P2 CO2-24,ok
+zipper.mp3,zipper,palavra,EX1-40,ok
+com-que-letra-comeca.mp3,Com que letra começa?,português,CO2-27,ok
+de-quem-e-esta-sombra.mp3,De quem é esta sombra?,português,EX1-21,ok
+e-a-ou-an.mp3,É a ou an?,português,EX1-22,ok
+e-vogal-ou-consoante.mp3,É vogal ou consoante?,português,EX1-03,ok
+escolha-a-cor-e-pinte.mp3,Escolha a cor e pinte.,português,CO1-03 CO1-04,ok
+leve-o-coelhinho.mp3,Leve o coelhinho.,português,CO1-01 CO1-02,ok
+ligue-a-forma-a-figura.mp3,Ligue a forma à figura.,português,CO1-08,ok
+ligue-as-letras-iguais.mp3,Ligue as letras iguais.,português,CO2-15,ok
+ligue-figura-e-palavra.mp3,Ligue figura e palavra.,português,EX1-32 EX1-33,ok
+ligue-maiuscula-e-minuscula.mp3,Ligue maiúscula e minúscula.,português,CO1-22 CO1-23,ok
+ligue-o-giz-a-figura.mp3,Ligue o giz à figura.,português,CO1-06,ok
+ligue-o-numero-a-quantidade.mp3,Ligue o número à quantidade.,português,CO1-13,ok
+ligue-os-opostos.mp3,Ligue os opostos.,português,CO2-13 CO2-14,ok
+monte-a-frase.mp3,Monte a frase.,português,EX1-23 EX1-24 EX1-25 EX1-30 EX1-31,ok
+monte-a-palavra.mp3,Monte a palavra.,português,CO1-24 EX1-09 EX1-10 EX1-18 EX1-19 EX1-20,ok
+onde-nao-tem-nenhum.mp3,Onde não tem nenhum?,português,CO1-14,ok
+ouca-e-toque-na-vogal.mp3,Ouça e toque na vogal.,português,EX1-35,ok
+ouca-e-toque.mp3,Ouça e toque.,português,CO1-25 CO1-26 CO1-27 CO1-15 CO1-16 CO1-28 CO1-29 CO2-24 CO2-06 CO2-10 CO2-11 CO2-12 CO2-25 EX1-36 EX1-37 EX1-38 EX1-39,ok
+ouca-o-som-e-toque-na-letra.mp3,Ouça o som e toque na letra.,português,CO2-26,ok
+plante-as-flores.mp3,Plante as flores.,português,CO1-09 CO1-10,ok
+qual-combina-com-ela.mp3,Qual combina com ela?,português,CO2-09,ok
+qual-comeca-com-esta-letra.mp3,Qual começa com esta letra?,português,CO1-17 CO1-18 CO1-19 CO1-20 CO1-21 EX1-01 EX1-02 EX1-34 EX1-40,ok
+qual-comeca-com-este-som.mp3,Qual começa com este som?,português,CO2-16 CO2-17 CO2-18 CO2-19 CO2-20 CO2-21 CO2-22,ok
+qual-desses-tem-um-a-mais.mp3,Qual desses tem um a mais?,português,CO2-04,ok
+qual-desses-tem-um-a-menos.mp3,Qual desses tem um a menos?,português,CO2-05,ok
+qual-e-a-palavra.mp3,Qual é a palavra?,português,EX1-04 EX1-05 EX1-06 EX1-07 EX1-08 EX1-12 EX1-13 EX1-14 EX1-15 EX1-16 EX1-17 EX1-26 EX1-27 EX1-28 EX1-29,ok
+qual-e-diferente.mp3,Qual é diferente?,português,CO2-08,ok
+qual-e-igual-a-esta.mp3,Qual é igual a esta?,português,CO2-07,ok
+qual-numero-fica-no-meio.mp3,Qual número fica no meio?,português,CO2-03,ok
+qual-numero-vem-antes.mp3,Qual número vem antes?,português,CO2-01,ok
+qual-numero-vem-depois.mp3,Qual número vem depois?,português,CO2-02,ok
+qual-rima-com-esta-palavra.mp3,Qual rima com esta palavra?,português,EX1-11,ok
+qual-tem-a-cor-do-giz.mp3,Qual tem a cor do giz?,português,CO1-05,ok
+qual-termina-com-este-som.mp3,Qual termina com este som?,português,CO2-23,ok
+quantos-sao.mp3,Quantos são?,português,CO1-11 CO1-12,ok
+toque-na-mesma-forma.mp3,Toque na mesma forma.,português,CO1-07,ok
 som-b.mp3,/b/,som da letra,CO2-16,falta
 som-d.mp3,/d/,som da letra,CO2-17 CO2-23 CO2-P4,falta
 som-f.mp3,/f/,som da letra,CO2-19 CO2-26 CO2-P4,falta
@@ -123,7 +290,7 @@ som-p.mp3,/p/,som da letra,CO2-18 CO2-26 CO2-23,falta
 som-q.mp3,/q/,som da letra,CO2-22,falta
 som-r.mp3,/r/,som da letra,CO2-21 CO2-P4,falta
 som-s.mp3,/s/,som da letra,CO2-20 CO2-26 CO2-P4,falta
-som-t.mp3,/t/,som da letra,CO2-16 CO2-26 CO2-23 CO2-P4,falta
+som-t.mp3,/t/,som da letra,CO2-16 CO2-26 CO2-23 CO2-P4 alinhamento CO2,falta
 som-v.mp3,/v/,som da letra,CO2-21,falta
 som-w.mp3,/w/,som da letra,CO2-19,falta
 som-x.mp3,/x/,som da letra,CO2-23,falta

@@ -10,7 +10,7 @@
           "missions": [
             {
               "id": "CO1-01",
-              "version": 2,
+              "version": 3,
               "type": "paths",
               "title": "Vamos ao jardim",
               "available": true,
@@ -46,11 +46,15 @@
                 },
                 "goalArt": "portao"
               },
-              "audio": "rabbit"
+              "audio": "rabbit",
+              "instruction": {
+                "pt": "Leve o coelhinho.",
+                "en": "Help the rabbit!"
+              }
             },
             {
               "id": "CO1-02",
-              "version": 2,
+              "version": 3,
               "type": "paths",
               "title": "Passeio do coelhinho",
               "available": true,
@@ -90,7 +94,11 @@
                 },
                 "goalArt": "cenouras"
               },
-              "audio": "rabbit"
+              "audio": "rabbit",
+              "instruction": {
+                "pt": "Leve o coelhinho.",
+                "en": "Help the rabbit!"
+              }
             }
           ]
         },
@@ -99,7 +107,7 @@
           "missions": [
             {
               "id": "CO1-03",
-              "version": 2,
+              "version": 3,
               "type": "colors",
               "title": "O sapinho verde",
               "available": true,
@@ -118,11 +126,15 @@
                 ],
                 "target": "leaf"
               },
-              "audio": "green"
+              "audio": "green",
+              "instruction": {
+                "pt": "Escolha a cor e pinte.",
+                "en": "Pick a color and paint!"
+              }
             },
             {
               "id": "CO1-04",
-              "version": 2,
+              "version": 3,
               "type": "colors",
               "title": "A banana amarela",
               "available": true,
@@ -142,11 +154,15 @@
                 ],
                 "target": "yellow"
               },
-              "audio": "yellow"
+              "audio": "yellow",
+              "instruction": {
+                "pt": "Escolha a cor e pinte.",
+                "en": "Pick a color and paint!"
+              }
             },
             {
               "id": "CO1-05",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Qual é desta cor?",
               "available": true,
@@ -174,7 +190,8 @@
                         "art": "banana"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "red"
                   },
                   {
                     "prompt": {
@@ -191,7 +208,8 @@
                         "art": "grapes"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "orange"
                   },
                   {
                     "prompt": {
@@ -208,7 +226,8 @@
                         "art": "banana"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "yellow"
                   },
                   {
                     "prompt": {
@@ -225,7 +244,8 @@
                         "art": "carrot"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "green"
                   },
                   {
                     "prompt": {
@@ -242,7 +262,8 @@
                         "art": "teddy_bear"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "blue"
                   },
                   {
                     "prompt": {
@@ -259,14 +280,19 @@
                         "art": "grapes"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "purple"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual tem a cor do giz?",
+                "en": "Find the same color."
               }
             },
             {
               "id": "CO1-06",
-              "version": 1,
+              "version": 2,
               "type": "match",
               "title": "Ligue o giz",
               "available": true,
@@ -280,7 +306,8 @@
                 "pairs": [
                   [
                     {
-                      "art": "crayon-red"
+                      "art": "crayon-red",
+                      "audio": "red"
                     },
                     {
                       "art": "apple"
@@ -288,7 +315,8 @@
                   ],
                   [
                     {
-                      "art": "crayon-yellow"
+                      "art": "crayon-yellow",
+                      "audio": "yellow"
                     },
                     {
                       "art": "banana"
@@ -296,7 +324,8 @@
                   ],
                   [
                     {
-                      "art": "crayon-green"
+                      "art": "crayon-green",
+                      "audio": "green"
                     },
                     {
                       "art": "lettuce"
@@ -304,7 +333,8 @@
                   ],
                   [
                     {
-                      "art": "crayon-blue"
+                      "art": "crayon-blue",
+                      "audio": "blue"
                     },
                     {
                       "art": "umbrella"
@@ -312,18 +342,23 @@
                   ],
                   [
                     {
-                      "art": "crayon-purple"
+                      "art": "crayon-purple",
+                      "audio": "purple"
                     },
                     {
                       "art": "grapes"
                     }
                   ]
                 ]
+              },
+              "instruction": {
+                "pt": "Ligue o giz à figura.",
+                "en": "Match the colors."
               }
             },
             {
               "id": "CO1-25",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: cores",
               "available": true,
@@ -426,11 +461,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO1-07",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "A mesma forma",
               "available": true,
@@ -458,7 +497,8 @@
                         "shape": "square"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "circle"
                   },
                   {
                     "prompt": {
@@ -475,7 +515,8 @@
                         "shape": "square"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "square"
                   },
                   {
                     "prompt": {
@@ -492,7 +533,8 @@
                         "shape": "triangle"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "triangle"
                   },
                   {
                     "prompt": {
@@ -509,7 +551,8 @@
                         "shape": "rectangle"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "rectangle"
                   },
                   {
                     "prompt": {
@@ -526,7 +569,8 @@
                         "shape": "oval"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "oval"
                   },
                   {
                     "prompt": {
@@ -543,14 +587,19 @@
                         "shape": "oval"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "diamond"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Toque na mesma forma.",
+                "en": "Find the same shape."
               }
             },
             {
               "id": "CO1-08",
-              "version": 1,
+              "version": 2,
               "type": "match",
               "title": "Formas nas coisas",
               "available": true,
@@ -565,7 +614,8 @@
                 "pairs": [
                   [
                     {
-                      "shape": "circle"
+                      "shape": "circle",
+                      "audio": "circle"
                     },
                     {
                       "art": "ball"
@@ -573,7 +623,8 @@
                   ],
                   [
                     {
-                      "shape": "oval"
+                      "shape": "oval",
+                      "audio": "oval"
                     },
                     {
                       "art": "egg"
@@ -581,7 +632,8 @@
                   ],
                   [
                     {
-                      "shape": "diamond"
+                      "shape": "diamond",
+                      "audio": "diamond"
                     },
                     {
                       "art": "kite"
@@ -589,18 +641,23 @@
                   ],
                   [
                     {
-                      "shape": "rectangle"
+                      "shape": "rectangle",
+                      "audio": "rectangle"
                     },
                     {
                       "art": "school_bus"
                     }
                   ]
                 ]
+              },
+              "instruction": {
+                "pt": "Ligue a forma à figura.",
+                "en": "Match the shapes."
               }
             },
             {
               "id": "CO1-26",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: formas",
               "available": true,
@@ -703,11 +760,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO1-P1",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: cores e formas",
               "available": true,
@@ -735,7 +796,8 @@
                         "art": "apple"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "red"
                   },
                   {
                     "prompt": {
@@ -752,7 +814,8 @@
                         "art": "banana"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "yellow"
                   },
                   {
                     "prompt": {
@@ -769,7 +832,8 @@
                         "art": "banana"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "blue"
                   },
                   {
                     "prompt": {
@@ -786,7 +850,8 @@
                         "shape": "circle"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "circle"
                   },
                   {
                     "prompt": {
@@ -803,7 +868,8 @@
                         "shape": "square"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "triangle"
                   },
                   {
                     "prompt": {
@@ -820,7 +886,8 @@
                         "shape": "circle"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "diamond"
                   }
                 ]
               }
@@ -832,7 +899,7 @@
           "missions": [
             {
               "id": "CO1-09",
-              "version": 2,
+              "version": 3,
               "type": "quantities",
               "title": "Uma flor",
               "available": true,
@@ -847,11 +914,15 @@
                 "slots": 1,
                 "numeral": "1"
               },
-              "audio": "one"
+              "audio": "one",
+              "instruction": {
+                "pt": "Plante as flores.",
+                "en": "Plant the flowers!"
+              }
             },
             {
               "id": "CO1-10",
-              "version": 2,
+              "version": 3,
               "type": "quantities",
               "title": "Duas flores",
               "available": true,
@@ -866,11 +937,15 @@
                 "slots": 2,
                 "numeral": "2"
               },
-              "audio": "two"
+              "audio": "two",
+              "instruction": {
+                "pt": "Plante as flores.",
+                "en": "Plant the flowers!"
+              }
             },
             {
               "id": "CO1-11",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Quantos são? (1 a 5)",
               "available": true,
@@ -896,7 +971,8 @@
                         "text": "5"
                       },
                       {
-                        "text": "3"
+                        "text": "3",
+                        "audio": "three"
                       }
                     ],
                     "answer": 2
@@ -911,7 +987,8 @@
                         "text": "2"
                       },
                       {
-                        "text": "1"
+                        "text": "1",
+                        "audio": "one"
                       },
                       {
                         "text": "4"
@@ -929,7 +1006,8 @@
                         "text": "3"
                       },
                       {
-                        "text": "5"
+                        "text": "5",
+                        "audio": "five"
                       },
                       {
                         "text": "1"
@@ -947,7 +1025,8 @@
                         "text": "1"
                       },
                       {
-                        "text": "2"
+                        "text": "2",
+                        "audio": "two"
                       },
                       {
                         "text": "3"
@@ -965,7 +1044,8 @@
                         "text": "5"
                       },
                       {
-                        "text": "4"
+                        "text": "4",
+                        "audio": "four"
                       },
                       {
                         "text": "2"
@@ -974,11 +1054,15 @@
                     "answer": 1
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Quantos são?",
+                "en": "How many?"
               }
             },
             {
               "id": "CO1-12",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Quantos são? (6 a 10)",
               "available": true,
@@ -998,7 +1082,8 @@
                     },
                     "options": [
                       {
-                        "text": "6"
+                        "text": "6",
+                        "audio": "six"
                       },
                       {
                         "text": "5"
@@ -1016,7 +1101,8 @@
                     },
                     "options": [
                       {
-                        "text": "7"
+                        "text": "7",
+                        "audio": "seven"
                       },
                       {
                         "text": "9"
@@ -1034,7 +1120,8 @@
                     },
                     "options": [
                       {
-                        "text": "8"
+                        "text": "8",
+                        "audio": "eight"
                       },
                       {
                         "text": "6"
@@ -1052,7 +1139,8 @@
                     },
                     "options": [
                       {
-                        "text": "10"
+                        "text": "10",
+                        "audio": "ten"
                       },
                       {
                         "text": "9"
@@ -1076,17 +1164,22 @@
                         "text": "10"
                       },
                       {
-                        "text": "9"
+                        "text": "9",
+                        "audio": "nine"
                       }
                     ],
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Quantos são?",
+                "en": "How many?"
               }
             },
             {
               "id": "CO1-13",
-              "version": 1,
+              "version": 2,
               "type": "match",
               "title": "Número e quantidade",
               "available": true,
@@ -1101,7 +1194,8 @@
                 "pairs": [
                   [
                     {
-                      "text": "1"
+                      "text": "1",
+                      "audio": "one"
                     },
                     {
                       "art": "apple",
@@ -1110,7 +1204,8 @@
                   ],
                   [
                     {
-                      "text": "2"
+                      "text": "2",
+                      "audio": "two"
                     },
                     {
                       "art": "duck",
@@ -1119,7 +1214,8 @@
                   ],
                   [
                     {
-                      "text": "3"
+                      "text": "3",
+                      "audio": "three"
                     },
                     {
                       "art": "ladybug",
@@ -1128,7 +1224,8 @@
                   ],
                   [
                     {
-                      "text": "4"
+                      "text": "4",
+                      "audio": "four"
                     },
                     {
                       "art": "fish",
@@ -1137,7 +1234,8 @@
                   ],
                   [
                     {
-                      "text": "5"
+                      "text": "5",
+                      "audio": "five"
                     },
                     {
                       "art": "bird",
@@ -1145,11 +1243,15 @@
                     }
                   ]
                 ]
+              },
+              "instruction": {
+                "pt": "Ligue o número à quantidade.",
+                "en": "Match the numbers."
               }
             },
             {
               "id": "CO1-14",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Zero: nenhum",
               "available": true,
@@ -1180,7 +1282,8 @@
                         "count": 3
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "zero"
                   },
                   {
                     "prompt": {
@@ -1200,7 +1303,8 @@
                         "count": 0
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "zero"
                   },
                   {
                     "prompt": {
@@ -1220,15 +1324,20 @@
                         "count": 2
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "zero"
                   }
                 ]
               },
-              "audio": "zero"
+              "audio": "zero",
+              "instruction": {
+                "pt": "Onde não tem nenhum?",
+                "en": "Which one has zero?"
+              }
             },
             {
               "id": "CO1-27",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: números",
               "available": true,
@@ -1331,11 +1440,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO1-P2",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: números",
               "available": true,
@@ -1456,7 +1569,8 @@
                         "count": 1
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "zero"
                   }
                 ]
               }
@@ -1468,7 +1582,7 @@
           "missions": [
             {
               "id": "CO1-15",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Maior ou menor",
               "available": true,
@@ -1567,11 +1681,15 @@
                     "audio": "taller"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO1-16",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Cheio ou vazio",
               "available": true,
@@ -1645,6 +1763,10 @@
                     "audio": "full"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
@@ -1736,7 +1858,7 @@
           "missions": [
             {
               "id": "CO1-17",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Começa com A, B, C, D, E",
               "available": true,
@@ -1755,16 +1877,21 @@
                     },
                     "options": [
                       {
-                        "art": "apple"
+                        "art": "apple",
+                        "text": "apple",
+                        "audio": "apple"
                       },
                       {
-                        "art": "cat"
+                        "art": "cat",
+                        "text": "cat"
                       },
                       {
-                        "art": "duck"
+                        "art": "duck",
+                        "text": "duck"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "A"
                   },
                   {
                     "prompt": {
@@ -1772,16 +1899,21 @@
                     },
                     "options": [
                       {
-                        "art": "bear"
+                        "art": "bear",
+                        "text": "bear",
+                        "audio": "bear"
                       },
                       {
-                        "art": "ant"
+                        "art": "ant",
+                        "text": "ant"
                       },
                       {
-                        "art": "cup"
+                        "art": "cup",
+                        "text": "cup"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "B"
                   },
                   {
                     "prompt": {
@@ -1789,16 +1921,21 @@
                     },
                     "options": [
                       {
-                        "art": "carrot"
+                        "art": "carrot",
+                        "text": "carrot",
+                        "audio": "carrot"
                       },
                       {
-                        "art": "banana"
+                        "art": "banana",
+                        "text": "banana"
                       },
                       {
-                        "art": "egg"
+                        "art": "egg",
+                        "text": "egg"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "C"
                   },
                   {
                     "prompt": {
@@ -1806,16 +1943,21 @@
                     },
                     "options": [
                       {
-                        "art": "apple"
+                        "art": "apple",
+                        "text": "apple"
                       },
                       {
-                        "art": "bear"
+                        "art": "bear",
+                        "text": "bear"
                       },
                       {
-                        "art": "duck"
+                        "art": "duck",
+                        "text": "duck",
+                        "audio": "duck"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "D"
                   },
                   {
                     "prompt": {
@@ -1823,23 +1965,32 @@
                     },
                     "options": [
                       {
-                        "art": "cat"
+                        "art": "cat",
+                        "text": "cat"
                       },
                       {
-                        "art": "egg"
+                        "art": "egg",
+                        "text": "egg",
+                        "audio": "egg"
                       },
                       {
-                        "art": "dress"
+                        "art": "dress",
+                        "text": "dress"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "E"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com esta letra?",
+                "en": "Which one starts with this letter?"
               }
             },
             {
               "id": "CO1-18",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Começa com F, G, H, I, J",
               "available": true,
@@ -1858,16 +2009,21 @@
                     },
                     "options": [
                       {
-                        "art": "jar"
+                        "art": "jar",
+                        "text": "jar"
                       },
                       {
-                        "art": "fish"
+                        "art": "fish",
+                        "text": "fish",
+                        "audio": "fish"
                       },
                       {
-                        "art": "heart"
+                        "art": "heart",
+                        "text": "heart"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "F"
                   },
                   {
                     "prompt": {
@@ -1875,16 +2031,21 @@
                     },
                     "options": [
                       {
-                        "art": "jet"
+                        "art": "jet",
+                        "text": "jet"
                       },
                       {
-                        "art": "grapes"
+                        "art": "grapes",
+                        "text": "grapes",
+                        "audio": "grapes"
                       },
                       {
-                        "art": "fish"
+                        "art": "fish",
+                        "text": "fish"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "G"
                   },
                   {
                     "prompt": {
@@ -1892,16 +2053,21 @@
                     },
                     "options": [
                       {
-                        "art": "grapes"
+                        "art": "grapes",
+                        "text": "grapes"
                       },
                       {
-                        "art": "insect"
+                        "art": "insect",
+                        "text": "insect"
                       },
                       {
-                        "art": "heart"
+                        "art": "heart",
+                        "text": "heart",
+                        "audio": "heart"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "H"
                   },
                   {
                     "prompt": {
@@ -1909,16 +2075,21 @@
                     },
                     "options": [
                       {
-                        "art": "house"
+                        "art": "house",
+                        "text": "house"
                       },
                       {
-                        "art": "juice"
+                        "art": "juice",
+                        "text": "juice"
                       },
                       {
-                        "art": "igloo"
+                        "art": "igloo",
+                        "text": "igloo",
+                        "audio": "igloo"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "I"
                   },
                   {
                     "prompt": {
@@ -1926,23 +2097,32 @@
                     },
                     "options": [
                       {
-                        "art": "jar"
+                        "art": "jar",
+                        "text": "jar",
+                        "audio": "jar"
                       },
                       {
-                        "art": "fox"
+                        "art": "fox",
+                        "text": "fox"
                       },
                       {
-                        "art": "goose"
+                        "art": "goose",
+                        "text": "goose"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "J"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com esta letra?",
+                "en": "Which one starts with this letter?"
               }
             },
             {
               "id": "CO1-19",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Começa com K, L, M, N, O",
               "available": true,
@@ -1961,16 +2141,21 @@
                     },
                     "options": [
                       {
-                        "art": "octopus"
+                        "art": "octopus",
+                        "text": "octopus"
                       },
                       {
-                        "art": "king"
+                        "art": "king",
+                        "text": "king",
+                        "audio": "king"
                       },
                       {
-                        "art": "lion"
+                        "art": "lion",
+                        "text": "lion"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "K"
                   },
                   {
                     "prompt": {
@@ -1978,16 +2163,21 @@
                     },
                     "options": [
                       {
-                        "art": "kite"
+                        "art": "kite",
+                        "text": "kite"
                       },
                       {
-                        "art": "mouse"
+                        "art": "mouse",
+                        "text": "mouse"
                       },
                       {
-                        "art": "lettuce"
+                        "art": "lettuce",
+                        "text": "lettuce",
+                        "audio": "lettuce"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "L"
                   },
                   {
                     "prompt": {
@@ -1995,16 +2185,21 @@
                     },
                     "options": [
                       {
-                        "art": "mushroom"
+                        "art": "mushroom",
+                        "text": "mushroom",
+                        "audio": "mushroom"
                       },
                       {
-                        "art": "lion"
+                        "art": "lion",
+                        "text": "lion"
                       },
                       {
-                        "art": "newt"
+                        "art": "newt",
+                        "text": "newt"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "M"
                   },
                   {
                     "prompt": {
@@ -2012,16 +2207,21 @@
                     },
                     "options": [
                       {
-                        "art": "mouse"
+                        "art": "mouse",
+                        "text": "mouse"
                       },
                       {
-                        "art": "king"
+                        "art": "king",
+                        "text": "king"
                       },
                       {
-                        "art": "necklace"
+                        "art": "necklace",
+                        "text": "necklace",
+                        "audio": "necklace"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "N"
                   },
                   {
                     "prompt": {
@@ -2029,23 +2229,32 @@
                     },
                     "options": [
                       {
-                        "art": "octopus"
+                        "art": "octopus",
+                        "text": "octopus",
+                        "audio": "octopus"
                       },
                       {
-                        "art": "ladybug"
+                        "art": "ladybug",
+                        "text": "ladybug"
                       },
                       {
-                        "art": "newspaper"
+                        "art": "newspaper",
+                        "text": "newspaper"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "O"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com esta letra?",
+                "en": "Which one starts with this letter?"
               }
             },
             {
               "id": "CO1-20",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Começa com P, Q, R, S, T",
               "available": true,
@@ -2064,16 +2273,21 @@
                     },
                     "options": [
                       {
-                        "art": "pig"
+                        "art": "pig",
+                        "text": "pig",
+                        "audio": "pig"
                       },
                       {
-                        "art": "rose"
+                        "art": "rose",
+                        "text": "rose"
                       },
                       {
-                        "art": "turtle"
+                        "art": "turtle",
+                        "text": "turtle"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "P"
                   },
                   {
                     "prompt": {
@@ -2081,16 +2295,21 @@
                     },
                     "options": [
                       {
-                        "art": "quail"
+                        "art": "quail",
+                        "text": "quail",
+                        "audio": "quail"
                       },
                       {
-                        "art": "snail"
+                        "art": "snail",
+                        "text": "snail"
                       },
                       {
-                        "art": "popcorn"
+                        "art": "popcorn",
+                        "text": "popcorn"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "Q"
                   },
                   {
                     "prompt": {
@@ -2098,16 +2317,21 @@
                     },
                     "options": [
                       {
-                        "art": "teddy_bear"
+                        "art": "teddy_bear",
+                        "text": "teddy_bear"
                       },
                       {
-                        "art": "penguin"
+                        "art": "penguin",
+                        "text": "penguin"
                       },
                       {
-                        "art": "rocket"
+                        "art": "rocket",
+                        "text": "rocket",
+                        "audio": "rocket"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "R"
                   },
                   {
                     "prompt": {
@@ -2115,16 +2339,21 @@
                     },
                     "options": [
                       {
-                        "art": "quarter"
+                        "art": "quarter",
+                        "text": "quarter"
                       },
                       {
-                        "art": "rabbit"
+                        "art": "rabbit",
+                        "text": "rabbit"
                       },
                       {
-                        "art": "snail"
+                        "art": "snail",
+                        "text": "snail",
+                        "audio": "snail"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "S"
                   },
                   {
                     "prompt": {
@@ -2132,23 +2361,32 @@
                     },
                     "options": [
                       {
-                        "art": "pig"
+                        "art": "pig",
+                        "text": "pig"
                       },
                       {
-                        "art": "rose"
+                        "art": "rose",
+                        "text": "rose"
                       },
                       {
-                        "art": "turtle"
+                        "art": "turtle",
+                        "text": "turtle",
+                        "audio": "turtle"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "T"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com esta letra?",
+                "en": "Which one starts with this letter?"
               }
             },
             {
               "id": "CO1-21",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Começa com U, V, W, Y, Z",
               "available": true,
@@ -2167,16 +2405,21 @@
                     },
                     "options": [
                       {
-                        "art": "violin"
+                        "art": "violin",
+                        "text": "violin"
                       },
                       {
-                        "art": "umbrella"
+                        "art": "umbrella",
+                        "text": "umbrella",
+                        "audio": "umbrella"
                       },
                       {
-                        "art": "zebra"
+                        "art": "zebra",
+                        "text": "zebra"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "U"
                   },
                   {
                     "prompt": {
@@ -2184,16 +2427,21 @@
                     },
                     "options": [
                       {
-                        "art": "wagon"
+                        "art": "wagon",
+                        "text": "wagon"
                       },
                       {
-                        "art": "yak"
+                        "art": "yak",
+                        "text": "yak"
                       },
                       {
-                        "art": "violin"
+                        "art": "violin",
+                        "text": "violin",
+                        "audio": "violin"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "V"
                   },
                   {
                     "prompt": {
@@ -2201,16 +2449,21 @@
                     },
                     "options": [
                       {
-                        "art": "umbrella"
+                        "art": "umbrella",
+                        "text": "umbrella"
                       },
                       {
-                        "art": "wagon"
+                        "art": "wagon",
+                        "text": "wagon",
+                        "audio": "wagon"
                       },
                       {
-                        "art": "zipper"
+                        "art": "zipper",
+                        "text": "zipper"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "W"
                   },
                   {
                     "prompt": {
@@ -2218,16 +2471,21 @@
                     },
                     "options": [
                       {
-                        "art": "yak"
+                        "art": "yak",
+                        "text": "yak",
+                        "audio": "yak"
                       },
                       {
-                        "art": "water"
+                        "art": "water",
+                        "text": "water"
                       },
                       {
-                        "art": "vase"
+                        "art": "vase",
+                        "text": "vase"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "Y"
                   },
                   {
                     "prompt": {
@@ -2235,23 +2493,32 @@
                     },
                     "options": [
                       {
-                        "art": "yo-yo"
+                        "art": "yo-yo",
+                        "text": "yo-yo"
                       },
                       {
-                        "art": "vegetables"
+                        "art": "vegetables",
+                        "text": "vegetables"
                       },
                       {
-                        "art": "zebra"
+                        "art": "zebra",
+                        "text": "zebra",
+                        "audio": "zebra"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "Z"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com esta letra?",
+                "en": "Which one starts with this letter?"
               }
             },
             {
               "id": "CO1-28",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: figuras",
               "available": true,
@@ -2354,11 +2621,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO1-22",
-              "version": 1,
+              "version": 2,
               "type": "match",
               "title": "Maiúscula e minúscula (A a F)",
               "available": true,
@@ -2373,58 +2644,74 @@
                 "pairs": [
                   [
                     {
-                      "text": "A"
+                      "text": "A",
+                      "audio": "A"
                     },
                     {
-                      "text": "a"
+                      "text": "a",
+                      "audio": "A"
                     }
                   ],
                   [
                     {
-                      "text": "B"
+                      "text": "B",
+                      "audio": "B"
                     },
                     {
-                      "text": "b"
+                      "text": "b",
+                      "audio": "B"
                     }
                   ],
                   [
                     {
-                      "text": "C"
+                      "text": "C",
+                      "audio": "C"
                     },
                     {
-                      "text": "c"
+                      "text": "c",
+                      "audio": "C"
                     }
                   ],
                   [
                     {
-                      "text": "D"
+                      "text": "D",
+                      "audio": "D"
                     },
                     {
-                      "text": "d"
+                      "text": "d",
+                      "audio": "D"
                     }
                   ],
                   [
                     {
-                      "text": "E"
+                      "text": "E",
+                      "audio": "E"
                     },
                     {
-                      "text": "e"
+                      "text": "e",
+                      "audio": "E"
                     }
                   ],
                   [
                     {
-                      "text": "F"
+                      "text": "F",
+                      "audio": "F"
                     },
                     {
-                      "text": "f"
+                      "text": "f",
+                      "audio": "F"
                     }
                   ]
                 ]
+              },
+              "instruction": {
+                "pt": "Ligue maiúscula e minúscula.",
+                "en": "Match the big and small letters."
               }
             },
             {
               "id": "CO1-23",
-              "version": 1,
+              "version": 2,
               "type": "match",
               "title": "Maiúscula e minúscula (G a R)",
               "available": true,
@@ -2439,58 +2726,74 @@
                 "pairs": [
                   [
                     {
-                      "text": "G"
+                      "text": "G",
+                      "audio": "G"
                     },
                     {
-                      "text": "g"
+                      "text": "g",
+                      "audio": "G"
                     }
                   ],
                   [
                     {
-                      "text": "H"
+                      "text": "H",
+                      "audio": "H"
                     },
                     {
-                      "text": "h"
+                      "text": "h",
+                      "audio": "H"
                     }
                   ],
                   [
                     {
-                      "text": "M"
+                      "text": "M",
+                      "audio": "M"
                     },
                     {
-                      "text": "m"
+                      "text": "m",
+                      "audio": "M"
                     }
                   ],
                   [
                     {
-                      "text": "N"
+                      "text": "N",
+                      "audio": "N"
                     },
                     {
-                      "text": "n"
+                      "text": "n",
+                      "audio": "N"
                     }
                   ],
                   [
                     {
-                      "text": "Q"
+                      "text": "Q",
+                      "audio": "Q"
                     },
                     {
-                      "text": "q"
+                      "text": "q",
+                      "audio": "Q"
                     }
                   ],
                   [
                     {
-                      "text": "R"
+                      "text": "R",
+                      "audio": "R"
                     },
                     {
-                      "text": "r"
+                      "text": "r",
+                      "audio": "R"
                     }
                   ]
                 ]
+              },
+              "instruction": {
+                "pt": "Ligue maiúscula e minúscula.",
+                "en": "Match the big and small letters."
               }
             },
             {
               "id": "CO1-29",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: letras",
               "available": true,
@@ -2593,11 +2896,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO1-24",
-              "version": 2,
+              "version": 3,
               "type": "spelling",
               "title": "Palavra FROG",
               "available": true,
@@ -2612,11 +2919,15 @@
                 "word": "FROG",
                 "art": "sapo"
               },
-              "audio": "frog"
+              "audio": "frog",
+              "instruction": {
+                "pt": "Monte a palavra.",
+                "en": "Make the word."
+              }
             },
             {
               "id": "CO1-P4",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: letras",
               "available": true,
@@ -2644,7 +2955,8 @@
                         "art": "apple"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "B"
                   },
                   {
                     "prompt": {
@@ -2661,7 +2973,8 @@
                         "art": "egg"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "D"
                   },
                   {
                     "prompt": {
@@ -2678,7 +2991,8 @@
                         "art": "lettuce"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "L"
                   },
                   {
                     "prompt": {
@@ -2695,7 +3009,8 @@
                         "art": "mouse"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "P"
                   },
                   {
                     "prompt": {
@@ -2712,7 +3027,8 @@
                         "art": "snail"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "Z"
                   },
                   {
                     "prompt": {
@@ -2729,7 +3045,8 @@
                         "text": "q"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "G"
                   }
                 ]
               }
@@ -2748,7 +3065,7 @@
           "missions": [
             {
               "id": "CO2-01",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Qual vem antes?",
               "available": true,
@@ -2767,7 +3084,8 @@
                     },
                     "options": [
                       {
-                        "text": "2"
+                        "text": "2",
+                        "audio": "two"
                       },
                       {
                         "text": "5"
@@ -2776,7 +3094,8 @@
                         "text": "4"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "three"
                   },
                   {
                     "prompt": {
@@ -2790,10 +3109,12 @@
                         "text": "3"
                       },
                       {
-                        "text": "5"
+                        "text": "5",
+                        "audio": "five"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "six"
                   },
                   {
                     "prompt": {
@@ -2807,10 +3128,12 @@
                         "text": "6"
                       },
                       {
-                        "text": "8"
+                        "text": "8",
+                        "audio": "eight"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "nine"
                   },
                   {
                     "prompt": {
@@ -2821,13 +3144,15 @@
                         "text": "0"
                       },
                       {
-                        "text": "1"
+                        "text": "1",
+                        "audio": "one"
                       },
                       {
                         "text": "3"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "two"
                   },
                   {
                     "prompt": {
@@ -2841,18 +3166,24 @@
                         "text": "6"
                       },
                       {
-                        "text": "4"
+                        "text": "4",
+                        "audio": "four"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "five"
                   }
                 ]
               },
-              "audio": "before"
+              "audio": "before",
+              "instruction": {
+                "pt": "Qual número vem antes?",
+                "en": "What comes before?"
+              }
             },
             {
               "id": "CO2-02",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Qual vem depois?",
               "available": true,
@@ -2874,13 +3205,15 @@
                         "text": "3"
                       },
                       {
-                        "text": "5"
+                        "text": "5",
+                        "audio": "five"
                       },
                       {
                         "text": "6"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "four"
                   },
                   {
                     "prompt": {
@@ -2894,10 +3227,12 @@
                         "text": "9"
                       },
                       {
-                        "text": "8"
+                        "text": "8",
+                        "audio": "eight"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "seven"
                   },
                   {
                     "prompt": {
@@ -2908,13 +3243,15 @@
                         "text": "0"
                       },
                       {
-                        "text": "2"
+                        "text": "2",
+                        "audio": "two"
                       },
                       {
                         "text": "3"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "one"
                   },
                   {
                     "prompt": {
@@ -2925,13 +3262,15 @@
                         "text": "8"
                       },
                       {
-                        "text": "10"
+                        "text": "10",
+                        "audio": "ten"
                       },
                       {
                         "text": "7"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "nine"
                   },
                   {
                     "prompt": {
@@ -2942,21 +3281,27 @@
                         "text": "7"
                       },
                       {
-                        "text": "6"
+                        "text": "6",
+                        "audio": "six"
                       },
                       {
                         "text": "4"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "five"
                   }
                 ]
               },
-              "audio": "after"
+              "audio": "after",
+              "instruction": {
+                "pt": "Qual número vem depois?",
+                "en": "What comes after?"
+              }
             },
             {
               "id": "CO2-03",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Qual fica no meio?",
               "available": true,
@@ -2981,10 +3326,12 @@
                         "text": "5"
                       },
                       {
-                        "text": "2"
+                        "text": "2",
+                        "audio": "two"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "one, three"
                   },
                   {
                     "prompt": {
@@ -2992,7 +3339,8 @@
                     },
                     "options": [
                       {
-                        "text": "6"
+                        "text": "6",
+                        "audio": "six"
                       },
                       {
                         "text": "8"
@@ -3001,7 +3349,8 @@
                         "text": "4"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "five, seven"
                   },
                   {
                     "prompt": {
@@ -3015,10 +3364,12 @@
                         "text": "7"
                       },
                       {
-                        "text": "9"
+                        "text": "9",
+                        "audio": "nine"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "eight, ten"
                   },
                   {
                     "prompt": {
@@ -3026,7 +3377,8 @@
                     },
                     "options": [
                       {
-                        "text": "4"
+                        "text": "4",
+                        "audio": "four"
                       },
                       {
                         "text": "6"
@@ -3035,15 +3387,20 @@
                         "text": "2"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "three, five"
                   }
                 ]
               },
-              "audio": "between"
+              "audio": "between",
+              "instruction": {
+                "pt": "Qual número fica no meio?",
+                "en": "What comes in between?"
+              }
             },
             {
               "id": "CO2-04",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Um a mais",
               "available": true,
@@ -3121,11 +3478,15 @@
                   }
                 ]
               },
-              "audio": "one more"
+              "audio": "one more",
+              "instruction": {
+                "pt": "Qual desses tem um a mais?",
+                "en": "Which one has one more?"
+              }
             },
             {
               "id": "CO2-05",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Um a menos",
               "available": true,
@@ -3203,11 +3564,15 @@
                   }
                 ]
               },
-              "audio": "one fewer"
+              "audio": "one fewer",
+              "instruction": {
+                "pt": "Qual desses tem um a menos?",
+                "en": "Which one has one fewer?"
+              }
             },
             {
               "id": "CO2-24",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: números",
               "available": true,
@@ -3310,11 +3675,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO2-P1",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: números",
               "available": true,
@@ -3342,7 +3711,8 @@
                         "text": "6"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "four"
                   },
                   {
                     "prompt": {
@@ -3359,7 +3729,8 @@
                         "text": "5"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "six"
                   },
                   {
                     "prompt": {
@@ -3376,7 +3747,8 @@
                         "text": "5"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "two, four"
                   },
                   {
                     "prompt": {
@@ -3430,7 +3802,7 @@
           "missions": [
             {
               "id": "CO2-06",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Mais ou menos",
               "available": true,
@@ -3512,11 +3884,15 @@
                     "audio": "less"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO2-07",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Igual ao modelo",
               "available": true,
@@ -3599,11 +3975,15 @@
                   }
                 ]
               },
-              "audio": "same"
+              "audio": "same",
+              "instruction": {
+                "pt": "Qual é igual a esta?",
+                "en": "Which one is the same?"
+              }
             },
             {
               "id": "CO2-08",
-              "version": 3,
+              "version": 4,
               "type": "pick",
               "title": "Qual é diferente?",
               "available": true,
@@ -3690,11 +4070,15 @@
                   }
                 ]
               },
-              "audio": "different"
+              "audio": "different",
+              "instruction": {
+                "pt": "Qual é diferente?",
+                "en": "Which one is different?"
+              }
             },
             {
               "id": "CO2-09",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Combina com",
               "available": true,
@@ -3793,11 +4177,15 @@
                     "answer": 1
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual combina com ela?",
+                "en": "Which one goes with it?"
               }
             },
             {
               "id": "CO2-10",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Verão ou inverno",
               "available": true,
@@ -3883,11 +4271,15 @@
                     "audio": "summer"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO2-P2",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Prova: comparar",
               "available": true,
@@ -3932,7 +4324,8 @@
                         "art": "bell"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "drum"
                   },
                   {
                     "prompt": {
@@ -3967,7 +4360,8 @@
                         "art": "lock"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "bee"
                   },
                   {
                     "prompt": {
@@ -3997,7 +4391,7 @@
           "missions": [
             {
               "id": "CO2-11",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Feliz ou triste",
               "available": true,
@@ -4056,11 +4450,15 @@
                     "audio": "happy"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO2-12",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Os sentidos",
               "available": true,
@@ -4128,11 +4526,15 @@
                     "audio": "hear"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO2-13",
-              "version": 1,
+              "version": 2,
               "type": "match",
               "title": "Opostos 1",
               "available": true,
@@ -4147,50 +4549,64 @@
                 "pairs": [
                   [
                     {
-                      "art": "day"
+                      "art": "day",
+                      "audio": "day"
                     },
                     {
-                      "art": "night"
+                      "art": "night",
+                      "audio": "night"
                     }
                   ],
                   [
                     {
-                      "art": "wet"
+                      "art": "wet",
+                      "audio": "wet"
                     },
                     {
-                      "art": "dry"
+                      "art": "dry",
+                      "audio": "dry"
                     }
                   ],
                   [
                     {
-                      "art": "hot"
+                      "art": "hot",
+                      "audio": "hot"
                     },
                     {
-                      "art": "cold"
+                      "art": "cold",
+                      "audio": "cold"
                     }
                   ],
                   [
                     {
-                      "art": "up"
+                      "art": "up",
+                      "audio": "up"
                     },
                     {
-                      "art": "down"
+                      "art": "down",
+                      "audio": "down"
                     }
                   ],
                   [
                     {
-                      "art": "open"
+                      "art": "open",
+                      "audio": "open"
                     },
                     {
-                      "art": "closed"
+                      "art": "closed",
+                      "audio": "closed"
                     }
                   ]
                 ]
+              },
+              "instruction": {
+                "pt": "Ligue os opostos.",
+                "en": "Match the opposites."
               }
             },
             {
               "id": "CO2-14",
-              "version": 1,
+              "version": 2,
               "type": "match",
               "title": "Opostos 2",
               "available": true,
@@ -4205,42 +4621,54 @@
                 "pairs": [
                   [
                     {
-                      "art": "in"
+                      "art": "in",
+                      "audio": "in"
                     },
                     {
-                      "art": "out"
+                      "art": "out",
+                      "audio": "out"
                     }
                   ],
                   [
                     {
-                      "art": "on"
+                      "art": "on",
+                      "audio": "on"
                     },
                     {
-                      "art": "off"
+                      "art": "off",
+                      "audio": "off"
                     }
                   ],
                   [
                     {
-                      "art": "little"
+                      "art": "little",
+                      "audio": "little"
                     },
                     {
-                      "art": "big"
+                      "art": "big",
+                      "audio": "big"
                     }
                   ],
                   [
                     {
-                      "art": "empty"
+                      "art": "empty",
+                      "audio": "empty"
                     },
                     {
-                      "art": "full"
+                      "art": "full",
+                      "audio": "full"
                     }
                   ]
                 ]
+              },
+              "instruction": {
+                "pt": "Ligue os opostos.",
+                "en": "Match the opposites."
               }
             },
             {
               "id": "CO2-25",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: opostos",
               "available": true,
@@ -4325,11 +4753,15 @@
                     "answer": 1
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "CO2-P3",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Prova: emoções e opostos",
               "available": true,
@@ -4372,7 +4804,8 @@
                         "art": "up"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "day"
                   },
                   {
                     "prompt": {
@@ -4389,7 +4822,8 @@
                         "art": "cold"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "hot"
                   },
                   {
                     "prompt": {
@@ -4406,7 +4840,8 @@
                         "art": "big"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "little"
                   },
                   {
                     "prompt": {
@@ -4423,7 +4858,8 @@
                         "art": "moon"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "hear"
                   }
                 ]
               }
@@ -4435,7 +4871,7 @@
           "missions": [
             {
               "id": "CO2-15",
-              "version": 1,
+              "version": 2,
               "type": "match",
               "title": "Letras iguais",
               "available": true,
@@ -4450,58 +4886,74 @@
                 "pairs": [
                   [
                     {
-                      "text": "b"
+                      "text": "b",
+                      "audio": "B"
                     },
                     {
-                      "text": "b"
+                      "text": "b",
+                      "audio": "B"
                     }
                   ],
                   [
                     {
-                      "text": "d"
+                      "text": "d",
+                      "audio": "D"
                     },
                     {
-                      "text": "d"
+                      "text": "d",
+                      "audio": "D"
                     }
                   ],
                   [
                     {
-                      "text": "p"
+                      "text": "p",
+                      "audio": "P"
                     },
                     {
-                      "text": "p"
+                      "text": "p",
+                      "audio": "P"
                     }
                   ],
                   [
                     {
-                      "text": "q"
+                      "text": "q",
+                      "audio": "Q"
                     },
                     {
-                      "text": "q"
+                      "text": "q",
+                      "audio": "Q"
                     }
                   ],
                   [
                     {
-                      "text": "n"
+                      "text": "n",
+                      "audio": "N"
                     },
                     {
-                      "text": "n"
+                      "text": "n",
+                      "audio": "N"
                     }
                   ],
                   [
                     {
-                      "text": "h"
+                      "text": "h",
+                      "audio": "H"
                     },
                     {
-                      "text": "h"
+                      "text": "h",
+                      "audio": "H"
                     }
                   ]
                 ]
+              },
+              "instruction": {
+                "pt": "Ligue as letras iguais.",
+                "en": "Match the same letters."
               }
             },
             {
               "id": "CO2-16",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Som do T, B e M",
               "available": true,
@@ -4623,11 +5075,15 @@
                     "audio": "/m/"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com este som?",
+                "en": "Which one starts with this sound?"
               }
             },
             {
               "id": "CO2-17",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Som do K, D e N",
               "available": true,
@@ -4749,11 +5205,15 @@
                     "audio": "/n/"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com este som?",
+                "en": "Which one starts with this sound?"
               }
             },
             {
               "id": "CO2-18",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Som do P, H e C",
               "available": true,
@@ -4875,11 +5335,15 @@
                     "audio": "/k/"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com este som?",
+                "en": "Which one starts with this sound?"
               }
             },
             {
               "id": "CO2-19",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Som do W, F e G",
               "available": true,
@@ -5001,11 +5465,15 @@
                     "audio": "/g/"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com este som?",
+                "en": "Which one starts with this sound?"
               }
             },
             {
               "id": "CO2-20",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Som do L, J e S",
               "available": true,
@@ -5127,11 +5595,15 @@
                     "audio": "/s/"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com este som?",
+                "en": "Which one starts with this sound?"
               }
             },
             {
               "id": "CO2-21",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Som do Y, R e V",
               "available": true,
@@ -5253,11 +5725,15 @@
                     "audio": "/v/"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com este som?",
+                "en": "Which one starts with this sound?"
               }
             },
             {
               "id": "CO2-22",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Som do Z e Q",
               "available": true,
@@ -5343,11 +5819,15 @@
                     "audio": "/q/"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual começa com este som?",
+                "en": "Which one starts with this sound?"
               }
             },
             {
               "id": "CO2-26",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: que som?",
               "available": true,
@@ -5450,11 +5930,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça o som e toque na letra.",
+                "en": "Listen and touch the letter."
               }
             },
             {
               "id": "CO2-27",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça: com que letra começa?",
               "available": true,
@@ -5575,11 +6059,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Com que letra começa?",
+                "en": "What letter does it start with?"
               }
             },
             {
               "id": "CO2-23",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Som do fim",
               "available": true,
@@ -5701,6 +6189,10 @@
                     "audio": "/x/"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual termina com este som?",
+                "en": "Which one ends with this sound?"
               }
             },
             {
@@ -5843,139 +6335,645 @@
           "missions": [
             {
               "id": "EX1-01",
-              "version": 1,
-              "type": "match",
-              "title": "Maiúscula e minúscula (A a F)",
+              "version": 3,
+              "type": "pick",
+              "title": "Letra e palavra: A a F",
               "available": true,
               "icon": "letras:Aa",
-              "bookRef": "Explorers — Stage 1, pp. 8–11 (“Upper and Lower Case Letters”, “Trace the letters”).",
-              "goal": "Ligar cada maiúscula à minúscula.",
-              "word": "uppercase, lowercase",
-              "meaning": "maiúscula, minúscula",
-              "adultTip": "Diga o nome de cada letra em inglês.",
-              "offScreen": "Escrevam o próprio nome com a primeira letra maiúscula.",
+              "bookRef": "Explorers — Stage 1, pp. 8–11 (alfabeto). Adaptado: ouvir o nome da letra e achar a palavra que começa com ela.",
+              "goal": "Ouvir o nome da letra e achar a figura cuja palavra começa com ela.",
+              "word": "ant, ball, cat, duck, egg, fish",
+              "meaning": "formiga, bola, gato, pato, ovo, peixe",
+              "adultTip": "O app fala o nome da letra ao abrir a rodada e a palavra quando a criança acerta. Repita a palavra puxando o primeiro som: “b… ball”.",
+              "offScreen": "Escolham uma letra e procurem pela casa coisas que começam com o som dela.",
+              "instruction": {
+                "pt": "Qual começa com esta letra?",
+                "en": "Which one starts with this letter?"
+              },
               "game": {
-                "pairs": [
-                  [
-                    {
-                      "text": "A"
+                "rounds": [
+                  {
+                    "prompt": {
+                      "text": "A a"
                     },
-                    {
-                      "text": "a"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "B"
+                    "audio": "A",
+                    "options": [
+                      {
+                        "art": "bed",
+                        "text": "bed"
+                      },
+                      {
+                        "art": "ant",
+                        "text": "ant",
+                        "audio": "ant"
+                      },
+                      {
+                        "art": "sun",
+                        "text": "sun"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "text": "B b"
                     },
-                    {
-                      "text": "b"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "C"
+                    "audio": "B",
+                    "options": [
+                      {
+                        "art": "ball",
+                        "text": "ball",
+                        "audio": "ball"
+                      },
+                      {
+                        "art": "cat",
+                        "text": "cat"
+                      },
+                      {
+                        "art": "fish",
+                        "text": "fish"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "prompt": {
+                      "text": "C c"
                     },
-                    {
-                      "text": "c"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "D"
+                    "audio": "C",
+                    "options": [
+                      {
+                        "art": "duck",
+                        "text": "duck"
+                      },
+                      {
+                        "art": "hat",
+                        "text": "hat"
+                      },
+                      {
+                        "art": "cat",
+                        "text": "cat",
+                        "audio": "cat"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "prompt": {
+                      "text": "D d"
                     },
-                    {
-                      "text": "d"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "E"
+                    "audio": "D",
+                    "options": [
+                      {
+                        "art": "egg",
+                        "text": "egg"
+                      },
+                      {
+                        "art": "pig",
+                        "text": "pig"
+                      },
+                      {
+                        "art": "duck",
+                        "text": "duck",
+                        "audio": "duck"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "prompt": {
+                      "text": "E e"
                     },
-                    {
-                      "text": "e"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "F"
+                    "audio": "E",
+                    "options": [
+                      {
+                        "art": "ant",
+                        "text": "ant"
+                      },
+                      {
+                        "art": "egg",
+                        "text": "egg",
+                        "audio": "egg"
+                      },
+                      {
+                        "art": "fox",
+                        "text": "fox"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "text": "F f"
                     },
-                    {
-                      "text": "f"
-                    }
-                  ]
+                    "audio": "F",
+                    "options": [
+                      {
+                        "art": "fish",
+                        "text": "fish",
+                        "audio": "fish"
+                      },
+                      {
+                        "art": "bat",
+                        "text": "bat"
+                      },
+                      {
+                        "art": "moon",
+                        "text": "moon"
+                      }
+                    ],
+                    "answer": 0
+                  }
                 ]
               }
             },
             {
               "id": "EX1-02",
-              "version": 1,
-              "type": "match",
-              "title": "Maiúscula e minúscula (L a Y)",
+              "version": 3,
+              "type": "pick",
+              "title": "Letra e palavra: G a L",
               "available": true,
-              "icon": "letras:Qq",
-              "bookRef": "Explorers — Stage 1, pp. 8–11.",
-              "goal": "Ligar cada maiúscula à minúscula.",
-              "word": "uppercase, lowercase",
-              "meaning": "maiúscula, minúscula",
-              "adultTip": "Q/q e P/p são as mais confundidas: compare as duas.",
-              "offScreen": "Procurem letras maiúsculas em placas e embalagens.",
+              "icon": "letras:Gg",
+              "bookRef": "Explorers — Stage 1, pp. 8–11 (alfabeto). Adaptado: ouvir o nome da letra e achar a palavra que começa com ela.",
+              "goal": "Ouvir o nome da letra e achar a figura cuja palavra começa com ela.",
+              "word": "goat, hen, igloo, jet, key, leaf",
+              "meaning": "cabra, galinha, iglu, jato, chave, folha",
+              "adultTip": "O app fala o nome da letra ao abrir a rodada e a palavra quando a criança acerta. Repita a palavra puxando o primeiro som: “b… ball”.",
+              "offScreen": "Escolham uma letra e procurem pela casa coisas que começam com o som dela.",
+              "instruction": {
+                "pt": "Qual começa com esta letra?",
+                "en": "Which one starts with this letter?"
+              },
               "game": {
-                "pairs": [
-                  [
-                    {
-                      "text": "L"
+                "rounds": [
+                  {
+                    "prompt": {
+                      "text": "G g"
                     },
-                    {
-                      "text": "l"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "P"
+                    "audio": "G",
+                    "options": [
+                      {
+                        "art": "kite",
+                        "text": "kite"
+                      },
+                      {
+                        "art": "goat",
+                        "text": "goat",
+                        "audio": "goat"
+                      },
+                      {
+                        "art": "pen",
+                        "text": "pen"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "text": "H h"
                     },
-                    {
-                      "text": "p"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Q"
+                    "audio": "H",
+                    "options": [
+                      {
+                        "art": "hen",
+                        "text": "hen",
+                        "audio": "hen"
+                      },
+                      {
+                        "art": "goat",
+                        "text": "goat"
+                      },
+                      {
+                        "art": "sun",
+                        "text": "sun"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "prompt": {
+                      "text": "I i"
                     },
-                    {
-                      "text": "q"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "R"
+                    "audio": "I",
+                    "options": [
+                      {
+                        "art": "egg",
+                        "text": "egg"
+                      },
+                      {
+                        "art": "ox",
+                        "text": "ox"
+                      },
+                      {
+                        "art": "igloo",
+                        "text": "igloo",
+                        "audio": "igloo"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "prompt": {
+                      "text": "J j"
                     },
-                    {
-                      "text": "r"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "T"
+                    "audio": "J",
+                    "options": [
+                      {
+                        "art": "yak",
+                        "text": "yak"
+                      },
+                      {
+                        "art": "cup",
+                        "text": "cup"
+                      },
+                      {
+                        "art": "jet",
+                        "text": "jet",
+                        "audio": "jet"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "prompt": {
+                      "text": "K k"
                     },
-                    {
-                      "text": "t"
-                    }
-                  ],
-                  [
-                    {
-                      "text": "Y"
+                    "audio": "K",
+                    "options": [
+                      {
+                        "art": "hat",
+                        "text": "hat"
+                      },
+                      {
+                        "art": "key",
+                        "text": "key",
+                        "audio": "key"
+                      },
+                      {
+                        "art": "lion",
+                        "text": "lion"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "text": "L l"
                     },
-                    {
-                      "text": "y"
-                    }
-                  ]
+                    "audio": "L",
+                    "options": [
+                      {
+                        "art": "leaf",
+                        "text": "leaf",
+                        "audio": "leaf"
+                      },
+                      {
+                        "art": "rock",
+                        "text": "rock"
+                      },
+                      {
+                        "art": "bed",
+                        "text": "bed"
+                      }
+                    ],
+                    "answer": 0
+                  }
+                ]
+              }
+            },
+            {
+              "id": "EX1-34",
+              "version": 3,
+              "type": "pick",
+              "title": "Letra e palavra: M a R",
+              "available": true,
+              "icon": "letras:Mm",
+              "bookRef": "Explorers — Stage 1, pp. 8–11 (alfabeto). Adaptado: ouvir o nome da letra e achar a palavra que começa com ela.",
+              "goal": "Ouvir o nome da letra e achar a figura cuja palavra começa com ela.",
+              "word": "moon, nut, octopus, penguin, queen, rabbit",
+              "meaning": "lua, noz, polvo, pinguim, rainha, coelho",
+              "adultTip": "O app fala o nome da letra ao abrir a rodada e a palavra quando a criança acerta. Repita a palavra puxando o primeiro som: “b… ball”.",
+              "offScreen": "Escolham uma letra e procurem pela casa coisas que começam com o som dela.",
+              "instruction": {
+                "pt": "Qual começa com esta letra?",
+                "en": "Which one starts with this letter?"
+              },
+              "game": {
+                "rounds": [
+                  {
+                    "prompt": {
+                      "text": "M m"
+                    },
+                    "audio": "M",
+                    "options": [
+                      {
+                        "art": "nut",
+                        "text": "nut"
+                      },
+                      {
+                        "art": "moon",
+                        "text": "moon",
+                        "audio": "moon"
+                      },
+                      {
+                        "art": "cup",
+                        "text": "cup"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "text": "N n"
+                    },
+                    "audio": "N",
+                    "options": [
+                      {
+                        "art": "nut",
+                        "text": "nut",
+                        "audio": "nut"
+                      },
+                      {
+                        "art": "moon",
+                        "text": "moon"
+                      },
+                      {
+                        "art": "sock",
+                        "text": "sock"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "prompt": {
+                      "text": "O o"
+                    },
+                    "audio": "O",
+                    "options": [
+                      {
+                        "art": "umbrella",
+                        "text": "umbrella"
+                      },
+                      {
+                        "art": "ant",
+                        "text": "ant"
+                      },
+                      {
+                        "art": "octopus",
+                        "text": "octopus",
+                        "audio": "octopus"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "prompt": {
+                      "text": "P p"
+                    },
+                    "audio": "P",
+                    "options": [
+                      {
+                        "art": "bat",
+                        "text": "bat"
+                      },
+                      {
+                        "art": "duck",
+                        "text": "duck"
+                      },
+                      {
+                        "art": "penguin",
+                        "text": "penguin",
+                        "audio": "penguin"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "prompt": {
+                      "text": "Q q"
+                    },
+                    "audio": "Q",
+                    "options": [
+                      {
+                        "art": "key",
+                        "text": "key"
+                      },
+                      {
+                        "art": "queen",
+                        "text": "queen",
+                        "audio": "queen"
+                      },
+                      {
+                        "art": "goat",
+                        "text": "goat"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "text": "R r"
+                    },
+                    "audio": "R",
+                    "options": [
+                      {
+                        "art": "rabbit",
+                        "text": "rabbit",
+                        "audio": "rabbit"
+                      },
+                      {
+                        "art": "lion",
+                        "text": "lion"
+                      },
+                      {
+                        "art": "wig",
+                        "text": "wig"
+                      }
+                    ],
+                    "answer": 0
+                  }
+                ]
+              }
+            },
+            {
+              "id": "EX1-40",
+              "version": 3,
+              "type": "pick",
+              "title": "Letra e palavra: S a Z",
+              "available": true,
+              "icon": "letras:Ss",
+              "bookRef": "Explorers — Stage 1, pp. 8–11 (alfabeto). Adaptado: ouvir o nome da letra e achar a palavra que começa com ela.",
+              "goal": "Ouvir o nome da letra e achar a figura cuja palavra começa com ela.",
+              "word": "sock, tree, umbrella, van, wig, yo-yo, zipper",
+              "meaning": "meia, árvore, guarda-chuva, van, peruca, ioiô, zíper",
+              "adultTip": "O app fala o nome da letra ao abrir a rodada e a palavra quando a criança acerta. Repita a palavra puxando o primeiro som: “b… ball”. O X fica de fora: quase nenhuma palavra que as crianças conhecem começa com ele (ele aparece no fim, como em “box”).",
+              "offScreen": "Escolham uma letra e procurem pela casa coisas que começam com o som dela.",
+              "instruction": {
+                "pt": "Qual começa com esta letra?",
+                "en": "Which one starts with this letter?"
+              },
+              "game": {
+                "rounds": [
+                  {
+                    "prompt": {
+                      "text": "S s"
+                    },
+                    "audio": "S",
+                    "options": [
+                      {
+                        "art": "zebra",
+                        "text": "zebra"
+                      },
+                      {
+                        "art": "sock",
+                        "text": "sock",
+                        "audio": "sock"
+                      },
+                      {
+                        "art": "fan",
+                        "text": "fan"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "text": "T t"
+                    },
+                    "audio": "T",
+                    "options": [
+                      {
+                        "art": "tree",
+                        "text": "tree",
+                        "audio": "tree"
+                      },
+                      {
+                        "art": "duck",
+                        "text": "duck"
+                      },
+                      {
+                        "art": "bed",
+                        "text": "bed"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "prompt": {
+                      "text": "U u"
+                    },
+                    "audio": "U",
+                    "options": [
+                      {
+                        "art": "apple",
+                        "text": "apple"
+                      },
+                      {
+                        "art": "octopus",
+                        "text": "octopus"
+                      },
+                      {
+                        "art": "umbrella",
+                        "text": "umbrella",
+                        "audio": "umbrella"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "prompt": {
+                      "text": "V v"
+                    },
+                    "audio": "V",
+                    "options": [
+                      {
+                        "art": "wagon",
+                        "text": "wagon"
+                      },
+                      {
+                        "art": "fan",
+                        "text": "fan"
+                      },
+                      {
+                        "art": "van",
+                        "text": "van",
+                        "audio": "van"
+                      }
+                    ],
+                    "answer": 2
+                  },
+                  {
+                    "prompt": {
+                      "text": "W w"
+                    },
+                    "audio": "W",
+                    "options": [
+                      {
+                        "art": "van",
+                        "text": "van"
+                      },
+                      {
+                        "art": "wig",
+                        "text": "wig",
+                        "audio": "wig"
+                      },
+                      {
+                        "art": "yak",
+                        "text": "yak"
+                      }
+                    ],
+                    "answer": 1
+                  },
+                  {
+                    "prompt": {
+                      "text": "Y y"
+                    },
+                    "audio": "Y",
+                    "options": [
+                      {
+                        "art": "yo-yo",
+                        "text": "yo-yo",
+                        "audio": "yo-yo"
+                      },
+                      {
+                        "art": "jet",
+                        "text": "jet"
+                      },
+                      {
+                        "art": "wagon",
+                        "text": "wagon"
+                      }
+                    ],
+                    "answer": 0
+                  },
+                  {
+                    "prompt": {
+                      "text": "Z z"
+                    },
+                    "audio": "Z",
+                    "options": [
+                      {
+                        "art": "zipper",
+                        "text": "zipper",
+                        "audio": "zipper"
+                      },
+                      {
+                        "art": "sun",
+                        "text": "sun"
+                      },
+                      {
+                        "art": "sock",
+                        "text": "sock"
+                      }
+                    ],
+                    "answer": 0
+                  }
                 ]
               }
             },
             {
               "id": "EX1-03",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Vogal ou consoante?",
               "available": true,
@@ -6079,113 +7077,10 @@
                     "audio": "T"
                   }
                 ]
-              }
-            },
-            {
-              "id": "EX1-34",
-              "version": 1,
-              "type": "pick",
-              "title": "Ouça e toque: letras",
-              "available": true,
-              "bookRef": "Explorers — Stage 1, pp. 10–11 (“There are 21 consonants and 5 vowels”). Atividade de ouvir criada para o app.",
-              "goal": "Ouvir o nome da letra e tocar na minúscula.",
-              "word": "B, E, G, M, R, U",
-              "meaning": "nomes das letras",
-              "adultTip": "O app fala em inglês ao abrir cada rodada. Deixe a criança ouvir e escolher sozinha; toque no alto-falante amarelo para ouvir de novo. Evite traduzir antes de ela tentar.",
-              "offScreen": "Brinquem de “ouça e aponte”: diga uma palavra em inglês e a criança aponta a coisa em casa.",
-              "game": {
-                "rounds": [
-                  {
-                    "audio": "B",
-                    "options": [
-                      {
-                        "text": "d"
-                      },
-                      {
-                        "text": "b"
-                      },
-                      {
-                        "text": "p"
-                      }
-                    ],
-                    "answer": 1
-                  },
-                  {
-                    "audio": "E",
-                    "options": [
-                      {
-                        "text": "e"
-                      },
-                      {
-                        "text": "a"
-                      },
-                      {
-                        "text": "i"
-                      }
-                    ],
-                    "answer": 0
-                  },
-                  {
-                    "audio": "G",
-                    "options": [
-                      {
-                        "text": "j"
-                      },
-                      {
-                        "text": "q"
-                      },
-                      {
-                        "text": "g"
-                      }
-                    ],
-                    "answer": 2
-                  },
-                  {
-                    "audio": "M",
-                    "options": [
-                      {
-                        "text": "n"
-                      },
-                      {
-                        "text": "m"
-                      },
-                      {
-                        "text": "w"
-                      }
-                    ],
-                    "answer": 1
-                  },
-                  {
-                    "audio": "R",
-                    "options": [
-                      {
-                        "text": "r"
-                      },
-                      {
-                        "text": "l"
-                      },
-                      {
-                        "text": "y"
-                      }
-                    ],
-                    "answer": 0
-                  },
-                  {
-                    "audio": "U",
-                    "options": [
-                      {
-                        "text": "o"
-                      },
-                      {
-                        "text": "a"
-                      },
-                      {
-                        "text": "u"
-                      }
-                    ],
-                    "answer": 2
-                  }
-                ]
+              },
+              "instruction": {
+                "pt": "É vogal ou consoante?",
+                "en": "Vowel or consonant?"
               }
             },
             {
@@ -6294,7 +7189,7 @@
           "missions": [
             {
               "id": "EX1-04",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Short a",
               "available": true,
@@ -6322,7 +7217,8 @@
                         "text": "cot"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "cat"
                   },
                   {
                     "prompt": {
@@ -6339,7 +7235,8 @@
                         "text": "hot"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "hat"
                   },
                   {
                     "prompt": {
@@ -6356,7 +7253,8 @@
                         "text": "big"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "bag"
                   },
                   {
                     "prompt": {
@@ -6373,7 +7271,8 @@
                         "text": "pin"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "pan"
                   },
                   {
                     "prompt": {
@@ -6390,14 +7289,19 @@
                         "text": "van"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "van"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-05",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Short i",
               "available": true,
@@ -6425,7 +7329,8 @@
                         "text": "pig"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "pig"
                   },
                   {
                     "prompt": {
@@ -6442,7 +7347,8 @@
                         "text": "pan"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "pin"
                   },
                   {
                     "prompt": {
@@ -6459,7 +7365,8 @@
                         "text": "wig"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "wig"
                   },
                   {
                     "prompt": {
@@ -6476,7 +7383,8 @@
                         "text": "bob"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "bib"
                   },
                   {
                     "prompt": {
@@ -6493,14 +7401,19 @@
                         "text": "fan"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "fin"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-06",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Short u",
               "available": true,
@@ -6528,7 +7441,8 @@
                         "text": "big"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "bug"
                   },
                   {
                     "prompt": {
@@ -6545,7 +7459,8 @@
                         "text": "cop"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "cup"
                   },
                   {
                     "prompt": {
@@ -6562,7 +7477,8 @@
                         "text": "son"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "sun"
                   },
                   {
                     "prompt": {
@@ -6579,7 +7495,8 @@
                         "text": "nut"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "nut"
                   },
                   {
                     "prompt": {
@@ -6596,14 +7513,19 @@
                         "text": "tub"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "tub"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-07",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Short o",
               "available": true,
@@ -6631,7 +7553,8 @@
                         "text": "bag"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "box"
                   },
                   {
                     "prompt": {
@@ -6648,7 +7571,8 @@
                         "text": "fix"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "fox"
                   },
                   {
                     "prompt": {
@@ -6665,7 +7589,8 @@
                         "text": "rug"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "rock"
                   },
                   {
                     "prompt": {
@@ -6682,7 +7607,8 @@
                         "text": "tip"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "top"
                   },
                   {
                     "prompt": {
@@ -6699,14 +7625,19 @@
                         "text": "egg"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "ox"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-08",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Short e",
               "available": true,
@@ -6734,7 +7665,8 @@
                         "text": "bed"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "bed"
                   },
                   {
                     "prompt": {
@@ -6751,7 +7683,8 @@
                         "text": "pen"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "pen"
                   },
                   {
                     "prompt": {
@@ -6768,7 +7701,8 @@
                         "text": "hen"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "hen"
                   },
                   {
                     "prompt": {
@@ -6785,7 +7719,8 @@
                         "text": "not"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "net"
                   },
                   {
                     "prompt": {
@@ -6802,14 +7737,19 @@
                         "text": "ball"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "bell"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-35",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça: qual vogal?",
               "available": true,
@@ -6930,11 +7870,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque na vogal.",
+                "en": "Listen and touch the vowel."
               }
             },
             {
               "id": "EX1-36",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: palavras",
               "available": true,
@@ -7037,11 +7981,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "EX1-09",
-              "version": 2,
+              "version": 3,
               "type": "spelling",
               "title": "Monte: CAT",
               "available": true,
@@ -7055,11 +8003,15 @@
                 "word": "CAT",
                 "art": "cat"
               },
-              "audio": "cat"
+              "audio": "cat",
+              "instruction": {
+                "pt": "Monte a palavra.",
+                "en": "Make the word."
+              }
             },
             {
               "id": "EX1-10",
-              "version": 2,
+              "version": 3,
               "type": "spelling",
               "title": "Monte: SUN",
               "available": true,
@@ -7073,11 +8025,15 @@
                 "word": "SUN",
                 "art": "sun"
               },
-              "audio": "sun"
+              "audio": "sun",
+              "instruction": {
+                "pt": "Monte a palavra.",
+                "en": "Make the word."
+              }
             },
             {
               "id": "EX1-11",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Rimas",
               "available": true,
@@ -7199,11 +8155,15 @@
                     "audio": "egg"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual rima com esta palavra?",
+                "en": "Which one rhymes?"
               }
             },
             {
               "id": "EX1-P2",
-              "version": 2,
+              "version": 3,
               "type": "pick",
               "title": "Prova: vogais curtas",
               "available": true,
@@ -7231,7 +8191,8 @@
                         "text": "hot"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "hat"
                   },
                   {
                     "prompt": {
@@ -7248,7 +8209,8 @@
                         "text": "pen"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "pig"
                   },
                   {
                     "prompt": {
@@ -7265,7 +8227,8 @@
                         "text": "sin"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "sun"
                   },
                   {
                     "prompt": {
@@ -7282,7 +8245,8 @@
                         "text": "fox"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "fox"
                   },
                   {
                     "prompt": {
@@ -7299,24 +8263,25 @@
                         "text": "bed"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "bed"
                   },
                   {
                     "prompt": {
-                      "text": "cat"
+                      "art": "cat"
                     },
                     "options": [
                       {
-                        "text": "cup"
+                        "text": "cut"
                       },
                       {
-                        "text": "pen"
+                        "text": "cat"
                       },
                       {
-                        "text": "hat"
+                        "text": "cot"
                       }
                     ],
-                    "answer": 2,
+                    "answer": 1,
                     "audio": "cat"
                   }
                 ]
@@ -7329,7 +8294,7 @@
           "missions": [
             {
               "id": "EX1-12",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Long a",
               "available": true,
@@ -7357,7 +8322,8 @@
                         "text": "cat"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "cake"
                   },
                   {
                     "prompt": {
@@ -7374,7 +8340,8 @@
                         "text": "cape"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "cape"
                   },
                   {
                     "prompt": {
@@ -7391,7 +8358,8 @@
                         "text": "rake"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "rake"
                   },
                   {
                     "prompt": {
@@ -7408,7 +8376,8 @@
                         "text": "get"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "gate"
                   },
                   {
                     "prompt": {
@@ -7425,14 +8394,19 @@
                         "text": "lick"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "lake"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-13",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Long e",
               "available": true,
@@ -7460,7 +8434,8 @@
                         "text": "bell"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "bee"
                   },
                   {
                     "prompt": {
@@ -7477,7 +8452,8 @@
                         "text": "foot"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "feet"
                   },
                   {
                     "prompt": {
@@ -7494,7 +8470,8 @@
                         "text": "seed"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "seed"
                   },
                   {
                     "prompt": {
@@ -7511,7 +8488,8 @@
                         "text": "tree"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "tree"
                   },
                   {
                     "prompt": {
@@ -7528,14 +8506,19 @@
                         "text": "ship"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "sheep"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-14",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Long i",
               "available": true,
@@ -7563,7 +8546,8 @@
                         "text": "kite"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "kite"
                   },
                   {
                     "prompt": {
@@ -7580,7 +8564,8 @@
                         "text": "bike"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "bike"
                   },
                   {
                     "prompt": {
@@ -7597,7 +8582,8 @@
                         "text": "pop"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "pipe"
                   },
                   {
                     "prompt": {
@@ -7614,7 +8600,8 @@
                         "text": "nun"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "nine"
                   },
                   {
                     "prompt": {
@@ -7631,14 +8618,19 @@
                         "text": "dice"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "dice"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-15",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Long o",
               "available": true,
@@ -7666,7 +8658,8 @@
                         "text": "bin"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "bone"
                   },
                   {
                     "prompt": {
@@ -7683,7 +8676,8 @@
                         "text": "gate"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "goat"
                   },
                   {
                     "prompt": {
@@ -7700,7 +8694,8 @@
                         "text": "bit"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "boat"
                   },
                   {
                     "prompt": {
@@ -7717,7 +8712,8 @@
                         "text": "sap"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "soap"
                   },
                   {
                     "prompt": {
@@ -7734,14 +8730,19 @@
                         "text": "robe"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "robe"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-16",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Long u",
               "available": true,
@@ -7769,7 +8770,8 @@
                         "text": "cube"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "cube"
                   },
                   {
                     "prompt": {
@@ -7786,7 +8788,8 @@
                         "text": "tub"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "tube"
                   },
                   {
                     "prompt": {
@@ -7803,7 +8806,8 @@
                         "text": "mule"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "mule"
                   },
                   {
                     "prompt": {
@@ -7820,7 +8824,8 @@
                         "text": "flat"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "flute"
                   },
                   {
                     "prompt": {
@@ -7837,14 +8842,19 @@
                         "text": "cat"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "cute"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-17",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "O som de all",
               "available": true,
@@ -7872,7 +8882,8 @@
                         "text": "ball"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "ball"
                   },
                   {
                     "prompt": {
@@ -7889,7 +8900,8 @@
                         "text": "well"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "wall"
                   },
                   {
                     "prompt": {
@@ -7906,7 +8918,8 @@
                         "text": "tell"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "tall"
                   },
                   {
                     "prompt": {
@@ -7923,14 +8936,19 @@
                         "text": "fall"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "fall"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-37",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça: curta ou longa?",
               "available": true,
@@ -8015,11 +9033,15 @@
                     "answer": 0
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "EX1-18",
-              "version": 2,
+              "version": 3,
               "type": "spelling",
               "title": "Monte: CAKE",
               "available": true,
@@ -8033,11 +9055,15 @@
                 "word": "CAKE",
                 "art": "cake"
               },
-              "audio": "cake"
+              "audio": "cake",
+              "instruction": {
+                "pt": "Monte a palavra.",
+                "en": "Make the word."
+              }
             },
             {
               "id": "EX1-19",
-              "version": 2,
+              "version": 3,
               "type": "spelling",
               "title": "Monte: BEE",
               "available": true,
@@ -8051,11 +9077,15 @@
                 "word": "BEE",
                 "art": "abelha"
               },
-              "audio": "bee"
+              "audio": "bee",
+              "instruction": {
+                "pt": "Monte a palavra.",
+                "en": "Make the word."
+              }
             },
             {
               "id": "EX1-20",
-              "version": 2,
+              "version": 3,
               "type": "spelling",
               "title": "Monte: KITE",
               "available": true,
@@ -8069,11 +9099,15 @@
                 "word": "KITE",
                 "art": "kite"
               },
-              "audio": "kite"
+              "audio": "kite",
+              "instruction": {
+                "pt": "Monte a palavra.",
+                "en": "Make the word."
+              }
             },
             {
               "id": "EX1-P3",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: vogais longas",
               "available": true,
@@ -8101,7 +9135,8 @@
                         "text": "cap"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "cake"
                   },
                   {
                     "prompt": {
@@ -8118,7 +9153,8 @@
                         "text": "bed"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "bee"
                   },
                   {
                     "prompt": {
@@ -8135,7 +9171,8 @@
                         "text": "cat"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "kite"
                   },
                   {
                     "prompt": {
@@ -8152,7 +9189,8 @@
                         "text": "boat"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "boat"
                   },
                   {
                     "prompt": {
@@ -8169,7 +9207,8 @@
                         "text": "cube"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "cube"
                   },
                   {
                     "prompt": {
@@ -8186,7 +9225,8 @@
                         "text": "ball"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "ball"
                   }
                 ]
               }
@@ -8198,7 +9238,7 @@
           "missions": [
             {
               "id": "EX1-21",
-              "version": 2,
+              "version": 3,
               "type": "quiz",
               "title": "a ___",
               "available": true,
@@ -8226,11 +9266,15 @@
                 ],
                 "answer": "fox"
               },
-              "audio": "a fox"
+              "audio": "a fox",
+              "instruction": {
+                "pt": "De quem é esta sombra?",
+                "en": "What is it?"
+              }
             },
             {
               "id": "EX1-22",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "a ou an?",
               "available": true,
@@ -8255,7 +9299,8 @@
                         "text": "a"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "apple"
                   },
                   {
                     "prompt": {
@@ -8269,7 +9314,8 @@
                         "text": "a"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "cat"
                   },
                   {
                     "prompt": {
@@ -8283,7 +9329,8 @@
                         "text": "a"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "egg"
                   },
                   {
                     "prompt": {
@@ -8297,7 +9344,8 @@
                         "text": "a"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "bug"
                   },
                   {
                     "prompt": {
@@ -8311,7 +9359,8 @@
                         "text": "a"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "igloo"
                   },
                   {
                     "prompt": {
@@ -8325,7 +9374,8 @@
                         "text": "an"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "pen"
                   },
                   {
                     "prompt": {
@@ -8339,14 +9389,19 @@
                         "text": "an"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "octopus"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "É a ou an?",
+                "en": "A or an?"
               }
             },
             {
               "id": "EX1-23",
-              "version": 2,
+              "version": 3,
               "type": "sentence",
               "title": "I am tall",
               "available": true,
@@ -8364,11 +9419,15 @@
                 ],
                 "art": "tall"
               },
-              "audio": "I am tall"
+              "audio": "I am tall",
+              "instruction": {
+                "pt": "Monte a frase.",
+                "en": "Make the sentence."
+              }
             },
             {
               "id": "EX1-24",
-              "version": 2,
+              "version": 3,
               "type": "sentence",
               "title": "We are ten",
               "available": true,
@@ -8386,11 +9445,15 @@
                 ],
                 "art": "ten"
               },
-              "audio": "We are ten"
+              "audio": "We are ten",
+              "instruction": {
+                "pt": "Monte a frase.",
+                "en": "Make the sentence."
+              }
             },
             {
               "id": "EX1-25",
-              "version": 2,
+              "version": 3,
               "type": "sentence",
               "title": "I am in bed",
               "available": true,
@@ -8409,11 +9472,15 @@
                 ],
                 "art": "bed"
               },
-              "audio": "I am in bed"
+              "audio": "I am in bed",
+              "instruction": {
+                "pt": "Monte a frase.",
+                "en": "Make the sentence."
+              }
             },
             {
               "id": "EX1-38",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: frases",
               "available": true,
@@ -8516,11 +9583,15 @@
                     "answer": 2
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "EX1-P4",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: palavras frequentes",
               "available": true,
@@ -8545,7 +9616,8 @@
                         "text": "an"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "apple"
                   },
                   {
                     "prompt": {
@@ -8559,7 +9631,8 @@
                         "text": "a"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "fox"
                   },
                   {
                     "prompt": {
@@ -8573,7 +9646,8 @@
                         "text": "a"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "egg"
                   },
                   {
                     "prompt": {
@@ -8590,7 +9664,8 @@
                         "text": "I am tall"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "bed"
                   },
                   {
                     "prompt": {
@@ -8607,7 +9682,8 @@
                         "text": "We are ten"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "ten"
                   }
                 ]
               }
@@ -8619,7 +9695,7 @@
           "missions": [
             {
               "id": "EX1-26",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Família -at",
               "available": true,
@@ -8647,7 +9723,8 @@
                         "text": "mat"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "bat"
                   },
                   {
                     "prompt": {
@@ -8664,7 +9741,8 @@
                         "text": "cat"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "cat"
                   },
                   {
                     "prompt": {
@@ -8681,14 +9759,19 @@
                         "text": "fat"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "hat"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-27",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Família -ake",
               "available": true,
@@ -8716,7 +9799,8 @@
                         "text": "rake"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "cake"
                   },
                   {
                     "prompt": {
@@ -8733,7 +9817,8 @@
                         "text": "cake"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "lake"
                   },
                   {
                     "prompt": {
@@ -8750,7 +9835,8 @@
                         "text": "rake"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "rake"
                   },
                   {
                     "prompt": {
@@ -8767,14 +9853,19 @@
                         "text": "gate"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "gate"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-28",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Família -en e -ell",
               "available": true,
@@ -8802,7 +9893,8 @@
                         "text": "hen"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "ten"
                   },
                   {
                     "prompt": {
@@ -8819,7 +9911,8 @@
                         "text": "pen"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "pen"
                   },
                   {
                     "prompt": {
@@ -8836,7 +9929,8 @@
                         "text": "well"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "bell"
                   },
                   {
                     "prompt": {
@@ -8853,14 +9947,19 @@
                         "text": "tell"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "well"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-29",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Família -ee e -in",
               "available": true,
@@ -8888,7 +9987,8 @@
                         "text": "see"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "seed"
                   },
                   {
                     "prompt": {
@@ -8905,7 +10005,8 @@
                         "text": "fin"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "pin"
                   },
                   {
                     "prompt": {
@@ -8922,7 +10023,8 @@
                         "text": "fin"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "fin"
                   },
                   {
                     "prompt": {
@@ -8939,14 +10041,19 @@
                         "text": "hill"
                       }
                     ],
-                    "answer": 2
+                    "answer": 2,
+                    "audio": "hill"
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Qual é a palavra?",
+                "en": "Find the word."
               }
             },
             {
               "id": "EX1-39",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Ouça e toque: palavras novas",
               "available": true,
@@ -9049,11 +10156,15 @@
                     "answer": 1
                   }
                 ]
+              },
+              "instruction": {
+                "pt": "Ouça e toque.",
+                "en": "Listen and touch."
               }
             },
             {
               "id": "EX1-30",
-              "version": 2,
+              "version": 3,
               "type": "sentence",
               "title": "Nate ate cake",
               "available": true,
@@ -9071,11 +10182,15 @@
                 ],
                 "art": "cake"
               },
-              "audio": "Nate ate cake"
+              "audio": "Nate ate cake",
+              "instruction": {
+                "pt": "Monte a frase.",
+                "en": "Make the sentence."
+              }
             },
             {
               "id": "EX1-31",
-              "version": 2,
+              "version": 3,
               "type": "sentence",
               "title": "Jill will win",
               "available": true,
@@ -9093,11 +10208,15 @@
                 ],
                 "art": "jill"
               },
-              "audio": "Jill will win"
+              "audio": "Jill will win",
+              "instruction": {
+                "pt": "Monte a frase.",
+                "en": "Make the sentence."
+              }
             },
             {
               "id": "EX1-P5",
-              "version": 1,
+              "version": 2,
               "type": "pick",
               "title": "Prova: palavras novas",
               "available": true,
@@ -9125,7 +10244,8 @@
                         "text": "mat"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "bat"
                   },
                   {
                     "prompt": {
@@ -9142,7 +10262,8 @@
                         "text": "cake"
                       }
                     ],
-                    "answer": 0
+                    "answer": 0,
+                    "audio": "lake"
                   },
                   {
                     "prompt": {
@@ -9159,7 +10280,8 @@
                         "text": "men"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "pen"
                   },
                   {
                     "prompt": {
@@ -9176,7 +10298,8 @@
                         "text": "feed"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "seed"
                   },
                   {
                     "prompt": {
@@ -9193,7 +10316,8 @@
                         "text": "We are ten"
                       }
                     ],
-                    "answer": 1
+                    "answer": 1,
+                    "audio": "cake"
                   }
                 ]
               }
@@ -9205,7 +10329,7 @@
           "missions": [
             {
               "id": "EX1-32",
-              "version": 1,
+              "version": 2,
               "type": "match",
               "title": "Cartas 1",
               "available": true,
@@ -9223,7 +10347,8 @@
                       "art": "hat"
                     },
                     {
-                      "text": "hat"
+                      "text": "hat",
+                      "audio": "hat"
                     }
                   ],
                   [
@@ -9231,7 +10356,8 @@
                       "art": "cat"
                     },
                     {
-                      "text": "cat"
+                      "text": "cat",
+                      "audio": "cat"
                     }
                   ],
                   [
@@ -9239,7 +10365,8 @@
                       "art": "bee"
                     },
                     {
-                      "text": "bee"
+                      "text": "bee",
+                      "audio": "bee"
                     }
                   ],
                   [
@@ -9247,7 +10374,8 @@
                       "art": "gate"
                     },
                     {
-                      "text": "gate"
+                      "text": "gate",
+                      "audio": "gate"
                     }
                   ],
                   [
@@ -9255,15 +10383,20 @@
                       "art": "cake"
                     },
                     {
-                      "text": "cake"
+                      "text": "cake",
+                      "audio": "cake"
                     }
                   ]
                 ]
+              },
+              "instruction": {
+                "pt": "Ligue figura e palavra.",
+                "en": "Match the pictures and words."
               }
             },
             {
               "id": "EX1-33",
-              "version": 1,
+              "version": 2,
               "type": "match",
               "title": "Cartas 2",
               "available": true,
@@ -9281,7 +10414,8 @@
                       "art": "seed"
                     },
                     {
-                      "text": "seed"
+                      "text": "seed",
+                      "audio": "seed"
                     }
                   ],
                   [
@@ -9289,7 +10423,8 @@
                       "art": "bell"
                     },
                     {
-                      "text": "bell"
+                      "text": "bell",
+                      "audio": "bell"
                     }
                   ],
                   [
@@ -9297,7 +10432,8 @@
                       "art": "lake"
                     },
                     {
-                      "text": "lake"
+                      "text": "lake",
+                      "audio": "lake"
                     }
                   ],
                   [
@@ -9305,7 +10441,8 @@
                       "art": "ten"
                     },
                     {
-                      "text": "ten"
+                      "text": "ten",
+                      "audio": "ten"
                     }
                   ],
                   [
@@ -9313,10 +10450,15 @@
                       "art": "well"
                     },
                     {
-                      "text": "well"
+                      "text": "well",
+                      "audio": "well"
                     }
                   ]
                 ]
+              },
+              "instruction": {
+                "pt": "Ligue figura e palavra.",
+                "en": "Match the pictures and words."
               }
             }
           ]
@@ -9343,7 +10485,8 @@
               "art": "apple"
             }
           ],
-          "answer": 2
+          "answer": 2,
+          "audio": "red"
         },
         {
           "prompt": {
@@ -9378,7 +10521,8 @@
               "shape": "circle"
             }
           ],
-          "answer": 2
+          "answer": 2,
+          "audio": "circle"
         },
         {
           "prompt": {
@@ -9395,7 +10539,8 @@
               "art": "duck"
             }
           ],
-          "answer": 0
+          "answer": 0,
+          "audio": "B"
         }
       ]
     },
@@ -9417,7 +10562,8 @@
               "text": "4"
             }
           ],
-          "answer": 2
+          "answer": 2,
+          "audio": "five"
         },
         {
           "prompt": {
@@ -9434,7 +10580,8 @@
               "art": "night"
             }
           ],
-          "answer": 2
+          "answer": 2,
+          "audio": "day"
         },
         {
           "prompt": {
@@ -9451,7 +10598,8 @@
               "art": "mouse"
             }
           ],
-          "answer": 0
+          "answer": 0,
+          "audio": "/t/"
         },
         {
           "prompt": {
@@ -9467,7 +10615,8 @@
               "count": 2
             }
           ],
-          "answer": 0
+          "answer": 0,
+          "audio": "more"
         }
       ]
     },
@@ -9489,7 +10638,8 @@
               "text": "cut"
             }
           ],
-          "answer": 1
+          "answer": 1,
+          "audio": "cat"
         },
         {
           "prompt": {
@@ -9506,7 +10656,8 @@
               "text": "sun"
             }
           ],
-          "answer": 2
+          "answer": 2,
+          "audio": "sun"
         },
         {
           "prompt": {
@@ -9523,7 +10674,8 @@
               "text": "cake"
             }
           ],
-          "answer": 2
+          "answer": 2,
+          "audio": "cake"
         },
         {
           "prompt": {
@@ -9537,7 +10689,8 @@
               "text": "a"
             }
           ],
-          "answer": 0
+          "answer": 0,
+          "audio": "apple"
         }
       ]
     }

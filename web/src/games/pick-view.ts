@@ -1,7 +1,7 @@
 // Tela do Escolher: enunciado no alto, opções embaixo, uma rodada por vez.
 // Na prova a escolha só "aperta" a carta e passa à próxima, sem mostrar se acertou.
 import { card, cardLabel, rabbit } from '../art.ts';
-import { say, speaker, stop } from '../audio.ts';
+import { cheer, oops, sayNext, speaker } from '../audio.ts';
 import { esc, reducedMotion } from '../ui.ts';
 import { createDemo, nudge } from './demo.ts';
 import { init, reduce, type PickEffect } from './pick.ts';
@@ -25,7 +25,8 @@ export const pickGame: GameModule<'pick'> = {
     const rabbitBox = el.querySelector<HTMLElement>('.game-rabbit')!;
     const demo = createDemo(el);
     const options = () => [...stage.querySelectorAll<HTMLButtonElement>('.option')];
-    const showDemo = () => demo.run([stage.querySelector('.pick__prompt')!, stage.querySelector('.pick__options')!]);
+    // A mão só toca no modelo: apontar o meio das opções caía em cima da resposta. O que fazer vem falado.
+    const showDemo = () => demo.run([stage.querySelector('.pick__prompt')!]);
 
     function renderRound(i: number) {
       const r = rounds[i];
@@ -38,10 +39,11 @@ export const pickGame: GameModule<'pick'> = {
           ${r.options.map((o, j) => `<button type="button" class="option pick-card" data-i="${j}" aria-label="${esc(cardLabel(o))}">${card(o)}</button>`).join('')}
         </div>`;
       rabbitBox.innerHTML = rabbit('waiting');
-      if (r.audio) say(r.audio, stage.querySelector('[data-say]'));
+      // Na fila: espera a instrução ou o "Good job!" da rodada anterior.
+      if (r.audio) sayNext(r.audio, stage.querySelector('[data-say]'));
     }
 
-    function apply(e: PickEffect) {
+    function apply(e: PickEffect, round: number) {
       const o = options()[e.option];
       switch (e.type) {
         case 'discarded':
@@ -49,6 +51,7 @@ export const pickGame: GameModule<'pick'> = {
           o.disabled = true;
           nudge(o);
           nudge(rabbitBox, 'is-thinking');
+          oops();
           break;
         case 'autoHelp':
           o.classList.add('is-hint');
@@ -61,6 +64,8 @@ export const pickGame: GameModule<'pick'> = {
           else {
             o.classList.add('is-right');
             rabbitBox.innerHTML = rabbit('celebrating');
+            const a = rounds[round].options[e.option].audio;
+            cheer(a ? [a] : []);
           }
           break;
         case 'roundDone':
@@ -82,7 +87,7 @@ export const pickGame: GameModule<'pick'> = {
       const r = reduce(state, { type: 'choose', option: Number(o.dataset.i) });
       state = r.state;
       if (r.effects.some((e) => e.type === 'answered')) dots[round].classList.add('is-done');
-      r.effects.forEach(apply);
+      r.effects.forEach((e) => apply(e, round));
     });
 
     renderRound(0);
@@ -100,7 +105,6 @@ export const pickGame: GameModule<'pick'> = {
       destroy() {
         demo.cancel();
         clearTimeout(timer);
-        stop();
       },
     };
   },

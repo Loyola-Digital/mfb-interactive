@@ -1,5 +1,6 @@
 // Tela do Ligar: duas colunas embaralhadas; toca numa carta e depois na parceira do outro lado.
 import { card, cardLabel, rabbit } from '../art.ts';
+import { cheer, oops, say, stop } from '../audio.ts';
 import { esc, reducedMotion, shuffled } from '../ui.ts';
 import { createDemo, nudge } from './demo.ts';
 import { init, reduce, type MatchEffect, type Side } from './match.ts';
@@ -38,7 +39,11 @@ export const matchGame: GameModule<'match'> = {
       switch (e.type) {
         case 'selected':
           el.querySelectorAll('.match-card.is-lifted').forEach((c) => c.classList.remove('is-lifted'));
-          if (e.pair !== null) cardOf(e.side, e.pair).classList.add('is-lifted');
+          if (e.pair !== null) {
+            cardOf(e.side, e.pair).classList.add('is-lifted');
+            const a = pairs[e.pair][e.side === 'a' ? 0 : 1].audio;
+            if (a) say(a);
+          }
           break;
         case 'paired': {
           demo.cancel();
@@ -50,6 +55,9 @@ export const matchGame: GameModule<'match'> = {
             c.style.setProperty('--pair', `var(--${color})`);
             c.disabled = true;
           }
+          const a = pairs[e.pair][0].audio ?? pairs[e.pair][1].audio;
+          stop();
+          cheer(a ? [a] : []);
           break;
         }
         case 'mismatch':
@@ -57,6 +65,7 @@ export const matchGame: GameModule<'match'> = {
           nudge(cardOf('a', e.a));
           nudge(cardOf('b', e.b));
           nudge(rabbitBox, 'is-thinking');
+          oops();
           break;
         case 'autoHelp':
           cardOf('a', e.pair).classList.add('is-hint');

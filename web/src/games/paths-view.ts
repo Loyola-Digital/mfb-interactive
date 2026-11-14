@@ -1,6 +1,7 @@
 // Tela do jogo de Caminhos: pedras sobre o jardim, o coelho anda até a pedra tocada.
 import type { Point } from '../../../shared/content.ts';
 import { img, rabbit } from '../art.ts';
+import { cheer, oops, sayNext, speaker } from '../audio.ts';
 import { esc, reducedMotion } from '../ui.ts';
 import { createDemo, nudge } from './demo.ts';
 import { init, reduce, type PathsEffect } from './paths.ts';
@@ -28,7 +29,7 @@ export const pathsGame: GameModule<'paths'> = {
     root.innerHTML = `<div class="paths game">
       <div class="game-model mfb-card" aria-label="Modelo">
         <div class="game-model__art game-model__art--rabbit">${rabbit('waiting')}</div>
-        <span class="word">${esc(mission.word)}</span>
+        <span class="word">${esc(mission.word)}</span>${mission.audio ? speaker(mission.audio) : ''}
       </div>
       <div class="scene">
         <svg class="trail" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
@@ -72,6 +73,7 @@ export const pathsGame: GameModule<'paths'> = {
         case 'invalid':
           nudge(stones[effect.index]);
           nudge(walker, 'is-thinking');
+          oops();
           break;
         case 'autoHelp':
           stones[effect.index].classList.add('is-hint');
@@ -80,6 +82,7 @@ export const pathsGame: GameModule<'paths'> = {
           break;
         case 'completed':
           demo.cancel();
+          cheer();
           later(700, () => moveTo(g.goal));
           later(1400, () => (walker.innerHTML = rabbit('celebrating')));
           later(2600, hooks.onComplete);
@@ -96,6 +99,7 @@ export const pathsGame: GameModule<'paths'> = {
     });
 
     mark();
+    if (mission.audio) sayNext(mission.audio, el.querySelector('.game-model [data-say]'));
     const showDemo = () => demo.run([stones[state.next]]);
     if (hooks.demoFirst) {
       requestAnimationFrame(showDemo);

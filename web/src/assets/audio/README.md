@@ -6,6 +6,8 @@ Para atualizar a lista depois de mudar o conteúdo: `npm run audios`.
 
 **Situação em 09/11/2026:** as 110 palavras, frases e nomes de letra foram gerados no site do Fish Audio com a voz "Voz Feminina Persuasiva" (voz da professora), modelo Drama 3, velocidade 0.9x. Foram 5 gerações com `[long pause]` entre as falas, cortadas nas pausas com o ffmpeg (100 ms de folga antes e 80 ms depois). Faltam os 20 sons de letra.
 
+**13/11/2026:** mais 131 falas em inglês (instruções, nomes de letra, palavras, "Good job!", "Oops! Try again.", pares de números como "one, three") do mesmo jeito, em 7 gerações. As 36 instruções em português (tipo `português` na lista) foram geradas em 14/11/2026 com a mesma voz, em 3 gerações. Pares de números e frases com duas partes foram cortados com `D=0.8` (a vírgula também faz pausa).
+
 ## Como gravar
 
 - **Formato:** `.mp3`, mono, 44,1 kHz, 128 kbps. Sem silêncio no começo e no fim (no máximo 0,1 s).

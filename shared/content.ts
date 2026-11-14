@@ -68,6 +68,8 @@ export interface Card {
   count?: number;
   shape?: Shape;
   size?: 'big' | 'small';
+  /** Texto em inglês falado ao tocar na carta (Ligar) ou ao acertá-la (Escolher). */
+  audio?: string;
 }
 
 export interface PickRound {
@@ -97,9 +99,20 @@ interface MissionBase {
   icon?: string;
   /** Prova: Escolher sem ajuda, conta acertos. */
   test?: boolean;
-  /** Texto em inglês falado na tela de resultado, junto da palavra. */
+  /** Texto em inglês falado no jogo (traçar, pintar, montar) e no fim, junto da palavra. */
   audio?: string;
+  /** O que fazer, falado ao abrir o jogo: primeiro em português, depois em inglês. */
+  instruction?: Instruction;
 }
+
+export interface Instruction {
+  pt: string;
+  en: string;
+}
+
+/** Falas fixas do app ao acertar e ao errar (fora da prova). */
+export const PRAISE = ['Good job!', 'Great!', 'Well done!'] as const;
+export const OOPS = 'Oops! Try again.';
 
 interface Texts {
   bookRef: string;
@@ -222,6 +235,9 @@ function validateMission(m: unknown, book: BookId, chapter: string, ids: Set<str
   if (typeof m.available !== 'boolean') throw new Error(`${m.id}: available ausente`);
   if (m.icon !== undefined && !isText(m.icon)) throw new Error(`${m.id}: icon vazio`);
   if (m.audio !== undefined && !isText(m.audio)) throw new Error(`${m.id}: audio vazio`);
+  if (m.instruction !== undefined && !(isObj(m.instruction) && isText(m.instruction.pt) && isText(m.instruction.en))) {
+    throw new Error(`${m.id}: instruction precisa de pt e en`);
+  }
   if (m.test !== undefined && (m.test !== true || m.type !== 'pick')) throw new Error(`${m.id}: prova só pode ser do tipo pick`);
   if (/-P\d/.test(m.id) !== (m.test === true)) throw new Error(`${m.id}: provas usam o id ${book}-PN e test: true`);
   if (m.available) {
@@ -285,6 +301,7 @@ function validateCard(where: string, c: unknown): void {
   if (c.shape !== undefined && !SHAPES.includes(c.shape as Shape)) throw new Error(`${where}: shape desconhecida`);
   if (c.count !== undefined && (!isInt(c.count, 0, 10) || c.art === undefined)) throw new Error(`${where}: count de 0 a 10 com art`);
   if (c.size !== undefined && c.size !== 'big' && c.size !== 'small') throw new Error(`${where}: size precisa ser big ou small`);
+  if (c.audio !== undefined && !isText(c.audio)) throw new Error(`${where}: audio vazio`);
 }
 
 function validateRound(where: string, r: unknown): void {
@@ -361,7 +378,8 @@ export function audioSlug(text: string): string {
   const sound = /^\/([a-z]+)\/$/.exec(t);
   if (sound) return `som-${sound[1]}`;
   if (/^[A-Z]$/.test(t)) return `letra-${t.toLowerCase()}`;
-  return t.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  // Sem acento: as instruções em português viram "qual-vem-depois".
+  return t.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
 /** Todos os textos falados do conteúdo, com as missões que usam cada um (para a lista de gravação). */
@@ -373,10 +391,16 @@ export function audioTexts(content: Content): Map<string, string[]> {
     if (!list.includes(where)) list.push(where);
     uses.set(text, list);
   };
+  const round = (r: PickRound, where: string) => [r.audio, r.prompt?.audio, ...r.options.map((o) => o.audio)].forEach((t) => add(t, where));
   for (const m of content.missions) {
     add(m.audio, m.id);
-    if (isPlayable(m) && m.type === 'pick') m.game.rounds.forEach((r) => add(r.audio, m.id));
+    add(m.instruction?.pt, m.id);
+    add(m.instruction?.en, m.id);
+    if (!isPlayable(m)) continue;
+    if (m.type === 'pick') m.game.rounds.forEach((r) => round(r, m.id));
+    if (m.type === 'match') m.game.pairs.flat().forEach((c) => add(c.audio, m.id));
   }
-  content.placement.forEach((l) => l.rounds.forEach((r) => add(r.audio, `alinhamento ${l.book}`)));
+  content.placement.forEach((l) => l.rounds.forEach((r) => round(r, `alinhamento ${l.book}`)));
+  [...PRAISE, OOPS].forEach((t) => add(t, 'acertos e erros'));
   return uses;
 }

@@ -8,6 +8,7 @@ export const spellingGame: GameModule<'spelling'> = {
     playJigsaw(root, {
       kind: 'spelling',
       art: mission.game.art,
+      audio: mission.audio,
       hooks,
       pieces: [...mission.game.word].map((l, i) => ({ face: `<span class="jig-letter">${l}</span>`, label: `Peça ${i + 1}: letra ${l}`, width: 66 })),
     }),
